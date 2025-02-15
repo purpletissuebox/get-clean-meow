@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh4kw75nff36h"]
+
+[ext_resource type="Script" path="res://levels/level_base.gd" id="1_qxkf6"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_qxkf6")
+
+[node name="Background" type="Sprite2D" parent="."]
+centered = false
+
+[node name="Spawns" type="Node2D" parent="."]
+
+[node name="Load Zones" type="Node2D" parent="."]
+
+[node name="Interactables" type="Node2D" parent="."]
+
+[node name="Collision" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionPoly" type="CollisionPolygon2D" parent="Collision"]
