@@ -1,7 +1,7 @@
 class_name PlayerController extends CharacterBody2D
 
 const BASE_DIR:Vector2 = Vector2(1,0.75)
-const BASE_SPEED:float = 150
+const BASE_SPEED:float = 350
 
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var interact_label: HBoxContainer = $InteractLabel
