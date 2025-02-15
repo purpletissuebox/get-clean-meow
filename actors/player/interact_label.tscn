@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3gyluwelgvy3"]
+
+[ext_resource type="Script" path="res://actors/player/interact_label.gd" id="1_finjk"]
+[ext_resource type="Texture2D" uid="uid://dgw642wj642re" path="res://actors/player/icon.png" id="2_mk2xn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3rht5"]
+font_size = 64
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[node name="InteractLabel" type="HBoxContainer"]
+theme_override_constants/separation = 30
+script = ExtResource("1_finjk")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_mk2xn")
+
+[node name="Text" type="Label" parent="."]
+layout_mode = 2
+text = "INTERACTION_TEXT
+"
+label_settings = SubResource("LabelSettings_3rht5")
