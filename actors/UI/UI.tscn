@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://bss3jpa3xqh7s"]
+
+[ext_resource type="Texture2D" uid="uid://bvguqp464sid4" path="res://actors/UI/tempInventory.png" id="1_cplu8"]
+[ext_resource type="Script" path="res://actors/UI/ui.gd" id="1_pb3oh"]
+[ext_resource type="Texture2D" uid="uid://bh3svr2av88k8" path="res://actors/UI/sponge.png" id="2_awxpv"]
+[ext_resource type="Texture2D" uid="uid://crh5fgb1bq7gk" path="res://actors/UI/bag.png" id="4_2k2oa"]
+[ext_resource type="Texture2D" uid="uid://phsbob2xailr" path="res://actors/UI/broom.png" id="5_44r2w"]
+[ext_resource type="Texture2D" uid="uid://dopwqe48ql013" path="res://actors/UI/key.png" id="6_xmu1p"]
+
+[node name="Ui" type="Node2D"]
+script = ExtResource("1_pb3oh")
+
+[node name="uiBox" type="Sprite2D" parent="."]
+position = Vector2(159, 166)
+texture = ExtResource("1_cplu8")
+
+[node name="Sponge" type="Sprite2D" parent="."]
+position = Vector2(67, 240)
+scale = Vector2(0.699791, 0.653272)
+texture = ExtResource("2_awxpv")
+
+[node name="Bag" type="Sprite2D" parent="."]
+position = Vector2(254, 237)
+scale = Vector2(0.703125, 0.675373)
+texture = ExtResource("4_2k2oa")
+
+[node name="Broom" type="Sprite2D" parent="."]
+position = Vector2(82, 238)
+scale = Vector2(0.874016, 0.666667)
+texture = ExtResource("5_44r2w")
+
+[node name="Key" type="Sprite2D" parent="."]
+position = Vector2(253, 256)
+scale = Vector2(0.671875, 0.815603)
+texture = ExtResource("6_xmu1p")

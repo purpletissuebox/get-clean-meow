@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://citqc8mse60dn" path="res://levels/test_lvl/bkg.png" id="2_s62mr"]
 [ext_resource type="PackedScene" uid="uid://dthqwuvotxvq4" path="res://levels/load_zone.tscn" id="3_jjoa8"]
 [ext_resource type="PackedScene" uid="uid://cybfyy4cdknnj" path="res://actors/table/table.tscn" id="3_l2kyl"]
-[ext_resource type="PackedScene" uid="uid://1r1sb6qgybpt" path="res://actors/dirtyStuff/grime.tscn" id="5_mlaui"]
+[ext_resource type="PackedScene" uid="uid://bss3jpa3xqh7s" path="res://actors/UI/UI.tscn" id="5_foaq6"]
 
 [node name="Level" instance=ExtResource("1_srhr3")]
 y_sort_enabled = true
@@ -43,5 +43,5 @@ polygon = PackedVector2Array(7, 865, 247, 519, 474, 534, 500, 484, 574, 482, 647
 y_sort_enabled = true
 position = Vector2(574, 740)
 
-[node name="Grime" parent="." index="6" instance=ExtResource("5_mlaui")]
-position = Vector2(910, 230)
+[node name="Ui" parent="." index="6" instance=ExtResource("5_foaq6")]
+position = Vector2(733, 323)
