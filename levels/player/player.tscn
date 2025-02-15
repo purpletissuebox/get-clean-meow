@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8kf7agyg1fpn"]
+
+[ext_resource type="Script" path="res://levels/player/character_body_2d.gd" id="1_rfg4s"]
+[ext_resource type="Texture2D" uid="uid://8c3ved3fcokx" path="res://levels/player/placeHolderImages/playerTempIdle.png" id="2_7ysbr"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_rfg4s")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(303, 155)
+texture = ExtResource("2_7ysbr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
