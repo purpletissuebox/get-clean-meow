@@ -1,31 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://c18xrkfum4s4f"]
+[gd_scene load_steps=3 format=3 uid="uid://c18xrkfum4s4f"]
 
 [ext_resource type="Script" path="res://actors/Dialouge/dialouge.gd" id="1_h2joy"]
-[ext_resource type="Texture2D" uid="uid://cmalgvflp0vx" path="res://actors/Dialouge/tempDialouge.png" id="1_i4hsm"]
-[ext_resource type="Texture2D" uid="uid://dqryrq80iad4c" path="res://actors/Dialouge/catgirl.png" id="2_jckan"]
-[ext_resource type="Texture2D" uid="uid://dfvrt6oslym1o" path="res://actors/Dialouge/catGirlTalk.png" id="3_soe8f"]
-[ext_resource type="Texture2D" uid="uid://bl2ldgbrhxhx1" path="res://actors/Dialouge/oldManPortrait.png" id="4_uoi0x"]
-[ext_resource type="Texture2D" uid="uid://ek3q1o876g3h" path="res://actors/Dialouge/oldManTalk.png" id="5_gklhi"]
+[ext_resource type="Texture2D" uid="uid://dgjx5d0qymt63" path="res://actors/Dialouge/dialougeBox.png" id="2_o7tya"]
 
 [node name="Dialouge" type="Node2D"]
 script = ExtResource("1_h2joy")
 
 [node name="dialougeOutline" type="Sprite2D" parent="."]
-position = Vector2(335, 194)
-texture = ExtResource("1_i4hsm")
+position = Vector2(540, 585)
+texture = ExtResource("2_o7tya")
 
-[node name="CatGirlFace" type="Sprite2D" parent="."]
-position = Vector2(209, 279)
-texture = ExtResource("2_jckan")
-
-[node name="CatGirlTalk" type="Sprite2D" parent="."]
-position = Vector2(366, 279)
-texture = ExtResource("3_soe8f")
-
-[node name="OldFuckFace" type="Sprite2D" parent="."]
-position = Vector2(209, 279)
-texture = ExtResource("4_uoi0x")
-
-[node name="OldFuckTalk" type="Sprite2D" parent="."]
-position = Vector2(366, 279)
-texture = ExtResource("5_gklhi")
+[node name="Text" type="Label" parent="."]
+modulate = Color(0.0295066, 0.0295066, 0.0295066, 1)
+offset_left = 69.0
+offset_top = 532.0
+offset_right = 1017.0
+offset_bottom = 633.0
+text = "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\""
+autowrap_mode = 2
