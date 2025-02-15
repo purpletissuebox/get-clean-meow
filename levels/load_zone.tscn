@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dthqwuvotxvq4"]
+
+[ext_resource type="PackedScene" uid="uid://civqyx6i1i73l" path="res://actors/interactable.tscn" id="1_s2ui6"]
+[ext_resource type="Script" path="res://levels/load_zone.gd" id="1_uidur"]
+
+[node name="LoadZone" instance=ExtResource("1_s2ui6")]
+script = ExtResource("1_uidur")
+spawnID = 0
+sceneID = 0
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+polygon = PackedVector2Array(-25, -25, -25, 25, 25, 25, 25, -25)
+
+[node name="Graphic" parent="." index="1"]
+visible = false
+
+[node name="Collision" parent="." index="2"]
+visible = false

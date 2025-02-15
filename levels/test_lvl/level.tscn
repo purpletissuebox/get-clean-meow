@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://ejlebcfq11ka"]
+
+[ext_resource type="PackedScene" uid="uid://dh4kw75nff36h" path="res://levels/level_base.tscn" id="1_srhr3"]
+[ext_resource type="Texture2D" uid="uid://citqc8mse60dn" path="res://levels/test_lvl/bkg.png" id="2_s62mr"]
+[ext_resource type="PackedScene" uid="uid://dthqwuvotxvq4" path="res://levels/load_zone.tscn" id="3_jjoa8"]
+[ext_resource type="PackedScene" uid="uid://cybfyy4cdknnj" path="res://actors/table/table.tscn" id="3_l2kyl"]
+
+[node name="Level" instance=ExtResource("1_srhr3")]
+y_sort_enabled = true
+
+[node name="Background" parent="." index="0"]
+texture = ExtResource("2_s62mr")
+
+[node name="stairs" type="Node2D" parent="Spawns" index="0"]
+position = Vector2(748, 212)
+
+[node name="front" type="Node2D" parent="Spawns" index="1"]
+position = Vector2(771, 809)
+
+[node name="door" type="Node2D" parent="Spawns" index="2"]
+position = Vector2(234, 650)
+
+[node name="front" parent="Load Zones" index="0" instance=ExtResource("3_jjoa8")]
+position = Vector2(775, 876)
+scale = Vector2(7.915, 3.12)
+spawnID = 1
+
+[node name="stairs" parent="Load Zones" index="1" instance=ExtResource("3_jjoa8")]
+position = Vector2(754, 156)
+scale = Vector2(5.48, 2.99)
+spawnID = 1
+
+[node name="door" parent="Load Zones" index="2" instance=ExtResource("3_jjoa8")]
+position = Vector2(151, 560)
+scale = Vector2(2.99, 7.415)
+spawnID = 2
+
+[node name="CollisionPoly" parent="Collision" index="0"]
+polygon = PackedVector2Array(7, 865, 247, 519, 474, 534, 500, 484, 574, 482, 647, 140, 855, 142, 978, 493, 1078, 495, 1115, 635, 1444, 635, 1521, 880, 915, 872, 1036, 1001, 1876, 997, 1848, -32, -215, -37, -231, 1001, 511, 999, 639, 865)
+
+[node name="Table" parent="." index="5" instance=ExtResource("3_l2kyl")]
+y_sort_enabled = true
+position = Vector2(574, 740)
