@@ -5,12 +5,19 @@ const BASE_SPEED:float = 150
 
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var interact_label: HBoxContainer = $InteractLabel
+@export var animation_tree : AnimationTree
 
 var busy:bool
 var nearby_interactables:Array[Interactable]
+var playback : AnimationNodeStateMachinePlayback
 
 func _init():
 	GlobalContext.player_node = self
+
+
+#Genuinly no idea what this does. Initalizes playback maybe?
+func _ready():
+	playback = animation_tree["parameters/playback"]
 
 func _physics_process(_delta:float):
 	if Input.is_action_just_pressed("interact"):
@@ -20,6 +27,8 @@ func _physics_process(_delta:float):
 	var dir = Input.get_vector("walk_left", "walk_right", "walk_up", "walk_down")
 	self.velocity = dir*BASE_SPEED*BASE_DIR
 	move_and_slide()
+	select_animation()
+	update_animation_parameters(dir)
 
 func approached_object(thing:Interactable):
 	self.nearby_interactables.append(thing)
@@ -28,3 +37,12 @@ func approached_object(thing:Interactable):
 func left_object(thing:Interactable):
 	self.nearby_interactables.erase(thing)
 	interact_label.redraw()
+	
+#Function that will check if moving, only idle animations right now
+func select_animation():
+	playback.travel("IDLE")
+
+
+#Function that updates animation, buddy who made the tutorial i followed LOVED new functions
+func update_animation_parameters(input_direction):
+	animation_tree["parameters/IDLE/blend_position"] = input_direction
