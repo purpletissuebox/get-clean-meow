@@ -1,15 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8kf7agyg1fpn"]
+[gd_scene load_steps=5 format=3 uid="uid://c8kf7agyg1fpn"]
 
 [ext_resource type="Script" path="res://levels/player/character_body_2d.gd" id="1_rfg4s"]
 [ext_resource type="Texture2D" uid="uid://8c3ved3fcokx" path="res://levels/player/placeHolderImages/playerTempIdle.png" id="2_7ysbr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxx5l"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_f5job"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_rfg4s")
+speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(303, 155)
 texture = ExtResource("2_7ysbr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(303, 155)
+scale = Vector2(3.24, 3.16)
+shape = SubResource("RectangleShape2D_pxx5l")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+
+[node name="AnimationTree" type="AnimationTree" parent="CharacterBody2D"]
+tree_root = SubResource("AnimationNodeStateMachine_f5job")
+anim_player = NodePath("../AnimationPlayer")
