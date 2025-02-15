@@ -19,6 +19,8 @@ boot_splash/show_image=false
 [autoload]
 
 SignalBus="*res://drivers/signal_bus.gd"
+GlobalContext="*res://drivers/global_ctxt.gd"
+GlobalData="*res://drivers/globals.gd"
 
 [debug]
 
