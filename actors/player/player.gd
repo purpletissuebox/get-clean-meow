@@ -1,7 +1,7 @@
 class_name PlayerController extends CharacterBody2D
 
 const BASE_DIR:Vector2 = Vector2(1,0.75)
-const BASE_SPEED:float = 350
+const BASE_SPEED:float = 250
 
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var interact_label: HBoxContainer = $InteractLabel
@@ -40,9 +40,15 @@ func left_object(thing:Interactable):
 	
 #Function that will check if moving, only idle animations right now
 func select_animation():
-	playback.travel("IDLE")
+	if velocity == Vector2.ZERO:
+		playback.travel("IDLE")
+	else:
+		playback.travel("WALKING")
 
 
 #Function that updates animation, buddy who made the tutorial i followed LOVED new functions
 func update_animation_parameters(input_direction):
+	if input_direction == Vector2.ZERO:
+		return
 	animation_tree["parameters/IDLE/blend_position"] = input_direction
+	animation_tree["parameters/WALKING/blend_position"] = input_direction
