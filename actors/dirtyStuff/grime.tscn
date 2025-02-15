@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://1r1sb6qgybpt"]
+
+[ext_resource type="Texture2D" uid="uid://cs0h8s2ekoq4i" path="res://actors/dirtyStuff/grime.png" id="1_msyml"]
+[ext_resource type="Script" path="res://actors/interactable.gd" id="2_ylide"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_adnx6"]
+size = Vector2(232, 105.75)
+
+[node name="Grime" type="Node2D"]
+
+[node name="Interactable" type="Area2D" parent="."]
+input_pickable = false
+script = ExtResource("2_ylide")
+obj_name = "Grime"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(359, 346.875)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_adnx6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactable"]
+position = Vector2(352.5, 346.5)
+scale = Vector2(0.959375, 0.396875)
+texture = ExtResource("1_msyml")

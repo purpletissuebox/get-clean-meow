@@ -1,4 +1,6 @@
 extends Interactable
 
 func _interact(_args:Array):
-	print("I was spoken to!")
+	var tableTalk = "I was spoken to!"
+	$"../Dialouge".dialouge(tableTalk)
+	$"../Ui".bagVar = 1
