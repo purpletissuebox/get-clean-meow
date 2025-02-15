@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://1r1sb6qgybpt"]
+
+[ext_resource type="Texture2D" uid="uid://cs0h8s2ekoq4i" path="res://actors/dirtyStuff/grime.png" id="1_msyml"]
+
+[node name="Grime" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(352.5, 346.5)
+scale = Vector2(0.959375, 0.396875)
+texture = ExtResource("1_msyml")

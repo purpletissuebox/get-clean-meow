@@ -140,7 +140,7 @@ states/IDLE/node = SubResource("AnimationNodeBlendSpace2D_unj8l")
 states/IDLE/position = Vector2(358, 37)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cejil"]
-radius = 92.1358
+radius = 48.0416
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animation_tree")]
 y_sort_enabled = true
@@ -153,6 +153,7 @@ animation_tree = NodePath("AnimationTree")
 shape = SubResource("RectangleShape2D_updys")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 67)
 texture = ExtResource("2_h6lg6")
 centered = false
 offset = Vector2(-50, -100)
@@ -174,7 +175,7 @@ parameters/IDLE/blend_position = Vector2(-0.00158983, -1.00885)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractCollider"]
-position = Vector2(0, -50)
+position = Vector2(-2, 0)
 shape = SubResource("CircleShape2D_cejil")
 
 [node name="InteractLabel" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_440br")]
