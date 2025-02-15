@@ -15,12 +15,12 @@ position = Vector2(159, 166)
 texture = ExtResource("1_cplu8")
 
 [node name="Sponge" type="Sprite2D" parent="."]
-position = Vector2(67, 240)
+position = Vector2(70, 238)
 scale = Vector2(0.699791, 0.653272)
 texture = ExtResource("2_awxpv")
 
 [node name="Bag" type="Sprite2D" parent="."]
-position = Vector2(254, 237)
+position = Vector2(74, 240)
 scale = Vector2(0.703125, 0.675373)
 texture = ExtResource("4_2k2oa")
 
@@ -30,6 +30,6 @@ scale = Vector2(0.874016, 0.666667)
 texture = ExtResource("5_44r2w")
 
 [node name="Key" type="Sprite2D" parent="."]
-position = Vector2(253, 256)
+position = Vector2(74, 256)
 scale = Vector2(0.671875, 0.815603)
 texture = ExtResource("6_xmu1p")
