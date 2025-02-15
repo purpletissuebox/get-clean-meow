@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://7k8yls7isrca"]
+
+[ext_resource type="Script" path="res://actors/player/player.gd" id="1_5gi23"]
+[ext_resource type="PackedScene" uid="uid://c3gyluwelgvy3" path="res://actors/player/interact_label.tscn" id="2_440br"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_updys"]
+size = Vector2(60, 20)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xexo6"]
+size = Vector2(100, 100)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cejil"]
+radius = 92.1358
+
+[node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
+collision_mask = 4
+motion_mode = 1
+script = ExtResource("1_5gi23")
+
+[node name="MovementCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_updys")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_xexo6")
+centered = false
+offset = Vector2(-50, -100)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="InteractCollider" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractCollider"]
+position = Vector2(0, -50)
+shape = SubResource("CircleShape2D_cejil")
+
+[node name="InteractLabel" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_440br")]
+visible = false
+offset_top = -200.0
+offset_right = 1061.0
+offset_bottom = -32.0
+scale = Vector2(0.3, 0.3)
+player = NodePath("..")
+
+[connection signal="area_entered" from="InteractCollider" to="." method="approached_object"]
+[connection signal="area_exited" from="InteractCollider" to="." method="left_object"]
