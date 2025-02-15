@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cybfyy4cdknnj"]
+
+[ext_resource type="PackedScene" uid="uid://civqyx6i1i73l" path="res://actors/interactable.tscn" id="1_pbdjx"]
+[ext_resource type="Script" path="res://actors/table/table.gd" id="2_7wgi1"]
+[ext_resource type="Texture2D" uid="uid://bv1lu4exowa7a" path="res://actors/table/end_table.png" id="2_r0ic3"]
+
+[node name="Table" instance=ExtResource("1_pbdjx")]
+script = ExtResource("2_7wgi1")
+obj_name = "End Table"
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+polygon = PackedVector2Array(-170, 48, 2, 127, 278, 15, 174, -252, -87, -266, -304, -141)
+
+[node name="Graphic" parent="." index="1"]
+texture = ExtResource("2_r0ic3")
+centered = false
+offset = Vector2(-81, -166)
+
+[node name="CollisionPolygon2D2" parent="Collision" index="0"]
+polygon = PackedVector2Array(-78, -26, -2, 6, 90, -15, 1, -62)
