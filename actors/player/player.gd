@@ -24,7 +24,13 @@ func _physics_process(_delta:float):
 		if self.nearby_interactables.size() != 0:
 			self.nearby_interactables[-1]._interact([])
 	
-	var dir = Input.get_vector("walk_left", "walk_right", "walk_up", "walk_down")
+	
+	#quick solution I found online REDDIT oh yeah yeah, stops player if trying to move diagonal
+	var dir = Input.get_vector("walk_left","walk_right","walk_up","walk_down")
+	if dir.x != 0 and dir.y != 0:
+		dir = Vector2.ZERO
+	
+	#var dir = Input.get_vector("walk_left", "walk_right", "walk_up", "walk_down")
 	self.velocity = dir*BASE_SPEED*BASE_DIR
 	move_and_slide()
 	select_animation()
