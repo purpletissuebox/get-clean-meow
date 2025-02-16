@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbtw0fr2xng32"]
+
+[ext_resource type="Script" path="res://minigames/scrub/bubble.gd" id="1_02g7k"]
+
+[node name="Bubble" type="Sprite2D"]
+script = ExtResource("1_02g7k")
