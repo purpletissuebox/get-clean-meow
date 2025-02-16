@@ -1,17 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://dsyy2e7wkak64"]
 
 [ext_resource type="Script" path="res://minigames/scrub/scrub.gd" id="1_gh1db"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c8t7a"]
-size = Vector2(50, 50)
+[ext_resource type="Texture2D" uid="uid://bolvettevnrnc" path="res://minigames/scrub/arm.png" id="2_e3oym"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -807.0
-offset_bottom = -435.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gh1db")
@@ -25,17 +21,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.572988, 0.572988, 0.572988, 1)
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -60.0
-offset_top = 13.0
-offset_right = -13.0
-offset_bottom = 44.0
-grow_horizontal = 0
-text = "QUIT"
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_c8t7a")
+[node name="arm" type="Sprite2D" parent="."]
+texture = ExtResource("2_e3oym")
+offset = Vector2(109, 251)
