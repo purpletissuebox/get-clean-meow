@@ -10,8 +10,8 @@ const bgm_resources:Array[String] = [
 	"res://drivers/audio/title.ogg"
 ]
 
-var global_bgm_volume:float
-var global_sfx_volume:float
+var global_bgm_volume:float = 1.0
+var global_sfx_volume:float = 1.0
 var bgm_player:AudioStreamPlayer
 var sfx_players:Array[AudioStreamPlayer]
 
@@ -19,10 +19,10 @@ func _ready():
 	self.bgm_player = AudioStreamPlayer.new()
 	self.add_child(bgm_player)
 
-func play_bgm(songID:BGM, volume:float, fade_time:float):
+func play_bgm(songID:BGM, fade_time:float = 0.5, volume:float = 1.0):
 	play_audio(bgm_resources[songID], self.bgm_player, volume*global_bgm_volume, fade_time)
 
-func play_sfx(filepath:String, volume:float):
+func play_sfx(filepath:String, volume:float = 1.0):
 	var player:AudioStreamPlayer = AudioStreamPlayer.new()
 	player.finished.connect(self.stop_audio.bind(player, 0, true))
 	
