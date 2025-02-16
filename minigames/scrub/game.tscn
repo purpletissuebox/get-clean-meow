@@ -3,7 +3,8 @@
 [ext_resource type="Script" path="res://minigames/scrub/scrub.gd" id="1_gh1db"]
 [ext_resource type="Texture2D" uid="uid://bolvettevnrnc" path="res://minigames/scrub/arm.png" id="2_e3oym"]
 
-[node name="Control" type="Control"]
+[node name="Scrub" type="Control"]
+clip_contents = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,5 +23,6 @@ grow_vertical = 2
 color = Color(0.572988, 0.572988, 0.572988, 1)
 
 [node name="arm" type="Sprite2D" parent="."]
+position = Vector2(578, 318)
 texture = ExtResource("2_e3oym")
 offset = Vector2(109, 251)

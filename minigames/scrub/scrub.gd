@@ -12,7 +12,7 @@ var bubble_timer:float
 @onready var hand_sprite: Sprite2D = $arm
 
 func _ready():
-	self.old_pos = self.get_local_mouse_position()
+	self.old_pos = hand_sprite.position
 	for i in NUM_DIRTS:
 		var dirt = TextureRect.new()
 		var txtr = PlaceholderTexture2D.new()
@@ -23,6 +23,8 @@ func _ready():
 		self.dirt_particles.append(dirt)
 
 func _process(delta:float):
+	if !game_start:
+		return
 	if !game_won:
 		if remove_dirt(delta):
 			bubble_timer -= delta
