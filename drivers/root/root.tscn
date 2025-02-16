@@ -1,16 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://rtkabh2xnhan"]
+[gd_scene load_steps=3 format=3 uid="uid://rtkabh2xnhan"]
 
 [ext_resource type="Script" path="res://drivers/root/root.gd" id="1_savmm"]
+[ext_resource type="PackedScene" uid="uid://boi2cc35amal0" path="res://minigames/controller.tscn" id="2_xpxdo"]
 
-[node name="root" type="Node" node_paths=PackedStringArray("screen_cover", "level")]
+[node name="root" type="Node" node_paths=PackedStringArray("screen_cover", "level", "minigame")]
 script = ExtResource("1_savmm")
-screen_cover = NodePath("CanvasLayer/ColorRect")
+screen_cover = NodePath("black_screen/ColorRect")
 level = NodePath("sceneContainer")
+minigame = NodePath("minigame_layer/HBoxContainer")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="black_screen" type="CanvasLayer" parent="."]
 layer = 2
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="black_screen"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -22,3 +24,8 @@ color = Color(0, 0, 0, 1)
 [node name="sceneContainer" type="Node" parent="."]
 
 [node name="dummy" type="Node" parent="sceneContainer"]
+
+[node name="minigame_layer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="HBoxContainer" parent="minigame_layer" instance=ExtResource("2_xpxdo")]
