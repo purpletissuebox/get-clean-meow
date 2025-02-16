@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dthqwuvotxvq4" path="res://levels/load_zone.tscn" id="3_jjoa8"]
 [ext_resource type="PackedScene" uid="uid://cybfyy4cdknnj" path="res://actors/table/table.tscn" id="3_l2kyl"]
 [ext_resource type="PackedScene" uid="uid://bss3jpa3xqh7s" path="res://actors/UI/UI.tscn" id="5_foaq6"]
-[ext_resource type="PackedScene" uid="uid://c18xrkfum4s4f" path="res://actors/Dialouge/Dialouge.tscn" id="6_mgmbu"]
+[ext_resource type="PackedScene" uid="uid://btr4guwhu05ny" path="res://actors/Dialouge/Dialouge.tscn" id="6_mgmbu"]
 
 [node name="Level" instance=ExtResource("1_srhr3")]
 y_sort_enabled = true
@@ -41,11 +41,10 @@ spawnID = 2
 y_sort_enabled = true
 position = Vector2(574, 740)
 
-[node name="CollisionPoly" parent="Collision" index="0"]
-polygon = PackedVector2Array(7, 865, 247, 519, 474, 534, 500, 484, 574, 482, 647, 140, 855, 142, 978, 493, 1078, 495, 1115, 635, 1444, 635, 1521, 880, 915, 872, 1036, 1001, 1876, 997, 1848, -32, -215, -37, -231, 1001, 511, 999, 639, 865)
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="6"]
 
-[node name="Ui" parent="." index="5" instance=ExtResource("5_foaq6")]
-position = Vector2(733, 323)
+[node name="Ui" parent="CanvasLayer" index="0" instance=ExtResource("5_foaq6")]
+position = Vector2(767, 247)
 
-[node name="Dialouge" parent="." index="6" instance=ExtResource("6_mgmbu")]
-position = Vector2(267, 224)
+[node name="Dialouge" parent="CanvasLayer" index="1" instance=ExtResource("6_mgmbu")]
+position = Vector2(35, 2)
