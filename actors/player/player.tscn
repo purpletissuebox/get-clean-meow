@@ -251,10 +251,9 @@ animation_tree = NodePath("AnimationTree")
 shape = SubResource("RectangleShape2D_updys")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-68, -85)
 texture = SubResource("CompressedTexture2D_p58pw")
 centered = false
-offset = Vector2(-50, -100)
+offset = Vector2(-118, -264)
 hframes = 12
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

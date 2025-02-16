@@ -37,10 +37,7 @@ position = Vector2(151, 560)
 scale = Vector2(2.99, 7.415)
 spawnID = 2
 
-[node name="CollisionPoly" parent="Collision" index="0"]
-polygon = PackedVector2Array(7, 865, 247, 519, 474, 534, 500, 484, 574, 482, 647, 140, 855, 142, 978, 493, 1078, 495, 1115, 635, 1444, 635, 1521, 880, 915, 872, 1036, 1001, 1876, 997, 1848, -32, -215, -37, -231, 1001, 511, 999, 639, 865)
-
-[node name="Table" parent="." index="5" instance=ExtResource("3_l2kyl")]
+[node name="Table" parent="Interactables" index="0" instance=ExtResource("3_l2kyl")]
 y_sort_enabled = true
 position = Vector2(574, 740)
 
