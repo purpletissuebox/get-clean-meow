@@ -21,6 +21,7 @@ boot_splash/show_image=false
 SignalBus="*res://drivers/signal_bus.gd"
 GlobalContext="*res://drivers/global_ctxt.gd"
 GlobalData="*res://drivers/globals.gd"
+SoundDriver="*res://drivers/sound.gd"
 
 [debug]
 
