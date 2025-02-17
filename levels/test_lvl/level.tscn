@@ -41,7 +41,7 @@ spawnID = 2
 y_sort_enabled = true
 position = Vector2(574, 740)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="6"]
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="5"]
 
 [node name="Ui" parent="CanvasLayer" index="0" instance=ExtResource("5_foaq6")]
 position = Vector2(767, 247)
