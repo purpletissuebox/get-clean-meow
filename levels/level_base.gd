@@ -25,5 +25,4 @@ func get_actor_state(a:Interactable):
 	if a.obj_ID in self.room_state:
 		return self.room_state[a.obj_ID]
 	else:
-		self.room_state[a.obj_ID] = 0
 		return 0
