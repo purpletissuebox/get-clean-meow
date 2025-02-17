@@ -11,7 +11,7 @@ func redraw():
 		self.show()
 	
 	var thing:Interactable = player.nearby_interactables[-1]
-	label.text = "Interact with " + thing.obj_name
+	label.text = thing.obj_interaction
 	
 	var midpoint = (self.get_minimum_size().x*self.scale.x)/2
 	self.position.x = -midpoint
