@@ -20,7 +20,6 @@ var game_x:float
 func _ready():
 	self.game_x = minigame_root.position.x
 	self.position.x = self.game_x
-	
 
 func set_up_game(filename:String):
 	create_child(filename)
@@ -28,6 +27,7 @@ func set_up_game(filename:String):
 	spin_text()
 
 func destroy_game():
+	game_node.exit.disconnect(self.destroy_game)
 	slide_screen(0)
 	spin_text()
 	
