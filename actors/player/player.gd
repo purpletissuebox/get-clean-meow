@@ -32,7 +32,8 @@ func _physics_process(_delta:float):
 	
 	#var dir = Input.get_vector("walk_left", "walk_right", "walk_up", "walk_down")
 	self.velocity = dir*BASE_SPEED*BASE_DIR
-	move_and_slide()
+	if self.can_process():
+		move_and_slide()
 	select_animation()
 	update_animation_parameters(Input.get_vector("walk_left","walk_right","walk_up","walk_down"))
 

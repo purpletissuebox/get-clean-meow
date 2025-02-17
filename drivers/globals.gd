@@ -5,6 +5,7 @@ enum RoomID
 	LIVING_ROOM,
 	KITCHEN,
 	BEDROOM,
+	NUM_ROOMS,
 }
 
 const ROOM_PATHS:Array[String] = [
