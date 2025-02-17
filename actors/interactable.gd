@@ -6,7 +6,6 @@ var state:int:
 	set(v):
 		GlobalContext.level_node.room_state[self.obj_ID] = v
 		state = v
-static var num_interactables:int
 
 func _enter_tree():
 	self.state = GlobalContext.level_node.get_actor_state(self)
