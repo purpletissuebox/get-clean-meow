@@ -3,6 +3,9 @@ extends HBoxContainer
 @export var player:PlayerController
 @onready var label: Label = $Text
 
+func _ready():
+	self.hide()
+
 func redraw():
 	if player.nearby_interactables.size() == 0:
 		self.hide()
