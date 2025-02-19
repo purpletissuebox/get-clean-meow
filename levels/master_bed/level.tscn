@@ -12,6 +12,12 @@ texture = ExtResource("2_xd0qt")
 [node name="Node2D" type="Node2D" parent="Spawns" index="0"]
 position = Vector2(62, 156)
 
+[node name="topleft" parent="Collision" index="0"]
+position = Vector2(17, 10)
+
+[node name="bottomright" parent="Collision" index="1"]
+position = Vector2(303, 225)
+
 [node name="LoadZone" parent="." index="5" instance=ExtResource("3_mv23n")]
 position = Vector2(8, 154)
 spawnID = 3

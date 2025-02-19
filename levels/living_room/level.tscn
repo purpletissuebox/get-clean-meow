@@ -16,3 +16,9 @@ position = Vector2(274, 165)
 position = Vector2(294, 163)
 spawnID = 1
 sceneID = 2
+
+[node name="topleft" parent="Collision" index="0"]
+position = Vector2(24, 15)
+
+[node name="bottomright" parent="Collision" index="1"]
+position = Vector2(297, 224)

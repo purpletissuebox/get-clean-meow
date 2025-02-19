@@ -12,6 +12,12 @@ texture = ExtResource("2_bvlqr")
 [node name="Node2D" type="Node2D" parent="Spawns" index="0"]
 position = Vector2(231, 209)
 
+[node name="topleft" parent="Collision" index="0"]
+position = Vector2(14, 13)
+
+[node name="bottomright" parent="Collision" index="1"]
+position = Vector2(307, 227)
+
 [node name="LoadZone" parent="." index="5" instance=ExtResource("3_ryxey")]
 position = Vector2(232, 237)
 spawnID = 4
