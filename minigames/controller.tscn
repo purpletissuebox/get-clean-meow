@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://minigames/controller.gd" id="1_b62xd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_csh2c"]
-font_size = 128
+font_size = 32
 font_color = Color(0.87451, 0, 0.843137, 1)
-outline_size = 24
+outline_size = 6
 outline_color = Color(0.639216, 0, 0.843137, 1)
 
 [node name="HBoxContainer" type="Control"]
@@ -43,6 +43,7 @@ grow_vertical = 2
 text = "transition_text"
 label_settings = SubResource("LabelSettings_csh2c")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Game" type="Control" parent="."]
 layout_mode = 1

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8ugolbnegx8a"
-path="res://.godot/imported/playerTempRight.png-eaa08c0ac8ec6af5907209c57206061f.ctex"
+uid="uid://bjgtwyjfiu811"
+path="res://.godot/imported/bedroomBase.png-3c93590da97948c8de94ae738f78ff0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://actors/player/playerTempRight.png"
-dest_files=["res://.godot/imported/playerTempRight.png-eaa08c0ac8ec6af5907209c57206061f.ctex"]
+source_file="res://levels/master_bed/bedroomBase.png"
+dest_files=["res://.godot/imported/bedroomBase.png-3c93590da97948c8de94ae738f78ff0c.ctex"]
 
 [params]
 

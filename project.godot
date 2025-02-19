@@ -27,6 +27,18 @@ SoundDriver="*res://drivers/sound.gd"
 
 gdscript/warnings/unused_signal=0
 
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=240
+window/size/window_width_override=960
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+
+[gui]
+
+theme/custom_font="res://rainyhearts.ttf"
+
 [input]
 
 walk_up={
@@ -65,3 +77,7 @@ interact={
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Actors"
 2d_physics/layer_3="World"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

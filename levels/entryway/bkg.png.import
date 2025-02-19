@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0mer0qm23aqs"
-path="res://.godot/imported/playerTempUp.png-50ba3768f1ecfb4f49e3bd20aaa27f62.ctex"
+uid="uid://btul8sjtc40tm"
+path="res://.godot/imported/bkg.png-de07c714c0805a2df14be78cd0e52fd5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://actors/player/playerTempUp.png"
-dest_files=["res://.godot/imported/playerTempUp.png-50ba3768f1ecfb4f49e3bd20aaa27f62.ctex"]
+source_file="res://levels/entryway/bkg.png"
+dest_files=["res://.godot/imported/bkg.png-de07c714c0805a2df14be78cd0e52fd5.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c05w0s3ev2lan"
-path="res://.godot/imported/playerTempDown.png-7b7a7ac51939ec10f8b45e4983939e69.ctex"
+uid="uid://58is3mwcnv8d"
+path="res://.godot/imported/basementBase.png-2e0092c75efd86fb18026f05088c6741.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://actors/player/playerTempDown.png"
-dest_files=["res://.godot/imported/playerTempDown.png-7b7a7ac51939ec10f8b45e4983939e69.ctex"]
+source_file="res://levels/basement/basementBase.png"
+dest_files=["res://.godot/imported/basementBase.png-2e0092c75efd86fb18026f05088c6741.ctex"]
 
 [params]
 

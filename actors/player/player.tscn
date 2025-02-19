@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c3gyluwelgvy3" path="res://actors/player/interact_label.tscn" id="2_440br"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_updys"]
-size = Vector2(60, 20)
+size = Vector2(25, 15)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p58pw"]
 load_path = "res://.godot/imported/maid-san-Sheet.png-8a3924e36cd684fd33fa1a16968100ea.ctex"
@@ -238,7 +238,7 @@ states/WALKING/node = SubResource("AnimationNodeBlendSpace2D_2yqt2")
 states/WALKING/position = Vector2(370, 119)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cejil"]
-radius = 48.0416
+radius = 13.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animation_tree")]
 y_sort_enabled = true
@@ -248,9 +248,11 @@ script = ExtResource("1_5gi23")
 animation_tree = NodePath("AnimationTree")
 
 [node name="MovementCollider" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7.5)
 shape = SubResource("RectangleShape2D_updys")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.333, 0.333)
 texture = SubResource("CompressedTexture2D_p58pw")
 centered = false
 offset = Vector2(-118, -264)
@@ -273,15 +275,13 @@ parameters/WALKING/blend_position = Vector2(-0.990461, 0.00884962)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractCollider"]
-position = Vector2(-2, 0)
 shape = SubResource("CircleShape2D_cejil")
 
 [node name="InteractLabel" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_440br")]
-visible = false
-offset_top = -200.0
-offset_right = 1061.0
-offset_bottom = -32.0
-scale = Vector2(0.3, 0.3)
+offset_top = -85.0
+offset_right = 1014.0
+offset_bottom = 83.0
+scale = Vector2(0.15, 0.15)
 player = NodePath("..")
 
 [connection signal="area_entered" from="InteractCollider" to="." method="approached_object"]

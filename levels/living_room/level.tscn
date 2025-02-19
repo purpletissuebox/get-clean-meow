@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvea38p5skr74"]
+
+[ext_resource type="PackedScene" uid="uid://dh4kw75nff36h" path="res://levels/level_base.tscn" id="1_hgtm4"]
+[ext_resource type="Texture2D" uid="uid://da8xvlcwcf46n" path="res://levels/living_room/livingroomBase.png" id="2_jxgqu"]
+[ext_resource type="PackedScene" uid="uid://dthqwuvotxvq4" path="res://levels/load_zone.tscn" id="3_o6xo0"]
+
+[node name="Level" instance=ExtResource("1_hgtm4")]
+
+[node name="Background" parent="." index="0"]
+texture = ExtResource("2_jxgqu")
+
+[node name="Node2D" type="Node2D" parent="Spawns" index="0"]
+position = Vector2(274, 165)
+
+[node name="LoadZone" parent="Load Zones" index="0" instance=ExtResource("3_o6xo0")]
+position = Vector2(294, 163)
+spawnID = 1
+sceneID = 2
+
+[node name="topleft" parent="Collision" index="0"]
+position = Vector2(24, 98)
+
+[node name="bottomright" parent="Collision" index="1"]
+position = Vector2(297, 224)
