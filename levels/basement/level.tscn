@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bc1x1qvkyfi3b"]
+
+[ext_resource type="PackedScene" uid="uid://dh4kw75nff36h" path="res://levels/level_base.tscn" id="1_ee4hl"]
+[ext_resource type="Texture2D" uid="uid://58is3mwcnv8d" path="res://levels/basement/basementBase.png" id="2_bvlqr"]
+[ext_resource type="PackedScene" uid="uid://dthqwuvotxvq4" path="res://levels/load_zone.tscn" id="3_ryxey"]
+
+[node name="Level" instance=ExtResource("1_ee4hl")]
+
+[node name="Background" parent="." index="0"]
+texture = ExtResource("2_bvlqr")
+
+[node name="Node2D" type="Node2D" parent="Spawns" index="0"]
+position = Vector2(231, 209)
+
+[node name="LoadZone" parent="." index="5" instance=ExtResource("3_ryxey")]
+position = Vector2(232, 237)
+spawnID = 4
+sceneID = 2
