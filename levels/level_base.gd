@@ -4,7 +4,6 @@ const PLAYER_ACTOR:PackedScene = preload("res://actors/player/player.tscn")
 
 @onready var spawns: Node2D = $Spawns
 @onready var background: Sprite2D = $Background
-@onready var collision_br: Node2D = $Collision/bottomright
 
 var room_state:Dictionary
 
@@ -26,8 +25,6 @@ func boundPlayer(player_instance:PlayerController):
 	player_instance.camera_2d.limit_left = 0
 	player_instance.camera_2d.limit_right = level_br_corner.x
 	player_instance.camera_2d.limit_bottom = level_br_corner.y
-	
-	self.collision_br.position = level_br_corner
 
 func get_actor_state(a:Interactable):
 	if a.obj_ID in self.room_state:

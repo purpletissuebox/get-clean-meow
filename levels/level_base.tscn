@@ -30,24 +30,32 @@ centered = false
 [node name="topleft" type="Node2D" parent="Collision"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Collision/topleft"]
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/topleft/StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_vttql")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Collision/topleft"]
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/topleft/StaticBody2D2"]
 shape = SubResource("WorldBoundaryShape2D_0vfcq")
 
 [node name="bottomright" type="Node2D" parent="Collision"]
-position = Vector2(9999, 9999)
+position = Vector2(320, 240)
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Collision/bottomright"]
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/bottomright/StaticBody2D3"]
 shape = SubResource("WorldBoundaryShape2D_p0xv7")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Collision/bottomright"]
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/bottomright/StaticBody2D4"]
 shape = SubResource("WorldBoundaryShape2D_sp21b")
