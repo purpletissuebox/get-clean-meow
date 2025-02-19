@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dh4kw75nff36h"]
+[gd_scene load_steps=6 format=3 uid="uid://dh4kw75nff36h"]
 
 [ext_resource type="Script" path="res://levels/level_base.gd" id="1_qxkf6"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vttql"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0vfcq"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p0xv7"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sp21b"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_qxkf6")
@@ -14,8 +25,29 @@ centered = false
 
 [node name="Interactables" type="Node2D" parent="."]
 
-[node name="Collision" type="StaticBody2D" parent="."]
-collision_layer = 4
-collision_mask = 0
+[node name="Collision" type="Node2D" parent="."]
 
-[node name="CollisionPoly" type="CollisionPolygon2D" parent="Collision"]
+[node name="topleft" type="Node2D" parent="Collision"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Collision/topleft"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/topleft/StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_vttql")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Collision/topleft"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/topleft/StaticBody2D2"]
+shape = SubResource("WorldBoundaryShape2D_0vfcq")
+
+[node name="bottomright" type="Node2D" parent="Collision"]
+position = Vector2(9999, 9999)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Collision/bottomright"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/bottomright/StaticBody2D3"]
+shape = SubResource("WorldBoundaryShape2D_p0xv7")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Collision/bottomright"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/bottomright/StaticBody2D4"]
+shape = SubResource("WorldBoundaryShape2D_sp21b")
