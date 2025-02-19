@@ -13,7 +13,7 @@ texture = ExtResource("2_bvlqr")
 position = Vector2(231, 209)
 
 [node name="topleft" parent="Collision" index="0"]
-position = Vector2(14, 13)
+position = Vector2(14, 98)
 
 [node name="bottomright" parent="Collision" index="1"]
 position = Vector2(307, 227)
