@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://levels/title/mainmenu.gd" id="1_1apnq"]
 [ext_resource type="Shader" path="res://levels/title/scroll.gdshader" id="2_3u82j"]
 [ext_resource type="Texture2D" uid="uid://cx340iyxwrb1y" path="res://levels/title/bkg.png" id="2_q4ct7"]
-[ext_resource type="Texture2D" uid="uid://bhat45dtv8fpg" path="res://levels/title/logo.png" id="3_tr5g0"]
+[ext_resource type="Texture2D" uid="uid://8xq041bkwfmi" path="res://levels/title/logo.png" id="4_r88h0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_akc40"]
 shader = ExtResource("2_3u82j")
@@ -25,7 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.894118, 0.635294, 0.533333, 1)
+color = Color(0.787243, 0.935297, 0.966162, 1)
 
 [node name="TextureRect" type="TextureRect" parent="ColorRect"]
 texture_repeat = 2
@@ -37,6 +37,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_q4ct7")
+expand_mode = 1
 stretch_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -46,10 +47,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 50
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -58,7 +59,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
-texture = ExtResource("3_tr5g0")
+texture = ExtResource("4_r88h0")
 expand_mode = 1
 stretch_mode = 5
 
