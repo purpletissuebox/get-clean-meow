@@ -4,9 +4,11 @@ const PLAYER_ACTOR:PackedScene = preload("res://actors/player/player.tscn")
 
 @onready var spawns: Node2D = $Spawns
 @onready var background: Sprite2D = $Background
+var room_state:Dictionary
 
 func _init():
 	GlobalContext.level_node = self
+	self.room_state = GlobalContext.plot_progress[GlobalContext.level_ID]
 
 func _ready():
 	var player_instance = PLAYER_ACTOR.instantiate()
@@ -18,3 +20,9 @@ func _ready():
 	player_instance.camera_2d.limit_left = 0
 	player_instance.camera_2d.limit_right = level_br_corner.x
 	player_instance.camera_2d.limit_bottom = level_br_corner.y
+
+func get_actor_state(a:Interactable):
+	if a.obj_ID in self.room_state:
+		return self.room_state[a.obj_ID]
+	else:
+		return 0

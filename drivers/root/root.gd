@@ -31,3 +31,4 @@ func trigger_minigame(filepath:String):
 	
 	screen_cover.modulate.a = 0.0
 	self.level.process_mode = Node.PROCESS_MODE_INHERIT
+	SignalBus.minigame_ended.emit()

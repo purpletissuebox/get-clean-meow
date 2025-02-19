@@ -40,6 +40,8 @@ spawnID = 2
 [node name="Table" parent="Interactables" index="0" instance=ExtResource("3_l2kyl")]
 y_sort_enabled = true
 position = Vector2(574, 740)
+obj_ID = "table1"
+obj_interaction = "Wipe Table"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="5"]
 

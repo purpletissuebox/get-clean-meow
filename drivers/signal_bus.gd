@@ -4,3 +4,5 @@ signal change_lvl
 signal start_minigame
 signal newDialouge
 signal updateInventory
+signal minigame_ended
+
