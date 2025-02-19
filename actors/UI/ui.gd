@@ -8,16 +8,48 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-
+	SignalBus.updateInventory.connect(changeItem)
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	pass
+
+func changeItem(item, changeValue):
+	#item list
+	#1 = sponge
+	#2 = bag
+	#3 = broom
+	#4 = key
+	
+	#change value list
+	#0 = remove
+	#1 = add
+	match(item):
+		1:
+			if(changeValue == 1):
+				spongeVar = 1
+			else:
+				spongeVar = 0
+		2:
+			if(changeValue == 1):
+				bagVar = 1
+			else:
+				bagVar = 0
+		3:
+			if(changeValue == 1):
+				broomVar = 1
+			else:
+				broomVar = 0
+		4:
+			if(changeValue == 1):
+				keyVar = 1
+			else:
+				keyVar = 0
 	updateInventory()
 	pass
 
-	
 func updateInventory():
 	#iterats through the inventory list, gives first item found to first slot
 	#Then goes to second, etc
