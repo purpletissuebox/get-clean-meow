@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Conversation" load_steps=5 format=3 uid="uid://crd8dn0kop0u3"]
+
+[ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="1_uwa1v"]
+[ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="2_qni4d"]
+
+[sub_resource type="Resource" id="Resource_btwjg"]
+script = ExtResource("1_uwa1v")
+text = "you picked the first one with the little ascii face on it!"
+choices = {}
+
+[sub_resource type="Resource" id="Resource_kjmjt"]
+script = ExtResource("1_uwa1v")
+text = "did you think the face was cool or no?"
+choices = {
+"no lol": null,
+"yeah": null
+}
+
+[resource]
+script = ExtResource("2_qni4d")
+contents = Array[ExtResource("1_uwa1v")]([SubResource("Resource_btwjg"), SubResource("Resource_kjmjt")])
