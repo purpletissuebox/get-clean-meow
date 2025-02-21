@@ -14,8 +14,6 @@ var t:Tween = null
 func _ready():
 	self.advance.connect(self.skipText)
 	SignalBus.trigger_conversation.connect(self.startConversation)
-	
-	SignalBus.trigger_conversation.emit(load("res://actors/player/hud/test_convo.tres"))
 
 func _process(delta:float):
 	if Input.is_action_just_pressed("interact"):
