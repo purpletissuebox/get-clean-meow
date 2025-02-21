@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxsvichrjdkji"]
+
+[ext_resource type="Script" path="res://actors/player/hud/dialog.gd" id="1_81lij"]
+[ext_resource type="Texture2D" uid="uid://bunayvq2onnx" path="res://actors/player/hud/hudpatch.png" id="1_707tj"]
+[ext_resource type="PackedScene" uid="uid://bvfwt1iwfyrb7" path="res://actors/player/hud/dialogChoice.tscn" id="2_viiqk"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8lbc3"]
+size = Vector2(20, 20)
+
+[node name="DialogManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -176.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_81lij")
+
+[node name="Choice" parent="." node_paths=PackedStringArray("dialog_manager") instance=ExtResource("2_viiqk")]
+dialog_manager = NodePath("..")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_707tj")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "DIALOG_TEXT"
+fit_content = true
+scroll_active = false
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture = SubResource("PlaceholderTexture2D_8lbc3")
+stretch_mode = 2
