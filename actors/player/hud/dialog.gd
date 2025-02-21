@@ -54,19 +54,16 @@ func printConversation(convo:Conversation, depth:int, choiceBuf:Array[int]):
 		
 		if dialog.choices.size(): #handle options
 			var txt = "   "
-			var upcoming_convos:Array[Conversation] = []
-			
-			for prompt in dialog.choices.keys():
-				txt += (prompt + "\n   ") #buffer all of the text to display at once
-				upcoming_convos.append(dialog.choices[prompt]) #we need to put them in an array because the choice option will report an int
-			
+			for opt in dialog.choices:
+				txt += (opt.prompt + "\n   ") #buffer all of the text to display at once
+				
 			textbox.text = txt
 			init_choice.emit(dialog.choices.size())
 			var choiceID = await choose #wait for user to pick one
 			
 			choiceBuf.append(choiceID)
-			if upcoming_convos[choiceID]: #handle null value for when dialog should end with a choice
-				await printConversation(upcoming_convos[choiceID], depth+1, choiceBuf)
+			if dialog.choices[choiceID].continuation != null: #handle case where choice leads to nothing
+				await printConversation(dialog.choices[choiceID].continuation, depth+1, choiceBuf)
 	
 	if depth == 0:
 		self.endConversation(choiceBuf)
