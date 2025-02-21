@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://564kbekchp3u"]
+
+[ext_resource type="Script" path="res://actors/player/hud/checklist.gd" id="1_n0lcw"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8x4nf"]
+size = Vector2(64, 128)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n0lcw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.8
+anchor_right = 1.0
+anchor_bottom = 1.2
+grow_horizontal = 0
+grow_vertical = 0
+texture = SubResource("PlaceholderTexture2D_8x4nf")
+expand_mode = 1
+
+[connection signal="mouse_entered" from="TextureRect" to="." method="raise"]
+[connection signal="mouse_exited" from="TextureRect" to="." method="lower"]
