@@ -23,8 +23,8 @@ func startConversation(convo:Conversation):
 	textbox.visible_ratio = 0
 	advance_icon.hide()
 	var t2 = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
-	t2.tween_property(self, "anchor_bottom", (2 - 64.0/240.0), ENTRY_TIME)
-	t2.parallel().tween_property(self, "anchor_top", (1 - 64.0/240.0), ENTRY_TIME)
+	t2.tween_property(self, "anchor_bottom", (2 - 96.0/240.0), ENTRY_TIME)
+	t2.parallel().tween_property(self, "anchor_top", (1 - 96.0/240.0), ENTRY_TIME)
 	
 	await t2.finished
 	printConversation(convo, 0, [])

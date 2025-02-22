@@ -8,8 +8,6 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-
-
 func showText():
 	$dialougeOutline.visible = true
 	$Text.visible = true

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2jforxlthkwd"
-path="res://.godot/imported/backGroundPlug.png-b0c37adf1e343d31507a4668d295438e.ctex"
+uid="uid://cnt4mygir5nj1"
+path="res://.godot/imported/dialouge.png-100043872bdd29b684db8253de4e476b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://minigames/plugInMinigame/backGroundPlug.png"
-dest_files=["res://.godot/imported/backGroundPlug.png-b0c37adf1e343d31507a4668d295438e.ctex"]
+source_file="res://actors/player/hud/dialouge.png"
+dest_files=["res://.godot/imported/dialouge.png-100043872bdd29b684db8253de4e476b.ctex"]
 
 [params]
 
