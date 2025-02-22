@@ -21,6 +21,7 @@ func _ready():
 	SignalBus.conversation_ended.connect(func(_x):self.busy = false)
 	playback = animation_tree["parameters/playback"]
 
+
 func _physics_process(_delta:float):
 	if busy:
 		return
@@ -56,7 +57,8 @@ func select_animation():
 	else:
 		playback.travel("WALKING")
 
-
+func force_idle():
+	playback.travel("IDLE")
 #Function that updates animation, buddy who made the tutorial i followed LOVED new functions
 func update_animation_parameters(input_direction):
 	if input_direction == Vector2.ZERO:

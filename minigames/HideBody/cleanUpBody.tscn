@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=3 uid="uid://cd6mmrq4qod1e"]
+
+[ext_resource type="Script" path="res://minigames/HideBody/clean_up_body.gd" id="1_cy821"]
+[ext_resource type="Texture2D" uid="uid://ns05pakp7w2h" path="res://minigames/HideBody/head.png" id="1_kf8jl"]
+[ext_resource type="Texture2D" uid="uid://bg55aitlqyhcm" path="res://minigames/HideBody/body.png" id="2_eyiw8"]
+[ext_resource type="Texture2D" uid="uid://biqcvfkyovvr5" path="res://minigames/HideBody/arm.png" id="3_xplab"]
+[ext_resource type="Texture2D" uid="uid://mqnutdpin5gc" path="res://minigames/HideBody/leg.png" id="4_aw2e0"]
+[ext_resource type="Texture2D" uid="uid://c2ursjxiu4ph1" path="res://minigames/HideBody/saw.png" id="5_w0m7f"]
+[ext_resource type="Texture2D" uid="uid://bh21kci83bmom" path="res://minigames/HideBody/mouse.png" id="6_cqte3"]
+[ext_resource type="Script" path="res://minigames/HideBody/mouse.gd" id="7_e7qcg"]
+
+[node name="CleanUpBody" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cy821")
+
+[node name="head" type="Sprite2D" parent="."]
+position = Vector2(79, 57)
+texture = ExtResource("1_kf8jl")
+
+[node name="body" type="Sprite2D" parent="."]
+position = Vector2(102, 60)
+texture = ExtResource("2_eyiw8")
+
+[node name="ArmUpButton" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 85.0
+offset_top = 45.0
+offset_right = 93.0
+offset_bottom = 53.0
+rotation = -0.652913
+scale = Vector2(3.39663, 1.19396)
+
+[node name="armUp" type="Sprite2D" parent="ArmUpButton"]
+position = Vector2(5.04866, 4.65814)
+rotation = -0.00727845
+scale = Vector2(0.294416, 0.837543)
+skew = 0.00637913
+texture = ExtResource("3_xplab")
+
+[node name="armDown" type="Sprite2D" parent="."]
+position = Vector2(104, 78)
+rotation = 0.477365
+texture = ExtResource("3_xplab")
+
+[node name="legUp" type="Sprite2D" parent="."]
+position = Vector2(141, 52)
+rotation = -0.214349
+texture = ExtResource("4_aw2e0")
+
+[node name="legDown" type="Sprite2D" parent="."]
+position = Vector2(141, 69)
+rotation = 0.228485
+texture = ExtResource("4_aw2e0")
+
+[node name="SawButton" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 136.0
+offset_top = 93.0
+offset_right = 159.0
+offset_bottom = 101.0
+
+[node name="saw" type="Sprite2D" parent="SawButton"]
+position = Vector2(10, 5)
+texture = ExtResource("5_w0m7f")
+
+[node name="Mouse" type="Sprite2D" parent="."]
+position = Vector2(139, 156)
+texture = ExtResource("6_cqte3")
+script = ExtResource("7_e7qcg")
+
+[connection signal="pressed" from="ArmUpButton" to="." method="_on_arm_up_button_pressed"]
+[connection signal="pressed" from="SawButton" to="." method="_on_saw_button_pressed"]

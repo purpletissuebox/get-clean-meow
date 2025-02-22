@@ -7,8 +7,13 @@ var state:int:
 		GlobalContext.level_node.room_state[self.obj_ID] = v
 		state = v
 
-func _enter_tree():
-	self.state = GlobalContext.level_node.get_actor_state(self)
+#func _enter_tree():
+	#self.state = GlobalContext.level_node.get_actor_state(self)
 
 func _interact():
 	pass
+
+
+func _on_button_pressed() -> void:
+	SignalBus.trigger_conversation.emit(self.text.pick_random())
+	pass # Replace with function body.
