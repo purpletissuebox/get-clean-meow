@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://danqr3275vjwp"]
+[gd_scene load_steps=7 format=3 uid="uid://danqr3275vjwp"]
 
 [ext_resource type="Script" path="res://levels/title/mainmenu.gd" id="1_1apnq"]
 [ext_resource type="Shader" path="res://levels/title/scroll.gdshader" id="2_3u82j"]
 [ext_resource type="Texture2D" uid="uid://cx340iyxwrb1y" path="res://levels/title/bkg.png" id="2_q4ct7"]
 [ext_resource type="Texture2D" uid="uid://8xq041bkwfmi" path="res://levels/title/logo.png" id="4_r88h0"]
+[ext_resource type="Script" path="res://levels/title/volume.gd" id="5_n5fjo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_akc40"]
 shader = ExtResource("2_3u82j")
@@ -93,6 +94,21 @@ size_flags_vertical = 3
 text = "QUIT
 "
 
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("5_n5fjo")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Volume"
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 0.5
+
 [node name="Control2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -100,3 +116,4 @@ size_flags_horizontal = 3
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button" to="." method="start_game"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button2" to="." method="do_options"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button3" to="." method="quit_game"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/HSlider" to="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" method="update_vol"]

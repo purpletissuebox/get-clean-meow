@@ -1,0 +1,28 @@
+[gd_scene load_steps=8 format=3 uid="uid://bd4okmbs1x8j8"]
+
+[ext_resource type="PackedScene" uid="uid://civqyx6i1i73l" path="res://actors/interactable.tscn" id="1_g8pyf"]
+[ext_resource type="Script" path="res://actors/doodad.gd" id="2_5bvfl"]
+[ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="3_1mfnw"]
+[ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="4_leyj4"]
+[ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="5_bxtws"]
+
+[sub_resource type="Resource" id="Resource_phsk2"]
+script = ExtResource("4_leyj4")
+text = "The ubiquitous \"prison-style\" sink. One tap is for cold water, and the other is for slightly less cold water."
+choices = Array[ExtResource("5_bxtws")]([])
+
+[sub_resource type="Resource" id="Resource_70yjw"]
+script = ExtResource("3_1mfnw")
+contents = Array[ExtResource("4_leyj4")]([SubResource("Resource_phsk2")])
+
+[node name="Sink" instance=ExtResource("1_g8pyf")]
+script = ExtResource("2_5bvfl")
+text = Array[ExtResource("3_1mfnw")]([SubResource("Resource_70yjw")])
+obj_ID = "bath_sink"
+obj_interaction = "Sink"
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+polygon = PackedVector2Array(-5, 0, 5, 0, 15, -2, 15, -23, -16, -23, -16, -3)
+
+[node name="CollisionPolygon2D2" parent="Collision" index="0"]
+polygon = PackedVector2Array(-16, 0, 15, 0, 15, -23, -16, -23)

@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=3 uid="uid://3jypu78gemu7"]
+
+[ext_resource type="PackedScene" uid="uid://civqyx6i1i73l" path="res://actors/interactable.tscn" id="1_rn0bq"]
+[ext_resource type="Script" path="res://actors/doodad.gd" id="2_iccqk"]
+[ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="3_6vajj"]
+[ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="4_ih41u"]
+[ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="5_dq7kd"]
+[ext_resource type="Texture2D" uid="uid://bwb6y0nh8eklb" path="res://actors/living_room/chair.png" id="6_baycw"]
+
+[sub_resource type="Resource" id="Resource_aakey"]
+script = ExtResource("4_ih41u")
+text = "A creaky wooden chair without a pillow in sight. How uncomfortable!"
+choices = Array[ExtResource("5_dq7kd")]([])
+
+[sub_resource type="Resource" id="Resource_kws01"]
+script = ExtResource("3_6vajj")
+contents = Array[ExtResource("4_ih41u")]([SubResource("Resource_aakey")])
+
+[node name="Chair" instance=ExtResource("1_rn0bq")]
+script = ExtResource("2_iccqk")
+text = Array[ExtResource("3_6vajj")]([SubResource("Resource_kws01")])
+obj_ID = "chair"
+obj_interaction = "Chair"
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+position = Vector2(-10, -10)
+polygon = PackedVector2Array(9, 10, 25, 5, 28, -19, 17, -24, 12, -41, -7, -36, -1, 4)
+
+[node name="Graphic" parent="." index="1"]
+position = Vector2(-17, -51)
+texture = ExtResource("6_baycw")
+centered = false
+
+[node name="CollisionPolygon2D2" parent="Collision" index="0"]
+polygon = PackedVector2Array(-1, 1, 16, -6, 6, -18, -12, -7)

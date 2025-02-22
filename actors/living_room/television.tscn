@@ -1,0 +1,82 @@
+[gd_scene load_steps=19 format=3 uid="uid://cgrt46yof5rtl"]
+
+[ext_resource type="PackedScene" uid="uid://civqyx6i1i73l" path="res://actors/interactable.tscn" id="1_71qbh"]
+[ext_resource type="Script" path="res://actors/doodad.gd" id="2_7dce1"]
+[ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="3_jtgmw"]
+[ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="4_m3fbt"]
+[ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="5_a4jkv"]
+[ext_resource type="Texture2D" uid="uid://d0uhhrh1njcew" path="res://actors/living_room/tv.png" id="6_t4xxp"]
+
+[sub_resource type="Resource" id="Resource_rl1se"]
+script = ExtResource("4_m3fbt")
+text = "You've been working too hard! Let's take a break!"
+choices = Array[ExtResource("5_a4jkv")]([])
+
+[sub_resource type="Resource" id="Resource_0meew"]
+script = ExtResource("4_m3fbt")
+text = "It's one of the early Saw movies!"
+choices = Array[ExtResource("5_a4jkv")]([])
+
+[sub_resource type="Resource" id="Resource_j8nbf"]
+script = ExtResource("4_m3fbt")
+text = "Uh oh, it's getting gory... Let's turn this off and read the plot summary online instead."
+choices = Array[ExtResource("5_a4jkv")]([])
+
+[sub_resource type="Resource" id="Resource_31mpl"]
+script = ExtResource("3_jtgmw")
+contents = Array[ExtResource("4_m3fbt")]([SubResource("Resource_0meew"), SubResource("Resource_j8nbf")])
+
+[sub_resource type="Resource" id="Resource_5n8jp"]
+script = ExtResource("5_a4jkv")
+prompt = "A scary movie!"
+continuation = SubResource("Resource_31mpl")
+
+[sub_resource type="Resource" id="Resource_q71is"]
+script = ExtResource("4_m3fbt")
+text = "Episode 875 of One Piece is on. You see Luffy eat a cookie for about 20 minutes."
+choices = Array[ExtResource("5_a4jkv")]([])
+
+[sub_resource type="Resource" id="Resource_an455"]
+script = ExtResource("4_m3fbt")
+text = "What a waste of time."
+choices = Array[ExtResource("5_a4jkv")]([])
+
+[sub_resource type="Resource" id="Resource_a5jrw"]
+script = ExtResource("3_jtgmw")
+contents = Array[ExtResource("4_m3fbt")]([SubResource("Resource_q71is"), SubResource("Resource_an455")])
+
+[sub_resource type="Resource" id="Resource_ax7rq"]
+script = ExtResource("5_a4jkv")
+prompt = "Anime!"
+continuation = SubResource("Resource_a5jrw")
+
+[sub_resource type="Resource" id="Resource_15rfx"]
+script = ExtResource("5_a4jkv")
+prompt = "There's nothing good on."
+
+[sub_resource type="Resource" id="Resource_e4dsw"]
+script = ExtResource("4_m3fbt")
+text = "What should we watch?"
+choices = Array[ExtResource("5_a4jkv")]([SubResource("Resource_5n8jp"), SubResource("Resource_ax7rq"), SubResource("Resource_15rfx")])
+
+[sub_resource type="Resource" id="Resource_hxocw"]
+script = ExtResource("3_jtgmw")
+contents = Array[ExtResource("4_m3fbt")]([SubResource("Resource_rl1se"), SubResource("Resource_e4dsw")])
+
+[node name="TV" instance=ExtResource("1_71qbh")]
+script = ExtResource("2_7dce1")
+text = Array[ExtResource("3_jtgmw")]([SubResource("Resource_hxocw")])
+obj_ID = "television"
+obj_interaction = "Watch TV"
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+position = Vector2(-10, -10)
+polygon = PackedVector2Array(60, 10, 54, -24, -32, -24, -39, 10)
+
+[node name="Graphic" parent="." index="1"]
+position = Vector2(-49, -35)
+texture = ExtResource("6_t4xxp")
+centered = false
+
+[node name="CollisionPolygon2D2" parent="Collision" index="0"]
+polygon = PackedVector2Array(-49, 0, 50, 0, 50, -10, -49, -10)
