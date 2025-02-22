@@ -1,5 +1,7 @@
 extends Control
 
+@export var pause_menu:Control
+
 const TRAVEL_TIME:float = 0.75
 const ANCHOR_DIFF:float = 0.19
 
@@ -18,6 +20,13 @@ func lower():
 	movementT = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
 	movementT.tween_property(texture_rect, "anchor_bottom", 1, TRAVEL_TIME)
 	movementT.parallel().tween_property(texture_rect, "anchor_top", 1, TRAVEL_TIME)
+
+func pauseGame(e:InputEvent):
+	if e is not InputEventMouseButton:
+		return
+	
+	if e.button_index == MOUSE_BUTTON_LEFT:
+		self.pause_menu.show_clipboard()
 
 func cancelTween():
 	if self.movementT:
