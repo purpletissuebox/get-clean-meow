@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bxsvichrjdkji"]
 
-[ext_resource type="Script" path="res://actors/player/hud/dialog.gd" id="1_81lij"]
-[ext_resource type="Texture2D" uid="uid://bunayvq2onnx" path="res://actors/player/hud/hudpatch.png" id="1_707tj"]
-[ext_resource type="PackedScene" uid="uid://bvfwt1iwfyrb7" path="res://actors/player/hud/dialogChoice.tscn" id="2_viiqk"]
+[ext_resource type="Script" path="res://actors/player/hud/dialogue/dialog.gd" id="1_81lij"]
+[ext_resource type="Texture2D" uid="uid://bunayvq2onnx" path="res://actors/player/hud/dialogue/hudpatch.png" id="1_707tj"]
+[ext_resource type="PackedScene" uid="uid://bvfwt1iwfyrb7" path="res://actors/player/hud/dialogue/dialogChoice.tscn" id="2_viiqk"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8lbc3"]
 size = Vector2(20, 20)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://564kbekchp3u"]
 
-[ext_resource type="Script" path="res://actors/player/hud/checklist.gd" id="1_n0lcw"]
-[ext_resource type="Texture2D" uid="uid://d2awfwacyw81o" path="res://actors/player/hud/clippytest.png" id="2_lwg5q"]
+[ext_resource type="Script" path="res://actors/player/hud/checklist/checklist.gd" id="1_n0lcw"]
+[ext_resource type="Texture2D" uid="uid://d2awfwacyw81o" path="res://actors/player/hud/checklist/clippytest.png" id="2_lwg5q"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bunayvq2onnx"
-path="res://.godot/imported/hudpatch.png-0ae3d328bdae33197c1c4d136177ad00.ctex"
+path="res://.godot/imported/hudpatch.png-4552a018791e57213af1bb3f85a5c8b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://actors/player/hud/hudpatch.png"
-dest_files=["res://.godot/imported/hudpatch.png-0ae3d328bdae33197c1c4d136177ad00.ctex"]
+source_file="res://actors/player/hud/dialogue/hudpatch.png"
+dest_files=["res://.godot/imported/hudpatch.png-4552a018791e57213af1bb3f85a5c8b5.ctex"]
 
 [params]
 
