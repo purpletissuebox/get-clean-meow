@@ -10,7 +10,7 @@ var block:bool = true
 func _ready():
 	dialog_manager.init_choice.connect(self.start)
 
-func _process(delta:float):
+func _process(_delta:float):
 	if !self.active:
 		return
 	if self.block:
