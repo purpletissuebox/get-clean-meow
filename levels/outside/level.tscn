@@ -1,10 +1,22 @@
-[gd_scene load_steps=9 format=3 uid="uid://cbj8nw6ruobou"]
+[gd_scene load_steps=14 format=3 uid="uid://cbj8nw6ruobou"]
 
 [ext_resource type="PackedScene" uid="uid://dh4kw75nff36h" path="res://levels/level_base.tscn" id="1_c2q14"]
 [ext_resource type="Texture2D" uid="uid://c56adsd0rbnju" path="res://levels/outside/outsideVan.png" id="2_d2sw8"]
 [ext_resource type="PackedScene" uid="uid://dthqwuvotxvq4" path="res://levels/load_zone.tscn" id="3_jngel"]
 [ext_resource type="PackedScene" uid="uid://dqeqo43y4hvgr" path="res://actors/outside/door.tscn" id="4_e32um"]
 [ext_resource type="PackedScene" uid="uid://c3bxwno786wbr" path="res://actors/outside/supplies.tscn" id="5_h3v5c"]
+[ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="6_0g4rg"]
+[ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="7_2kdgr"]
+[ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="8_h6ncu"]
+
+[sub_resource type="Resource" id="Resource_nitub"]
+script = ExtResource("7_2kdgr")
+text = "The doors locked. I must have locked my keys inside again."
+choices = Array[ExtResource("8_h6ncu")]([])
+
+[sub_resource type="Resource" id="Resource_cnmk5"]
+script = ExtResource("6_0g4rg")
+contents = Array[ExtResource("7_2kdgr")]([SubResource("Resource_nitub")])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frnoo"]
 size = Vector2(106, 35)
@@ -34,6 +46,13 @@ base_location = Vector2(244, 168)
 
 [node name="Supplies" parent="Interactables" index="1" instance=ExtResource("5_h3v5c")]
 position = Vector2(244, 169)
+
+[node name="FrontDoor" parent="Interactables" index="2" instance=ExtResource("5_h3v5c")]
+position = Vector2(175, 182)
+scale = Vector2(1.52, 1)
+text = Array[ExtResource("6_0g4rg")]([SubResource("Resource_cnmk5")])
+obj_ID = "FrontDoor"
+obj_interaction = "Front Door"
 
 [node name="topleft" parent="Collision" index="0"]
 position = Vector2(0, 152)

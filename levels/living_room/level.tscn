@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvea38p5skr74"]
+[gd_scene load_steps=11 format=3 uid="uid://bvea38p5skr74"]
 
 [ext_resource type="PackedScene" uid="uid://dh4kw75nff36h" path="res://levels/level_base.tscn" id="1_hgtm4"]
 [ext_resource type="Texture2D" uid="uid://da8xvlcwcf46n" path="res://levels/living_room/livingroomBase.png" id="2_jxgqu"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://m0uskbulkx3k" path="res://actors/living_room/painting.tscn" id="7_km7nu"]
 [ext_resource type="PackedScene" uid="uid://djcwh310w0gx0" path="res://actors/living_room/lamp.tscn" id="8_st42o"]
 [ext_resource type="PackedScene" uid="uid://c3nleupsmkvce" path="res://actors/living_room/rug.tscn" id="9_8df81"]
+[ext_resource type="PackedScene" uid="uid://45yahwfn3ppr" path="res://actors/living_room/trophy.tscn" id="10_j3jhv"]
 
 [node name="Level" instance=ExtResource("1_hgtm4")]
 
@@ -40,6 +41,9 @@ position = Vector2(231, 121)
 
 [node name="Rug" parent="Interactables" index="5" instance=ExtResource("9_8df81")]
 position = Vector2(149, 164)
+
+[node name="Trophy" parent="Interactables" index="6" instance=ExtResource("10_j3jhv")]
+position = Vector2(272, 84)
 
 [node name="topleft" parent="Collision" index="0"]
 position = Vector2(24, 98)

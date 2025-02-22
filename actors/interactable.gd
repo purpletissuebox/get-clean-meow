@@ -11,9 +11,12 @@ var state:int:
 	#self.state = GlobalContext.level_node.get_actor_state(self)
 
 func _interact():
+	SignalBus.updateTrophy.emit()
+	$".".visible = false
 	pass
 
 
 func _on_button_pressed() -> void:
 	SignalBus.trigger_conversation.emit(self.text.pick_random())
+	print("test")
 	pass # Replace with function body.

@@ -7,6 +7,8 @@ const BASE_SPEED:float = 80
 @onready var interact_label: HBoxContainer = $InteractLabel
 @export var animation_tree : AnimationTree
 
+var hasTrophy = false
+
 var busy:bool
 var nearby_interactables:Array[Interactable]
 var playback : AnimationNodeStateMachinePlayback
@@ -14,13 +16,14 @@ var playback : AnimationNodeStateMachinePlayback
 func _init():
 	GlobalContext.player_node = self
 
-
+func updateTrophy():
+	hasTrophy = true
 #Genuinly no idea what this does. Initalizes playback maybe?
 func _ready():
 	SignalBus.trigger_conversation.connect(func(_x):self.busy = true)
 	SignalBus.conversation_ended.connect(func(_x):self.busy = false)
 	playback = animation_tree["parameters/playback"]
-
+	SignalBus.updateTrophy.connect(updateTrophy)
 
 func _physics_process(_delta:float):
 	if busy:
