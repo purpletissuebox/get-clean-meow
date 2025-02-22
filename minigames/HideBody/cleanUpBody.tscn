@@ -51,12 +51,12 @@ rotation = 0.477365
 texture = ExtResource("3_xplab")
 
 [node name="legUp" type="Sprite2D" parent="."]
-position = Vector2(141, 52)
+position = Vector2(140, 50)
 rotation = -0.214349
 texture = ExtResource("4_aw2e0")
 
 [node name="legDown" type="Sprite2D" parent="."]
-position = Vector2(141, 69)
+position = Vector2(137, 69)
 rotation = 0.228485
 texture = ExtResource("4_aw2e0")
 
@@ -69,7 +69,7 @@ offset_right = 159.0
 offset_bottom = 101.0
 
 [node name="saw" type="Sprite2D" parent="SawButton"]
-position = Vector2(10, 5)
+position = Vector2(15, 24)
 texture = ExtResource("5_w0m7f")
 
 [node name="Mouse" type="Sprite2D" parent="."]
