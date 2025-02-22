@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://csqjohxa0hpu0"]
 
-[ext_resource type="PackedScene" path="res://actors/player/hud/dialog.tscn" id="1_adtfs"]
+[ext_resource type="PackedScene" uid="uid://bxsvichrjdkji" path="res://actors/player/hud/dialogue/dialog.tscn" id="1_adtfs"]
 
 [node name="Hud" type="CanvasLayer"]
 
