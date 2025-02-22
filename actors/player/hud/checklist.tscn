@@ -1,9 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://564kbekchp3u"]
 
 [ext_resource type="Script" path="res://actors/player/hud/checklist.gd" id="1_n0lcw"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8x4nf"]
-size = Vector2(64, 128)
+[ext_resource type="Texture2D" uid="uid://d2awfwacyw81o" path="res://actors/player/hud/clippytest.png" id="2_lwg5q"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -12,19 +10,64 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_n0lcw")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.8
-anchor_top = 0.8
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.2
+anchor_bottom = 1.0
+offset_left = -87.0
+offset_top = -67.0
+offset_right = 17.0
+offset_bottom = 63.0
 grow_horizontal = 0
 grow_vertical = 0
-texture = SubResource("PlaceholderTexture2D_8x4nf")
-expand_mode = 1
+mouse_filter = 0
+texture = ExtResource("2_lwg5q")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -44.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.331613
+pivot_offset = Vector2(12, 40)
+mouse_filter = 2
+
+[node name="CheckBox" type="CheckBox" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+mouse_filter = 2
+disabled = true
+button_mask = 0
+
+[node name="CheckBox2" type="CheckBox" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+mouse_filter = 2
+disabled = true
+button_mask = 0
+
+[node name="CheckBox3" type="CheckBox" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+mouse_filter = 2
+disabled = true
+button_mask = 0
 
 [connection signal="mouse_entered" from="TextureRect" to="." method="raise"]
 [connection signal="mouse_exited" from="TextureRect" to="." method="lower"]
