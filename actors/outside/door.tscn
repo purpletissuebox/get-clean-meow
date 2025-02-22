@@ -1,0 +1,60 @@
+[gd_scene load_steps=15 format=3 uid="uid://dqeqo43y4hvgr"]
+
+[ext_resource type="PackedScene" uid="uid://civqyx6i1i73l" path="res://actors/interactable.tscn" id="1_i3v7d"]
+[ext_resource type="Script" path="res://actors/outside/door.gd" id="2_ka1pi"]
+[ext_resource type="Texture2D" uid="uid://bpgtlfdaytswc" path="res://actors/outside/door.png" id="2_s26v6"]
+[ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="3_jjmoa"]
+[ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="4_ittts"]
+[ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="5_ch41n"]
+
+[sub_resource type="Resource" id="Resource_lxtok"]
+script = ExtResource("5_ch41n")
+prompt = "No."
+
+[sub_resource type="Resource" id="Resource_dd6ly"]
+script = ExtResource("5_ch41n")
+prompt = "Yes."
+
+[sub_resource type="Resource" id="Resource_vlpyh"]
+script = ExtResource("4_ittts")
+text = "Open the door?"
+choices = Array[ExtResource("5_ch41n")]([SubResource("Resource_lxtok"), SubResource("Resource_dd6ly")])
+
+[sub_resource type="Resource" id="Resource_ln8vl"]
+script = ExtResource("3_jjmoa")
+contents = Array[ExtResource("4_ittts")]([SubResource("Resource_vlpyh")])
+
+[sub_resource type="Resource" id="Resource_oe58l"]
+script = ExtResource("5_ch41n")
+prompt = "No."
+
+[sub_resource type="Resource" id="Resource_simwq"]
+script = ExtResource("5_ch41n")
+prompt = "Yes."
+
+[sub_resource type="Resource" id="Resource_kbvog"]
+script = ExtResource("4_ittts")
+text = "Close the door?"
+choices = Array[ExtResource("5_ch41n")]([SubResource("Resource_oe58l"), SubResource("Resource_simwq")])
+
+[sub_resource type="Resource" id="Resource_rbleu"]
+script = ExtResource("3_jjmoa")
+contents = Array[ExtResource("4_ittts")]([SubResource("Resource_kbvog")])
+
+[node name="Door" instance=ExtResource("1_i3v7d")]
+script = ExtResource("2_ka1pi")
+convos = Array[ExtResource("3_jjmoa")]([SubResource("Resource_ln8vl"), SubResource("Resource_rbleu")])
+base_location = Vector2(0, 0)
+obj_ID = "outside_door"
+obj_interaction = "Van Door"
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+polygon = PackedVector2Array(-40, 14, 39, 14, 39, -103, -40, -103)
+
+[node name="Graphic" parent="." index="1"]
+texture = ExtResource("2_s26v6")
+centered = false
+offset = Vector2(-40, -103)
+
+[node name="CollisionPolygon2D2" parent="Collision" index="0"]
+polygon = PackedVector2Array(-40, 9, 39, 9, 39, -103, -40, -103)
