@@ -10,5 +10,5 @@ var state:int:
 func _enter_tree():
 	self.state = GlobalContext.level_node.get_actor_state(self)
 
-func _interact(_args:Array):
+func _interact():
 	pass

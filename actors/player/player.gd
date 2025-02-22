@@ -17,8 +17,8 @@ func _init():
 
 #Genuinly no idea what this does. Initalizes playback maybe?
 func _ready():
-	SignalBus.trigger_conversation.connect(func():self.busy = true)
-	SignalBus.conversation_ended.connect(func():self.busy = false)
+	SignalBus.trigger_conversation.connect(func(_x):self.busy = true)
+	SignalBus.conversation_ended.connect(func(_x):self.busy = false)
 	playback = animation_tree["parameters/playback"]
 
 func _physics_process(_delta:float):
@@ -27,7 +27,7 @@ func _physics_process(_delta:float):
 	
 	if Input.is_action_just_pressed("interact"):
 		if self.nearby_interactables.size() != 0:
-			self.nearby_interactables[-1]._interact([])
+			self.nearby_interactables[-1]._interact()
 	
 	
 	#quick solution I found online REDDIT oh yeah yeah, stops player if trying to move diagonal
