@@ -7,3 +7,8 @@ func _ready() -> void:
 	await SignalBus.conversation_ended
 	SignalBus.change_lvl.emit("res://levels/outside/level.tscn",1)
 	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
