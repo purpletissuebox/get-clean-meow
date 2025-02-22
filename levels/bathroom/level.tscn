@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccb8uoikhijs8"]
+[gd_scene load_steps=9 format=3 uid="uid://ccb8uoikhijs8"]
 
 [ext_resource type="PackedScene" uid="uid://dh4kw75nff36h" path="res://levels/level_base.tscn" id="1_rhnfy"]
 [ext_resource type="Texture2D" uid="uid://bklc7gigqh0ck" path="res://levels/bathroom/bathroomBase.png" id="2_bdun1"]
 [ext_resource type="PackedScene" uid="uid://dthqwuvotxvq4" path="res://levels/load_zone.tscn" id="3_cxkfd"]
+[ext_resource type="PackedScene" uid="uid://swswuobojshn" path="res://actors/bathroom/mat.tscn" id="4_gnrfv"]
+[ext_resource type="PackedScene" uid="uid://ya56dp6upntf" path="res://actors/bathroom/mirror.tscn" id="5_ledey"]
+[ext_resource type="PackedScene" uid="uid://bd4okmbs1x8j8" path="res://actors/bathroom/sink.tscn" id="6_5poh3"]
+[ext_resource type="PackedScene" uid="uid://0idvh5p4jo54" path="res://actors/bathroom/toilet.tscn" id="7_ush3x"]
+[ext_resource type="PackedScene" uid="uid://dt0eed5xx781n" path="res://actors/bathroom/tub.tscn" id="8_3julw"]
 
 [node name="Level" instance=ExtResource("1_rhnfy")]
 
@@ -12,13 +17,28 @@ texture = ExtResource("2_bdun1")
 [node name="Node2D" type="Node2D" parent="Spawns" index="0"]
 position = Vector2(202, 157)
 
+[node name="LoadZone" parent="Load Zones" index="0" instance=ExtResource("3_cxkfd")]
+position = Vector2(248, 159)
+spawnID = 2
+sceneID = 2
+
+[node name="Mat" parent="Interactables" index="0" instance=ExtResource("4_gnrfv")]
+position = Vector2(105, 188)
+
+[node name="Mirror" parent="Interactables" index="1" instance=ExtResource("5_ledey")]
+position = Vector2(152, 69)
+
+[node name="Sink" parent="Interactables" index="2" instance=ExtResource("6_5poh3")]
+position = Vector2(153, 102)
+
+[node name="Toilet" parent="Interactables" index="3" instance=ExtResource("7_ush3x")]
+position = Vector2(206, 120)
+
+[node name="Tub" parent="Interactables" index="4" instance=ExtResource("8_3julw")]
+position = Vector2(102, 159)
+
 [node name="topleft" parent="Collision" index="0"]
 position = Vector2(82, 98)
 
 [node name="bottomright" parent="Collision" index="1"]
 position = Vector2(234, 198)
-
-[node name="LoadZone" parent="." index="5" instance=ExtResource("3_cxkfd")]
-position = Vector2(248, 159)
-spawnID = 2
-sceneID = 2

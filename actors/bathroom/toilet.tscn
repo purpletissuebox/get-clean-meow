@@ -1,0 +1,28 @@
+[gd_scene load_steps=8 format=3 uid="uid://0idvh5p4jo54"]
+
+[ext_resource type="PackedScene" uid="uid://civqyx6i1i73l" path="res://actors/interactable.tscn" id="1_w2cx2"]
+[ext_resource type="Script" path="res://actors/doodad.gd" id="2_hw1bt"]
+[ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="3_pfdpm"]
+[ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="4_ri8iq"]
+[ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="5_2q1wm"]
+
+[sub_resource type="Resource" id="Resource_nbw3f"]
+script = ExtResource("4_ri8iq")
+text = "The porcelain throne rules over all mankind."
+choices = Array[ExtResource("5_2q1wm")]([])
+
+[sub_resource type="Resource" id="Resource_17sdu"]
+script = ExtResource("3_pfdpm")
+contents = Array[ExtResource("4_ri8iq")]([SubResource("Resource_nbw3f")])
+
+[node name="Toilet" instance=ExtResource("1_w2cx2")]
+script = ExtResource("2_hw1bt")
+text = Array[ExtResource("3_pfdpm")]([SubResource("Resource_17sdu")])
+obj_ID = "toilet"
+obj_interaction = "Toilet"
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+polygon = PackedVector2Array(-5, 0, -11, -20, -11, -49, 11, -49, 11, -20, 5, 0)
+
+[node name="CollisionPolygon2D2" parent="Collision" index="0"]
+polygon = PackedVector2Array(-11, -20, -4.78942, 0, 5, 0, 11, -20, 11, -49, -11, -49)
