@@ -1,0 +1,26 @@
+[gd_scene load_steps=8 format=3 uid="uid://c3nleupsmkvce"]
+
+[ext_resource type="PackedScene" uid="uid://civqyx6i1i73l" path="res://actors/interactable.tscn" id="1_cpd4n"]
+[ext_resource type="Script" path="res://actors/doodad.gd" id="2_q7sqi"]
+[ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="3_klrg3"]
+[ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="4_ehl2f"]
+[ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="5_nb4tc"]
+
+[sub_resource type="Resource" id="Resource_xk857"]
+script = ExtResource("4_ehl2f")
+text = "A red rug with gold tassles on the corners. Maybe our next game should be rug-themed..."
+choices = Array[ExtResource("5_nb4tc")]([])
+
+[sub_resource type="Resource" id="Resource_5ov78"]
+script = ExtResource("3_klrg3")
+contents = Array[ExtResource("4_ehl2f")]([SubResource("Resource_xk857")])
+
+[node name="Rug" instance=ExtResource("1_cpd4n")]
+script = ExtResource("2_q7sqi")
+text = Array[ExtResource("3_klrg3")]([SubResource("Resource_5ov78")])
+obj_ID = "living-rug"
+obj_interaction = "Cool Rug"
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+position = Vector2(-10, -10)
+polygon = PackedVector2Array(-53, 42, 76, 42, 76, -18, -53, -19)

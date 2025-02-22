@@ -1,0 +1,28 @@
+[gd_scene load_steps=8 format=3 uid="uid://dule7vwekt4vf"]
+
+[ext_resource type="PackedScene" uid="uid://civqyx6i1i73l" path="res://actors/interactable.tscn" id="1_e57hj"]
+[ext_resource type="Script" path="res://actors/doodad.gd" id="2_xdkl6"]
+[ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="3_cwoyo"]
+[ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="4_2e7vh"]
+[ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="5_h20ew"]
+
+[sub_resource type="Resource" id="Resource_5yu1u"]
+script = ExtResource("4_2e7vh")
+text = "Dresser? I hardly even know 'er!"
+choices = Array[ExtResource("5_h20ew")]([])
+
+[sub_resource type="Resource" id="Resource_frlp0"]
+script = ExtResource("3_cwoyo")
+contents = Array[ExtResource("4_2e7vh")]([SubResource("Resource_5yu1u")])
+
+[node name="Dresser" instance=ExtResource("1_e57hj")]
+script = ExtResource("2_xdkl6")
+text = Array[ExtResource("3_cwoyo")]([SubResource("Resource_frlp0")])
+obj_ID = "dresser"
+obj_interaction = "Dresser"
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+polygon = PackedVector2Array(-30, 2, -32, -85, 31, -85, 28, 2)
+
+[node name="CollisionPolygon2D2" parent="Collision" index="0"]
+polygon = PackedVector2Array(29, 0, -30, 0, -30, -17, 29, -17)

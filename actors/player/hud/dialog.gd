@@ -34,7 +34,6 @@ func endConversation(choices:Array[int]):
 	t2.tween_property(self, "anchor_bottom", 2, ENTRY_TIME)
 	t2.parallel().tween_property(self, "anchor_top", 1, ENTRY_TIME)
 	
-	await t2.finished
 	SignalBus.conversation_ended.emit(choices)
 
 func printConversation(convo:Conversation, depth:int, choiceBuf:Array[int]):
@@ -52,8 +51,10 @@ func printConversation(convo:Conversation, depth:int, choiceBuf:Array[int]):
 		
 		if dialog.choices.size(): #handle options
 			var txt = "   "
-			for opt in dialog.choices:
-				txt += (opt.prompt + "\n   ") #buffer all of the text to display at once
+			for i in dialog.choices.size():
+				txt += dialog.choices[i].prompt #buffer all of the text to display at once
+				if i+1 < dialog.choices.size():
+					txt += "\n   "
 				
 			textbox.text = txt
 			init_choice.emit(dialog.choices.size())

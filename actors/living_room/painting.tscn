@@ -1,0 +1,26 @@
+[gd_scene load_steps=8 format=3 uid="uid://m0uskbulkx3k"]
+
+[ext_resource type="PackedScene" uid="uid://civqyx6i1i73l" path="res://actors/interactable.tscn" id="1_m7ku1"]
+[ext_resource type="Script" path="res://actors/doodad.gd" id="2_g2wc7"]
+[ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="3_qqxg5"]
+[ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="4_se03g"]
+[ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="5_acmgm"]
+
+[sub_resource type="Resource" id="Resource_12cta"]
+script = ExtResource("4_se03g")
+text = "A coastline leaps to life in this Charles Martinet original work. Look at that lighthouse!"
+choices = Array[ExtResource("5_acmgm")]([])
+
+[sub_resource type="Resource" id="Resource_g6db7"]
+script = ExtResource("3_qqxg5")
+contents = Array[ExtResource("4_se03g")]([SubResource("Resource_12cta")])
+
+[node name="Painting" instance=ExtResource("1_m7ku1")]
+script = ExtResource("2_g2wc7")
+text = Array[ExtResource("3_qqxg5")]([SubResource("Resource_g6db7")])
+obj_ID = "painting"
+obj_interaction = "Painting"
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+position = Vector2(-10, -10)
+polygon = PackedVector2Array(-32, 11, -3.71275, 11, -4, 52, 22, 52, 21.7065, 11, 51, 11, 50, -22, -32, -23)

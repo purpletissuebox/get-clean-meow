@@ -1,0 +1,25 @@
+[gd_scene load_steps=8 format=3 uid="uid://ya56dp6upntf"]
+
+[ext_resource type="PackedScene" uid="uid://civqyx6i1i73l" path="res://actors/interactable.tscn" id="1_vh2nk"]
+[ext_resource type="Script" path="res://actors/doodad.gd" id="2_cbo3b"]
+[ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="3_4c62m"]
+[ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="4_qkwd1"]
+[ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="5_15owx"]
+
+[sub_resource type="Resource" id="Resource_0jcsi"]
+script = ExtResource("4_qkwd1")
+text = "Reflective and effective!"
+choices = Array[ExtResource("5_15owx")]([])
+
+[sub_resource type="Resource" id="Resource_vuhct"]
+script = ExtResource("3_4c62m")
+contents = Array[ExtResource("4_qkwd1")]([SubResource("Resource_0jcsi")])
+
+[node name="Mirror" instance=ExtResource("1_vh2nk")]
+script = ExtResource("2_cbo3b")
+text = Array[ExtResource("3_4c62m")]([SubResource("Resource_vuhct")])
+obj_ID = "bath_mirror"
+obj_interaction = "Mirror"
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+polygon = PackedVector2Array(-23, 43, 24, 43, 24, -36, -23, -36)

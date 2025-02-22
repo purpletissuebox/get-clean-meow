@@ -1,0 +1,25 @@
+[gd_scene load_steps=8 format=3 uid="uid://cwf1x2xnugv38"]
+
+[ext_resource type="PackedScene" uid="uid://civqyx6i1i73l" path="res://actors/interactable.tscn" id="1_85ww0"]
+[ext_resource type="Script" path="res://actors/doodad.gd" id="2_jwbu8"]
+[ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="3_t72wv"]
+[ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="4_4vdke"]
+[ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="5_ewjnb"]
+
+[sub_resource type="Resource" id="Resource_i0v2x"]
+script = ExtResource("4_4vdke")
+text = "You can see the company van from here. Sigh..."
+choices = Array[ExtResource("5_ewjnb")]([])
+
+[sub_resource type="Resource" id="Resource_7f2g5"]
+script = ExtResource("3_t72wv")
+contents = Array[ExtResource("4_4vdke")]([SubResource("Resource_i0v2x")])
+
+[node name="Window" instance=ExtResource("1_85ww0")]
+script = ExtResource("2_jwbu8")
+text = Array[ExtResource("3_t72wv")]([SubResource("Resource_7f2g5")])
+obj_ID = "mb_window"
+obj_interaction = "Window"
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+polygon = PackedVector2Array(-37, 0, -21, -97, 24, -97, 14, 0)

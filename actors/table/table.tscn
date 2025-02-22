@@ -1,12 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://cybfyy4cdknnj"]
+[gd_scene load_steps=9 format=3 uid="uid://cybfyy4cdknnj"]
 
 [ext_resource type="PackedScene" uid="uid://civqyx6i1i73l" path="res://actors/interactable.tscn" id="1_pbdjx"]
-[ext_resource type="Script" path="res://actors/table/table.gd" id="2_7wgi1"]
+[ext_resource type="Script" path="res://actors/doodad.gd" id="2_aia87"]
 [ext_resource type="Texture2D" uid="uid://bv1lu4exowa7a" path="res://actors/table/end_table.png" id="2_r0ic3"]
+[ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="3_x3fjr"]
+[ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="4_can8i"]
+[ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="5_7m4ri"]
+
+[sub_resource type="Resource" id="Resource_psorp"]
+script = ExtResource("4_can8i")
+text = "Wow! A cool new table! I'm so glad this feature works now."
+choices = Array[ExtResource("5_7m4ri")]([])
+
+[sub_resource type="Resource" id="Resource_1y715"]
+script = ExtResource("3_x3fjr")
+contents = Array[ExtResource("4_can8i")]([SubResource("Resource_psorp")])
 
 [node name="Table" instance=ExtResource("1_pbdjx")]
-script = ExtResource("2_7wgi1")
-obj_name = "End Table"
+script = ExtResource("2_aia87")
+text = Array[ExtResource("3_x3fjr")]([SubResource("Resource_1y715")])
+obj_ID = "table1"
+obj_interaction = "Examine Table"
 
 [node name="CollisionPolygon2D" parent="." index="0"]
 polygon = PackedVector2Array(-170, 48, 2, 127, 278, 15, 174, -252, -87, -266, -304, -141)

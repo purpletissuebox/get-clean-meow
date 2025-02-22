@@ -1,0 +1,25 @@
+[gd_scene load_steps=8 format=3 uid="uid://c623aq3txurna"]
+
+[ext_resource type="PackedScene" uid="uid://civqyx6i1i73l" path="res://actors/interactable.tscn" id="1_jrh4s"]
+[ext_resource type="Script" path="res://actors/doodad.gd" id="2_003rp"]
+[ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="3_qjv11"]
+[ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="4_v5blb"]
+[ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="5_mhttw"]
+
+[sub_resource type="Resource" id="Resource_eskde"]
+script = ExtResource("4_v5blb")
+text = "RUG THEMED GAME. RUG THEMED GAME. RUG THEMED GAME."
+choices = Array[ExtResource("5_mhttw")]([])
+
+[sub_resource type="Resource" id="Resource_u1rdq"]
+script = ExtResource("3_qjv11")
+contents = Array[ExtResource("4_v5blb")]([SubResource("Resource_eskde")])
+
+[node name="Rug" instance=ExtResource("1_jrh4s")]
+script = ExtResource("2_003rp")
+text = Array[ExtResource("3_qjv11")]([SubResource("Resource_u1rdq")])
+obj_ID = "mb_rug"
+obj_interaction = "Cool Rug"
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+polygon = PackedVector2Array(-68, 0, -68, -67, 67, -67, 67, 0)

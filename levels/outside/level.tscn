@@ -1,5 +1,59 @@
-[gd_scene load_steps=2 format=3 uid="uid://cbj8nw6ruobou"]
+[gd_scene load_steps=9 format=3 uid="uid://cbj8nw6ruobou"]
 
 [ext_resource type="PackedScene" uid="uid://dh4kw75nff36h" path="res://levels/level_base.tscn" id="1_c2q14"]
+[ext_resource type="Texture2D" uid="uid://c56adsd0rbnju" path="res://levels/outside/outsideVan.png" id="2_d2sw8"]
+[ext_resource type="PackedScene" uid="uid://dthqwuvotxvq4" path="res://levels/load_zone.tscn" id="3_jngel"]
+[ext_resource type="PackedScene" uid="uid://dqeqo43y4hvgr" path="res://actors/outside/door.tscn" id="4_e32um"]
+[ext_resource type="PackedScene" uid="uid://c3bxwno786wbr" path="res://actors/outside/supplies.tscn" id="5_h3v5c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_frnoo"]
+size = Vector2(106, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xlr3v"]
+size = Vector2(107, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwf2n"]
+size = Vector2(79, 25)
 
 [node name="Level" instance=ExtResource("1_c2q14")]
+
+[node name="Background" parent="." index="0"]
+texture = ExtResource("2_d2sw8")
+
+[node name="Node2D" type="Node2D" parent="Spawns" index="0"]
+position = Vector2(27, 196)
+
+[node name="LoadZone" parent="Load Zones" index="0" instance=ExtResource("3_jngel")]
+position = Vector2(-1, 195)
+scale = Vector2(1, 2.035)
+sceneID = 2
+
+[node name="Door" parent="Interactables" index="0" instance=ExtResource("4_e32um")]
+position = Vector2(244, 168)
+base_location = Vector2(244, 168)
+
+[node name="Supplies" parent="Interactables" index="1" instance=ExtResource("5_h3v5c")]
+position = Vector2(244, 169)
+
+[node name="topleft" parent="Collision" index="0"]
+position = Vector2(0, 152)
+
+[node name="bottomright" parent="Collision" index="1"]
+position = Vector2(440, 240)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="5"]
+position = Vector2(244, 159)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(-93, 0.5)
+shape = SubResource("RectangleShape2D_frnoo")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" index="1"]
+position = Vector2(92.5, 0.5)
+shape = SubResource("RectangleShape2D_xlr3v")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" index="2"]
+position = Vector2(-0.5, -4.5)
+shape = SubResource("RectangleShape2D_lwf2n")

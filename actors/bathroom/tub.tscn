@@ -1,0 +1,28 @@
+[gd_scene load_steps=8 format=3 uid="uid://dt0eed5xx781n"]
+
+[ext_resource type="PackedScene" uid="uid://civqyx6i1i73l" path="res://actors/interactable.tscn" id="1_ccuoi"]
+[ext_resource type="Script" path="res://actors/doodad.gd" id="2_y4o0m"]
+[ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="3_82qdn"]
+[ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="4_ewf5a"]
+[ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="5_v7d4v"]
+
+[sub_resource type="Resource" id="Resource_8ltfj"]
+script = ExtResource("4_ewf5a")
+text = "\"Rub-a-dub-dub, science in the tub\""
+choices = Array[ExtResource("5_v7d4v")]([])
+
+[sub_resource type="Resource" id="Resource_7qmb1"]
+script = ExtResource("3_82qdn")
+contents = Array[ExtResource("4_ewf5a")]([SubResource("Resource_8ltfj")])
+
+[node name="Tub" instance=ExtResource("1_ccuoi")]
+script = ExtResource("2_y4o0m")
+text = Array[ExtResource("3_82qdn")]([SubResource("Resource_7qmb1")])
+obj_ID = "bathtub"
+obj_interaction = "Bathtub"
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+polygon = PackedVector2Array(-20, 0, 21, 0, 20, -70, 0, -81, -20, -70)
+
+[node name="CollisionPolygon2D2" parent="Collision" index="0"]
+polygon = PackedVector2Array(-20, 0, 20, 0, 20, -70, -20, -70)

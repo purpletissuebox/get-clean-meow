@@ -1,0 +1,52 @@
+[gd_scene load_steps=13 format=3 uid="uid://djcwh310w0gx0"]
+
+[ext_resource type="PackedScene" uid="uid://civqyx6i1i73l" path="res://actors/interactable.tscn" id="1_o3rfp"]
+[ext_resource type="Script" path="res://actors/doodad.gd" id="2_15dwd"]
+[ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="3_owtf7"]
+[ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="4_6ncd4"]
+[ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="5_hxmxt"]
+
+[sub_resource type="Resource" id="Resource_sg8se"]
+script = ExtResource("4_6ncd4")
+text = "A brass lamp resting on a simple wooden end table."
+choices = Array[ExtResource("5_hxmxt")]([])
+
+[sub_resource type="Resource" id="Resource_8jqyy"]
+script = ExtResource("4_6ncd4")
+text = "Hey, wait a minute! There's no lightbulb in here! The lighting is just painted on the walls!"
+choices = Array[ExtResource("5_hxmxt")]([])
+
+[sub_resource type="Resource" id="Resource_rfuyv"]
+script = ExtResource("3_owtf7")
+contents = Array[ExtResource("4_6ncd4")]([SubResource("Resource_8jqyy")])
+
+[sub_resource type="Resource" id="Resource_q55gp"]
+script = ExtResource("5_hxmxt")
+prompt = "Yes."
+continuation = SubResource("Resource_rfuyv")
+
+[sub_resource type="Resource" id="Resource_rt2gc"]
+script = ExtResource("5_hxmxt")
+prompt = "No."
+
+[sub_resource type="Resource" id="Resource_sxxln"]
+script = ExtResource("4_6ncd4")
+text = "Should we turn it off?"
+choices = Array[ExtResource("5_hxmxt")]([SubResource("Resource_q55gp"), SubResource("Resource_rt2gc")])
+
+[sub_resource type="Resource" id="Resource_n5nk2"]
+script = ExtResource("3_owtf7")
+contents = Array[ExtResource("4_6ncd4")]([SubResource("Resource_sg8se"), SubResource("Resource_sxxln")])
+
+[node name="Lamp" instance=ExtResource("1_o3rfp")]
+script = ExtResource("2_15dwd")
+text = Array[ExtResource("3_owtf7")]([SubResource("Resource_n5nk2")])
+obj_ID = "table-lamp"
+obj_interaction = "Table with Lamp"
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+position = Vector2(-10, -10)
+polygon = PackedVector2Array(16, 10, 25, -9, 15, -45, 4, -45, -6, -9, 3, 10)
+
+[node name="CollisionPolygon2D2" parent="Collision" index="0"]
+polygon = PackedVector2Array(-7, 0, 6, 0, 15, -19, -16, -19)

@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvea38p5skr74"]
+[gd_scene load_steps=10 format=3 uid="uid://bvea38p5skr74"]
 
 [ext_resource type="PackedScene" uid="uid://dh4kw75nff36h" path="res://levels/level_base.tscn" id="1_hgtm4"]
 [ext_resource type="Texture2D" uid="uid://da8xvlcwcf46n" path="res://levels/living_room/livingroomBase.png" id="2_jxgqu"]
 [ext_resource type="PackedScene" uid="uid://dthqwuvotxvq4" path="res://levels/load_zone.tscn" id="3_o6xo0"]
+[ext_resource type="PackedScene" uid="uid://tt0wro8f4ted" path="res://actors/living_room/couch.tscn" id="4_4mp6w"]
+[ext_resource type="PackedScene" uid="uid://3jypu78gemu7" path="res://actors/living_room/chair.tscn" id="5_d52w8"]
+[ext_resource type="PackedScene" uid="uid://cgrt46yof5rtl" path="res://actors/living_room/television.tscn" id="6_cex5x"]
+[ext_resource type="PackedScene" uid="uid://m0uskbulkx3k" path="res://actors/living_room/painting.tscn" id="7_km7nu"]
+[ext_resource type="PackedScene" uid="uid://djcwh310w0gx0" path="res://actors/living_room/lamp.tscn" id="8_st42o"]
+[ext_resource type="PackedScene" uid="uid://c3nleupsmkvce" path="res://actors/living_room/rug.tscn" id="9_8df81"]
 
 [node name="Level" instance=ExtResource("1_hgtm4")]
 
@@ -16,6 +22,24 @@ position = Vector2(274, 165)
 position = Vector2(294, 163)
 spawnID = 1
 sceneID = 2
+
+[node name="Couch" parent="Interactables" index="0" instance=ExtResource("4_4mp6w")]
+position = Vector2(151, 125)
+
+[node name="Chair" parent="Interactables" index="1" instance=ExtResource("5_d52w8")]
+position = Vector2(58, 133)
+
+[node name="TV" parent="Interactables" index="2" instance=ExtResource("6_cex5x")]
+position = Vector2(155, 224)
+
+[node name="Painting" parent="Interactables" index="3" instance=ExtResource("7_km7nu")]
+position = Vector2(149, 61)
+
+[node name="Lamp" parent="Interactables" index="4" instance=ExtResource("8_st42o")]
+position = Vector2(231, 121)
+
+[node name="Rug" parent="Interactables" index="5" instance=ExtResource("9_8df81")]
+position = Vector2(149, 164)
 
 [node name="topleft" parent="Collision" index="0"]
 position = Vector2(24, 98)

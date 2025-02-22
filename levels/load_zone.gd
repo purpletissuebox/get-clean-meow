@@ -6,7 +6,7 @@ class_name LoadZone extends Interactable
 func _ready():
 	self.obj_interaction = "Go to " + GlobalData.RoomID.keys()[self.sceneID].replace("_s_", "'s_").capitalize()
 
-func _interact(_args:Array):
+func _interact():
 	load_level(self.sceneID, self.spawnID)
 	
 static func load_level(level:GlobalData.RoomID, spawn:int):

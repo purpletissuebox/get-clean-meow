@@ -1,6 +1,6 @@
 extends Interactable
 
-func _interact(_args:Array):
+func _interact():
 	if self.state == 0:
 		SignalBus.start_minigame.emit("res://minigames/scrub/game.tscn")
 		await SignalBus.minigame_ended
