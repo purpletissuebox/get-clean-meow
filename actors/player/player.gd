@@ -32,10 +32,9 @@ func _physics_process(_delta:float):
 	
 	#quick solution I found online REDDIT oh yeah yeah, stops player if trying to move diagonal
 	var dir = Input.get_vector("walk_left","walk_right","walk_up","walk_down")
-	if dir.x != 0 and dir.y != 0:
-		dir = Vector2.ZERO
+	#if dir.x != 0 and dir.y != 0:
+	#	dir.y = 0
 	
-	#var dir = Input.get_vector("walk_left", "walk_right", "walk_up", "walk_down")
 	self.velocity = dir*BASE_SPEED*BASE_DIR
 	if self.can_process():
 		move_and_slide()
