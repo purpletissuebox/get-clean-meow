@@ -33,7 +33,7 @@ func endConversation(choices:Array[int]):
 	var t2 = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
 	t2.tween_property(self, "anchor_bottom", 2, ENTRY_TIME)
 	t2.parallel().tween_property(self, "anchor_top", 1, ENTRY_TIME)
-	
+	await t2.finished
 	SignalBus.conversation_ended.emit(choices)
 
 func printConversation(convo:Conversation, depth:int, choiceBuf:Array[int]):
