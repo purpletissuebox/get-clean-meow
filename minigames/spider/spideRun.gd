@@ -38,7 +38,7 @@ func isOutOfBounds():
 	if vectorTemp.y > 120:
 		movementDirection = 2
 		pass
-	if vectorTemp.y < -120:
+	if vectorTemp.y < -100:
 		movementDirection = 3
 		pass
 	pass
