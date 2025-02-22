@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://d34uy3cejceqk"]
+
+[ext_resource type="Script" path="res://minigames/spider/spider.gd" id="1_200ds"]
+[ext_resource type="Script" path="res://minigames/spider/spideRun.gd" id="1_ruolg"]
+[ext_resource type="Texture2D" uid="uid://e7020drop3xr" path="res://minigames/spider/Spider.png" id="1_sypbo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7r5w5"]
+radius = 66.2722
+
+[node name="Spider" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_200ds")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_ruolg")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(183, 121)
+texture = ExtResource("1_sypbo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(187, 95)
+shape = SubResource("CircleShape2D_7r5w5")
+
+[node name="Button" type="Button" parent="CharacterBody2D"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 131.0
+offset_top = 52.0
+offset_right = 187.0
+offset_bottom = 97.0
+scale = Vector2(2.06352, 2.08862)
+
+[connection signal="pressed" from="CharacterBody2D/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CharacterBody2D/Button" to="CharacterBody2D" method="_on_button_pressed"]

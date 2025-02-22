@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://dgclid00j0pl3"]
+
+[ext_resource type="Texture2D" uid="uid://2jforxlthkwd" path="res://minigames/plugInMinigame/backGroundPlug.png" id="1_1stw7"]
+[ext_resource type="Script" path="res://minigames/plugInMinigame/plug_in_minigame.gd" id="1_3s0ad"]
+[ext_resource type="Texture2D" uid="uid://13xgftvtgort" path="res://minigames/plugInMinigame/plug.png" id="2_tbx0f"]
+[ext_resource type="Script" path="res://minigames/plugInMinigame/movePlug.gd" id="2_xft4y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nh2r1"]
+size = Vector2(28, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w24rg"]
+size = Vector2(9, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u1utn"]
+size = Vector2(319.5, 13)
+
+[node name="PlugInMinigame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3s0ad")
+
+[node name="BackGroundPlug" type="Sprite2D" parent="."]
+position = Vector2(160, 121)
+texture = ExtResource("1_1stw7")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_xft4y")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(146, 132)
+texture = ExtResource("2_tbx0f")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D" groups=["Plug"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+position = Vector2(149, 117.5)
+shape = SubResource("RectangleShape2D_nh2r1")
+
+[node name="plug" type="CharacterBody2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="plug" groups=["plugHole"]]
+
+[node name="plugCollision" type="CollisionShape2D" parent="plug/Area2D"]
+position = Vector2(153.5, 51)
+shape = SubResource("RectangleShape2D_w24rg")
+
+[node name="Area2D" type="Area2D" parent="." groups=["missedPlug"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(160.25, 29.5)
+shape = SubResource("RectangleShape2D_u1utn")
+
+[connection signal="area_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_area_entered"]
