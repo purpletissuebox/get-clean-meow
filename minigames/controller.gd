@@ -22,15 +22,17 @@ func _ready():
 	self.position.x = self.game_x
 
 func set_up_game(filename:String):
+	SoundDriver.play_bgm(1,0.5,0.5)
 	create_child(filename)
 	slide_screen(1)
 	spin_text()
 
 func destroy_game():
+	SoundDriver.play_bgm(0,0.5,0.6)
 	game_node.exit.disconnect(self.destroy_game)
 	slide_screen(0)
 	spin_text()
-	
+
 
 func create_child(filename:String):
 	self.game_x = minigame_root.position.x
