@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://csqjohxa0hpu0"]
+[gd_scene load_steps=4 format=3 uid="uid://csqjohxa0hpu0"]
 
-[ext_resource type="PackedScene" path="res://actors/player/hud/dialog.tscn" id="1_adtfs"]
+[ext_resource type="PackedScene" uid="uid://bxsvichrjdkji" path="res://actors/player/hud/dialog.tscn" id="1_adtfs"]
+[ext_resource type="PackedScene" uid="uid://dmf6qwkh46pxb" path="res://actors/player/hud/checklist/checklist.tscn" id="2_f4thv"]
+[ext_resource type="PackedScene" uid="uid://8j2krt28kjfu" path="res://actors/player/hud/checklist/pausemenu.tscn" id="3_ttjem"]
 
 [node name="Hud" type="CanvasLayer"]
 
@@ -17,3 +19,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
 anchor_bottom = 2.0
+
+[node name="PauseMenu" parent="Control" instance=ExtResource("3_ttjem")]
+layout_mode = 1
+
+[node name="Clipboard" parent="Control" node_paths=PackedStringArray("pause_menu") instance=ExtResource("2_f4thv")]
+layout_mode = 1
+pause_menu = NodePath("../PauseMenu")
