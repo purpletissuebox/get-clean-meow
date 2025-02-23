@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://sna3yoyflah2"]
+
+[ext_resource type="PackedScene" uid="uid://civqyx6i1i73l" path="res://actors/interactable.tscn" id="1_6eu8o"]
+[ext_resource type="Script" path="res://actors/basement/gtfo.gd" id="2_tvmkn"]
+
+[node name="InteractRadius" instance=ExtResource("1_6eu8o")]
+script = ExtResource("2_tvmkn")
+d = null
