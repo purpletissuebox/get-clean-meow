@@ -14,6 +14,7 @@ var windowClean
 var lampInBed
 var tilesClean
 var rugClean
+var foundKey:bool
 
 func _ready():
 	for i in GlobalData.RoomID.NUM_ROOMS:
@@ -26,3 +27,4 @@ func _ready():
 	lampInBed = false
 	tilesClean = false
 	rugClean = false
+	foundKey = false
