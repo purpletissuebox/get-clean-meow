@@ -13,6 +13,7 @@ var windowClean
 var lampInBed
 var tilesClean
 var rugClean
+var foundKey:bool
 var goals:Dictionary
 var day:int = 0
 var hasTrophy:bool = false
@@ -28,3 +29,4 @@ func _ready():
 	lampInBed = false
 	tilesClean = false
 	rugClean = false
+	foundKey = false

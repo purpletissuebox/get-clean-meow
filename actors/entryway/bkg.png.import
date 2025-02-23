@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btul8sjtc40tm"
-path="res://.godot/imported/bkg.png-de07c714c0805a2df14be78cd0e52fd5.ctex"
+uid="uid://kn4hkugqkuex"
+path="res://.godot/imported/bkg.png-b2622a8dd34121bff9b88b1a2cb47ffc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/entryway/bkg.png"
-dest_files=["res://.godot/imported/bkg.png-de07c714c0805a2df14be78cd0e52fd5.ctex"]
+source_file="res://actors/entryway/bkg.png"
+dest_files=["res://.godot/imported/bkg.png-b2622a8dd34121bff9b88b1a2cb47ffc.ctex"]
 
 [params]
 
