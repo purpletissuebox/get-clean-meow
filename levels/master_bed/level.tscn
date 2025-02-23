@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://6gwutwdyfrns" path="res://levels/master_bed/dirtyRug.png" id="12_abid6"]
 [ext_resource type="Texture2D" uid="uid://cbgwg5a23p4q5" path="res://levels/master_bed/rugRolled.png" id="16_atna8"]
 [ext_resource type="Texture2D" uid="uid://cfaso1gub4gbh" path="res://levels/master_bed/dirtyWindow.png" id="17_8fqje"]
-[ext_resource type="PackedScene" uid="uid://dw7bgr2wuswo1" path="res://actors/master_bed/key.tscn" id="20_hb1bt"]
+[ext_resource type="PackedScene" path="res://actors/master_bed/key.tscn" id="20_hb1bt"]
 
 [sub_resource type="Resource" id="Resource_4n8yi"]
 script = ExtResource("7_bnifm")

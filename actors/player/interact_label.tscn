@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c3gyluwelgvy3"]
 
 [ext_resource type="Script" path="res://actors/player/interact_label.gd" id="1_finjk"]
-[ext_resource type="Texture2D" uid="uid://dgw642wj642re" path="res://actors/player/icon.png" id="2_mk2xn"]
+[ext_resource type="Texture2D" uid="uid://fg0isi83gfu6" path="res://actors/player/icon.png" id="2_mk2xn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3rht5"]
 font_size = 96

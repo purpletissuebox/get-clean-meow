@@ -4,7 +4,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 const GOAL_LIST:Array[String] = [
 	"Clean Bathtub",
-	"Vaccuum Floors",
+	"Clean Rug",
 	"Exterminate Spider",
 ]
 func _ready() -> void:

@@ -20,7 +20,7 @@ func disappear():
 func _interact():
 	SignalBus.trigger_conversation.emit(self.pickup_txt)
 	await SignalBus.conversation_ended
-	self.state = 1
+	self.state = 2
 	GlobalContext.foundKey = true
 	die()
 
