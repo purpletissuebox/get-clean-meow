@@ -26,6 +26,7 @@ position = Vector2(249, 186)
 
 [node name="LoadZone" parent="Load Zones" index="0" instance=ExtResource("3_w0is2")]
 position = Vector2(15, 161)
+spawnID = 1
 sceneID = 7
 
 [node name="LoadZone2" parent="Load Zones" index="1" instance=ExtResource("3_w0is2")]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=10 format=3 uid="uid://cgix8mymig2x6"]
+
+[ext_resource type="PackedScene" uid="uid://civqyx6i1i73l" path="res://actors/interactable.tscn" id="1_536ib"]
+[ext_resource type="Script" path="res://actors/outside/intro_text.gd" id="2_pvfu1"]
+[ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="3_g84eu"]
+[ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="4_dos0c"]
+[ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="5_j0vvc"]
+
+[sub_resource type="Resource" id="Resource_0m8bw"]
+script = ExtResource("3_g84eu")
+text = "\"Take a left instead of a right...\" Yeah, OK."
+choices = Array[ExtResource("4_dos0c")]([])
+
+[sub_resource type="Resource" id="Resource_i6g4a"]
+script = ExtResource("3_g84eu")
+text = "(Use WASD to move. Press E to interact. For lefties, arrowkeys+J are available)"
+choices = Array[ExtResource("4_dos0c")]([])
+
+[sub_resource type="Resource" id="Resource_tlkjg"]
+script = ExtResource("3_g84eu")
+text = "(Your client has left some notes on what needs to be cleaned. You can view this menu by clicking the clipboard in the lower right)"
+choices = Array[ExtResource("4_dos0c")]([])
+
+[sub_resource type="Resource" id="Resource_sixwx"]
+script = ExtResource("5_j0vvc")
+contents = Array[ExtResource("3_g84eu")]([SubResource("Resource_0m8bw"), SubResource("Resource_i6g4a"), SubResource("Resource_tlkjg")])
+
+[node name="IntroText" instance=ExtResource("1_536ib")]
+script = ExtResource("2_pvfu1")
+txt = SubResource("Resource_sixwx")
+obj_ID = "_intro"
