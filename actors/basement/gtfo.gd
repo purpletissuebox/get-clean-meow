@@ -2,7 +2,7 @@ extends Interactable
 
 @export var d:Conversation
 
-func _ready():
+func _process(_delta:float):
 	if self.state:
 		die()
 	self.state = 1
