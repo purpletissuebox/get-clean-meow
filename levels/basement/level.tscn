@@ -41,4 +41,3 @@ texture = ExtResource("7_lj5io")
 
 [node name="plot" parent="." index="9" instance=ExtResource("8_0g643")]
 position = Vector2(192, 149)
-obj_interaction = null

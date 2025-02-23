@@ -84,11 +84,6 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "START"
 
-[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "OPTIONS"
-
 [node name="Button3" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -114,7 +109,16 @@ value = 0.5
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 3.0
+offset_top = 164.0
+offset_right = 115.0
+offset_bottom = 238.0
+scale = Vector2(0.515, 0.515)
+text = "Made by Dertun, Sofie, and purple tissue box for GWJ #78"
+autowrap_mode = 2
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button" to="." method="start_game"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button2" to="." method="do_options"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button3" to="." method="quit_game"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/HSlider" to="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" method="update_vol"]
