@@ -1,4 +1,11 @@
-class_name bMLevel extends Level
+class_name Level extends Node2D
+
+const PLAYER_ACTOR:PackedScene = preload("res://actors/player/player.tscn")
+
+@onready var spawns: Node2D = $Spawns
+@onready var background: Sprite2D = $Background
+
+var room_state:Dictionary
 
 func _init():
 	GlobalContext.level_node = self
