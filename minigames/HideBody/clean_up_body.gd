@@ -2,7 +2,12 @@ extends Control
 
 var holdingSaw = false
 var holdingRag = false
-var holdingArm = false
+var holdingArmUp = false
+var holdingArmDown = false
+var holdingLegUp = false
+var holdingLegDown = false
+var holdingHead = false
+var holdingBody = false
 #maybe vars for each piece?
 var tempVector2 = Vector2(0.0,0.0)
 
@@ -40,7 +45,7 @@ func isHolding():
 		pass
 	elif holdingRag:
 		pass
-	elif holdingArm:
+	elif holdingArmUp:
 		#clearHolding()
 		$armUp.position = get_global_mouse_position()
 		$ArmUpButton.position = get_global_mouse_position()
@@ -54,22 +59,91 @@ func _process(delta: float) -> void:
 	isHolding()
 	pass
 
-
+func allButOne(one):
+	print("THIS IS ONE")
+	print(one)
+	# 0 = armUp
+	# 1 = armDown
+	# 2 = legUp
+	# 3 = legDown
+	# 4 = head
+	# 5 = body
+	# 6 = saw
+	
+	match one:
+		0:
+			holdingArmUp = true
+			holdingSaw = false
+			holdingArmDown = false
+			holdingLegUp = false
+			holdingLegDown = false
+			holdingHead = false
+			holdingBody = false
+		1:
+			holdingArmDown = true
+			holdingSaw = false
+			holdingArmUp = false
+			holdingLegUp = false
+			holdingLegDown = false
+			holdingHead = false
+			holdingBody = false
+		2:
+			holdingLegUp  = true
+			holdingSaw = false
+			holdingArmUp = false
+			holdingArmDown = false
+			holdingLegDown = false
+			holdingHead = false
+			holdingBody = false
+		3:
+			holdingLegDown  = true
+			holdingSaw = false
+			holdingArmUp = false
+			holdingArmDown = false
+			holdingLegUp = false
+			holdingHead = false
+			holdingBody = false
+		4:
+			holdingHead  = true
+			holdingSaw = false
+			holdingArmUp = false
+			holdingArmDown = false
+			holdingLegUp = false
+			holdingLegDown = false
+			holdingBody = false
+		5:
+			holdingBody  = true
+			holdingSaw = false
+			holdingArmUp = false
+			holdingArmDown = false
+			holdingLegUp = false
+			holdingLegDown = false
+			holdingHead = false
+		6:
+			holdingSaw  = true
+			holdingArmUp = false
+			holdingArmDown = false
+			holdingLegUp = false
+			holdingLegDown = false
+			holdingHead = false
+			holdingBody = false
+		7:
+			pass
+		8:
+			pass
+		9:
+			pass
+				
 func _on_saw_button_pressed() -> void:
-	print(holdingSaw)
-	holdingSaw = true
-	holdingRag = false
-	holdingArm = false
+	allButOne(holdingSaw)
 	pass # Replace with function body.
 
 
 func _on_arm_up_button_pressed() -> void:
 	if isArmUpConnected == false:
-		holdingArm = true
-		holdingSaw = false
-		holdingRag = false
+		allButOne(0)
 	else:
-		holdingArm = false
+		holdingArmUp = false
 	print("This is ")
 	print(isArmUpConnected)
 	cutting()
@@ -77,7 +151,13 @@ func _on_arm_up_button_pressed() -> void:
 
 
 func _on_button_pressed() -> void:
-	holdingArm = false
+	holdingRag = false
 	holdingSaw = false
 	holdingRag = false
+	holdingArmUp = false
+	holdingArmDown = false
+	holdingLegUp = false
+	holdingLegDown = false
+	holdingHead = false
+	holdingBody = false
 	pass # Replace with function body.

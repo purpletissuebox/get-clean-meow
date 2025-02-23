@@ -76,7 +76,7 @@ position = Vector2(139, 156)
 texture = ExtResource("6_cqte3")
 script = ExtResource("7_e7qcg")
 
-[node name="Button" type="Button" parent="."]
+[node name="DropAll" type="Button" parent="."]
 layout_mode = 0
 offset_left = 75.0
 offset_top = 150.0
@@ -85,4 +85,4 @@ offset_bottom = 158.0
 
 [connection signal="pressed" from="ArmUpButton" to="." method="_on_arm_up_button_pressed"]
 [connection signal="pressed" from="SawButton" to="." method="_on_saw_button_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="DropAll" to="." method="_on_button_pressed"]
