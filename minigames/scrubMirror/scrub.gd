@@ -15,7 +15,7 @@ func _ready():
 	self.old_pos = hand_sprite.position
 	for i in NUM_DIRTS:
 		var dirt = TextureRect.new()
-		var txtr = load("res://minigames/scrubMirror/dirt.png")
+		var txtr = load("res://minigames/scrub/dirt.png")
 		#txtr.size = Vector2(50,50)
 		dirt.texture = txtr
 		dirt.position = Vector2(randf_range(0,self.size.x), randf_range(0,self.size.y))

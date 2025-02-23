@@ -12,6 +12,7 @@ func _ready() -> void:
 	SignalBus.trigger_conversation.emit(introText)
 	await SignalBus.conversation_ended
 	SignalBus.change_lvl.emit("res://levels/outside/level.tscn",1)
+	
 	pass # Replace with function body.
 
 func addGoals():
