@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bbpjikpl0yyum"]
+[gd_scene load_steps=28 format=3 uid="uid://bbpjikpl0yyum"]
 
 [ext_resource type="PackedScene" uid="uid://dh4kw75nff36h" path="res://levels/level_base.tscn" id="1_3pyd7"]
 [ext_resource type="Texture2D" uid="uid://bjgtwyjfiu811" path="res://levels/master_bed/bedroomBase.png" id="2_xd0qt"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dule7vwekt4vf" path="res://actors/master_bed/dresser.tscn" id="5_bqxra"]
 [ext_resource type="PackedScene" uid="uid://c623aq3txurna" path="res://actors/master_bed/rug.tscn" id="6_2v3rq"]
 [ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="6_28rfw"]
+[ext_resource type="Texture2D" path="res://levels/master_bed/bedDirty.png" id="6_yjgrs"]
+[ext_resource type="Texture2D" path="res://levels/master_bed/bedClean.png" id="7_bbx5w"]
 [ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="7_bnifm"]
 [ext_resource type="PackedScene" uid="uid://tam45u3aqks0" path="res://actors/master_bed/table.tscn" id="7_wucfe"]
 [ext_resource type="Script" path="res://actors/master_bed/rug.gd" id="8_0pwi5"]
@@ -15,8 +17,9 @@
 [ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="8_ukbu5"]
 [ext_resource type="Script" path="res://actors/master_bed/table.gd" id="9_8y7q6"]
 [ext_resource type="Script" path="res://actors/master_bed/window.gd" id="10_fydif"]
-[ext_resource type="Texture2D" uid="uid://b0l113miianc1" path="res://levels/master_bed/cleanRug.png" id="12_sqaad"]
+[ext_resource type="Texture2D" path="res://levels/master_bed/dirtyRug.png" id="12_abid6"]
 [ext_resource type="Texture2D" uid="uid://cbgwg5a23p4q5" path="res://levels/master_bed/rugRolled.png" id="16_atna8"]
+[ext_resource type="Texture2D" path="res://levels/master_bed/dirtyWindow.png" id="17_8fqje"]
 [ext_resource type="Texture2D" uid="uid://boetukeg784bk" path="res://levels/master_bed/floorKey.png" id="17_osw2u"]
 
 [sub_resource type="Resource" id="Resource_ebmw2"]
@@ -64,6 +67,15 @@ position = Vector2(259, 182)
 script = ExtResource("5_3bx2d")
 obj_ID = "Bed"
 
+[node name="DirtyBed" type="Sprite2D" parent="Interactables/Bed" index="3"]
+position = Vector2(-99, -62)
+texture = ExtResource("6_yjgrs")
+
+[node name="cleanBed" type="Sprite2D" parent="Interactables/Bed" index="4"]
+visible = false
+position = Vector2(-99, -62)
+texture = ExtResource("7_bbx5w")
+
 [node name="Dresser" parent="Interactables" index="1" instance=ExtResource("5_bqxra")]
 position = Vector2(80, 115)
 
@@ -74,7 +86,7 @@ text = Array[ExtResource("6_28rfw")]([SubResource("Resource_2p34g")])
 
 [node name="cleanRug" type="Sprite2D" parent="Interactables/Rug" index="3"]
 position = Vector2(36, -73)
-texture = ExtResource("12_sqaad")
+texture = ExtResource("12_abid6")
 
 [node name="Table" parent="Interactables" index="3" instance=ExtResource("7_wucfe")]
 position = Vector2(182, 119)
@@ -87,6 +99,10 @@ position = Vector2(153, 113)
 script = ExtResource("10_fydif")
 text = Array[ExtResource("6_28rfw")]([SubResource("Resource_t8aoy")])
 obj_ID = "Window"
+
+[node name="DirtyWindow" type="Sprite2D" parent="Interactables/Window" index="3"]
+position = Vector2(7, 7)
+texture = ExtResource("17_8fqje")
 
 [node name="topleft" parent="Collision" index="0"]
 position = Vector2(17, 98)

@@ -8,7 +8,7 @@
 
 [sub_resource type="Resource" id="Resource_e5seo"]
 script = ExtResource("4_hhq0k")
-text = "Where's the blanket?"
+text = "That is a nice blanket!"
 choices = Array[ExtResource("5_j2t43")]([])
 
 [sub_resource type="Resource" id="Resource_y8tmd"]
