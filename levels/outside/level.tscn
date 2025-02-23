@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cbj8nw6ruobou"]
+[gd_scene load_steps=10 format=3 uid="uid://cbj8nw6ruobou"]
 
 [ext_resource type="PackedScene" uid="uid://dh4kw75nff36h" path="res://levels/level_base.tscn" id="1_c2q14"]
 [ext_resource type="Texture2D" uid="uid://c56adsd0rbnju" path="res://levels/outside/outsideVan.png" id="2_d2sw8"]
 [ext_resource type="PackedScene" uid="uid://dthqwuvotxvq4" path="res://levels/load_zone.tscn" id="3_jngel"]
 [ext_resource type="PackedScene" uid="uid://dqeqo43y4hvgr" path="res://actors/outside/door.tscn" id="4_e32um"]
 [ext_resource type="PackedScene" uid="uid://c3bxwno786wbr" path="res://actors/outside/supplies.tscn" id="5_h3v5c"]
+[ext_resource type="PackedScene" uid="uid://cgix8mymig2x6" path="res://actors/outside/intro_text.tscn" id="6_dssns"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frnoo"]
 size = Vector2(106, 35)
@@ -37,6 +38,8 @@ base_location = Vector2(244, 168)
 
 [node name="Supplies" parent="Interactables" index="1" instance=ExtResource("5_h3v5c")]
 position = Vector2(244, 169)
+
+[node name="IntroText" parent="Interactables" index="2" instance=ExtResource("6_dssns")]
 
 [node name="topleft" parent="Collision" index="0"]
 position = Vector2(0, 152)
