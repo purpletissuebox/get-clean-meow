@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ccb8uoikhijs8"]
+[gd_scene load_steps=23 format=3 uid="uid://ccb8uoikhijs8"]
 
 [ext_resource type="PackedScene" uid="uid://dh4kw75nff36h" path="res://levels/level_base.tscn" id="1_rhnfy"]
 [ext_resource type="Texture2D" uid="uid://bklc7gigqh0ck" path="res://levels/bathroom/bathroomBase.png" id="2_bdun1"]
@@ -10,10 +10,14 @@
 [ext_resource type="Script" path="res://actors/bathroom/mirror.gd" id="6_cmjjm"]
 [ext_resource type="PackedScene" uid="uid://0idvh5p4jo54" path="res://actors/bathroom/toilet.tscn" id="7_ush3x"]
 [ext_resource type="PackedScene" uid="uid://dt0eed5xx781n" path="res://actors/bathroom/tub.tscn" id="8_3julw"]
+[ext_resource type="Texture2D" path="res://levels/bathroom/tileMinigameGrime.png" id="9_3a1fk"]
 [ext_resource type="Script" path="res://actors/bathroom/tub.gd" id="9_qucri"]
 [ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="10_tm5kw"]
 [ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="11_6dvct"]
+[ext_resource type="Texture2D" path="res://levels/bathroom/mirrorDirty.png" id="12_7lm0g"]
 [ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="12_avwd4"]
+[ext_resource type="Texture2D" path="res://levels/bathroom/toiletDirty.png" id="15_r2pmq"]
+[ext_resource type="Texture2D" path="res://levels/bathroom/bathtubDirty.png" id="18_f60k2"]
 
 [sub_resource type="Resource" id="Resource_xye73"]
 script = ExtResource("11_6dvct")
@@ -52,10 +56,19 @@ script = ExtResource("5_j5kvj")
 text = Array[ExtResource("10_tm5kw")]([SubResource("Resource_u6iow")])
 obj_interaction = "Floor mat"
 
+[node name="Grime" type="Sprite2D" parent="Interactables/Mat" index="3"]
+position = Vector2(73, -33)
+scale = Vector2(0.272457, 0.244465)
+texture = ExtResource("9_3a1fk")
+
 [node name="Mirror" parent="Interactables" index="1" instance=ExtResource("5_ledey")]
 position = Vector2(152, 75)
 script = ExtResource("6_cmjjm")
 obj_ID = "Mirror"
+
+[node name="DirtyMirror" type="Sprite2D" parent="Interactables/Mirror" index="3"]
+position = Vector2(8, 45)
+texture = ExtResource("12_7lm0g")
 
 [node name="Sink" parent="Interactables" index="2" instance=ExtResource("6_5poh3")]
 position = Vector2(153, 102)
@@ -63,12 +76,20 @@ position = Vector2(153, 102)
 [node name="Toilet" parent="Interactables" index="3" instance=ExtResource("7_ush3x")]
 position = Vector2(206, 120)
 
+[node name="DirtyToilet" type="Sprite2D" parent="Interactables/Toilet" index="3"]
+position = Vector2(-46, 0)
+texture = ExtResource("15_r2pmq")
+
 [node name="Tub" parent="Interactables" index="4" instance=ExtResource("8_3julw")]
 position = Vector2(102, 159)
 script = ExtResource("9_qucri")
 text = Array[ExtResource("10_tm5kw")]([SubResource("Resource_knyyn")])
 obj_ID = "Tub"
 obj_interaction = "Tub"
+
+[node name="DirtyTub" type="Sprite2D" parent="Interactables/Tub" index="3"]
+position = Vector2(58, -39)
+texture = ExtResource("18_f60k2")
 
 [node name="topleft" parent="Collision" index="0"]
 position = Vector2(82, 98)
