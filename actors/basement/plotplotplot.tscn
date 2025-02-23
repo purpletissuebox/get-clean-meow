@@ -24,3 +24,4 @@ contents = Array[ExtResource("3_ligjl")]([SubResource("Resource_5p6m2"), SubReso
 script = ExtResource("2_tvmkn")
 d = SubResource("Resource_exxyw")
 obj_ID = "basementplot"
+obj_interaction = null
