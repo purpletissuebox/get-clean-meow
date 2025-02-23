@@ -11,6 +11,7 @@ func _ready() -> void:
 	addGoals()
 	SignalBus.trigger_conversation.emit(introText)
 	await SignalBus.conversation_ended
+	GlobalContext.level_ID = GlobalData.RoomID.OUTSIDE
 	SignalBus.change_lvl.emit("res://levels/outside/level.tscn",1)
 	
 	pass # Replace with function body.
