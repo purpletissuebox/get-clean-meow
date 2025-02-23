@@ -1,10 +1,18 @@
-class_name bMLevel extends Level
+class_name Level extends Node2D
+
+const PLAYER_ACTOR:PackedScene = preload("res://actors/player/player.tscn")
+
+@onready var spawns: Node2D = $Spawns
+@onready var background: Sprite2D = $Background
+
+var room_state:Dictionary
 
 func _init():
 	GlobalContext.level_node = self
 	self.room_state = GlobalContext.plot_progress[GlobalContext.level_ID]
 
 func _ready():
+	SoundDriver.play_bgm(2,0.5,1)
 	var player_instance = PLAYER_ACTOR.instantiate()
 	player_instance.position = spawns.get_child(GlobalContext.spawn_point_ID).position
 	self.add_child(player_instance)

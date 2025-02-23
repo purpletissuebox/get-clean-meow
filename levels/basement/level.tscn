@@ -1,28 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://bc1x1qvkyfi3b"]
+[gd_scene load_steps=8 format=3 uid="uid://bc1x1qvkyfi3b"]
 
 [ext_resource type="PackedScene" uid="uid://dh4kw75nff36h" path="res://levels/level_base.tscn" id="1_ee4hl"]
 [ext_resource type="Texture2D" uid="uid://58is3mwcnv8d" path="res://levels/basement/basementBase.png" id="2_bvlqr"]
+[ext_resource type="Script" path="res://levels/basement/basementLvl.gd" id="2_mley5"]
 [ext_resource type="PackedScene" uid="uid://dthqwuvotxvq4" path="res://levels/load_zone.tscn" id="3_ryxey"]
-[ext_resource type="PackedScene" uid="uid://sna3yoyflah2" path="res://actors/basement/plotplotplot.tscn" id="4_kuhqk"]
-[ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="5_v53rf"]
-[ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="6_m65fd"]
-[ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="7_6gi0n"]
 
-[sub_resource type="Resource" id="Resource_50hy6"]
-script = ExtResource("5_v53rf")
-text = "O_O"
-choices = Array[ExtResource("6_m65fd")]([])
-
-[sub_resource type="Resource" id="Resource_fo8j8"]
-script = ExtResource("5_v53rf")
-text = "I gotta get out of here >_< !!!!!!"
-choices = Array[ExtResource("6_m65fd")]([])
-
-[sub_resource type="Resource" id="Resource_sq3mn"]
-script = ExtResource("7_6gi0n")
-contents = Array[ExtResource("5_v53rf")]([SubResource("Resource_50hy6"), SubResource("Resource_fo8j8")])
+[ext_resource type="Texture2D" uid="uid://dapb14ju10wra" path="res://levels/basement/moreDirt.png" id="5_wis2u"]
+[ext_resource type="Texture2D" uid="uid://du10b1405m33h" path="res://levels/basement/bodyandBlood.png" id="6_k1b7w"]
+[ext_resource type="Texture2D" uid="uid://cnoxaen0y8o7e" path="res://levels/basement/cobwebs.png" id="7_lj5io"]
 
 [node name="Level" instance=ExtResource("1_ee4hl")]
+script = ExtResource("2_mley5")
 
 [node name="Background" parent="." index="0"]
 texture = ExtResource("2_bvlqr")
@@ -41,7 +29,14 @@ position = Vector2(232, 237)
 spawnID = 4
 sceneID = 2
 
-[node name="lol" parent="." index="6" instance=ExtResource("4_kuhqk")]
-position = Vector2(149, 122)
-d = SubResource("Resource_sq3mn")
-obj_ID = "escape"
+[node name="Dirt" type="Sprite2D" parent="." index="6"]
+position = Vector2(159, 121)
+texture = ExtResource("5_wis2u")
+
+[node name="Body" type="Sprite2D" parent="." index="7"]
+position = Vector2(161, 121)
+texture = ExtResource("6_k1b7w")
+
+[node name="cobWebs" type="Sprite2D" parent="." index="8"]
+position = Vector2(159, 121)
+texture = ExtResource("7_lj5io")

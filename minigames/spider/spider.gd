@@ -12,6 +12,6 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
-	print("working")
+	GlobalContext.goals["Exterminate Spider"] = true
 	complete_minigame()
 	pass # Replace with function body.

@@ -8,7 +8,8 @@ enum BGM {
 }
 const bgm_resources:Array[String] = [
 	"res://drivers/audio/Exploring.mp3",
-	"res://minigames/mew.mp3"
+	"res://minigames/mew.mp3",
+	"res://drivers/audio/waterphone.mp3"
 ]
 
 var global_bgm_volume:float = 1.0
