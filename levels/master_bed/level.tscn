@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bbpjikpl0yyum"]
+[gd_scene load_steps=30 format=3 uid="uid://bbpjikpl0yyum"]
 
 [ext_resource type="PackedScene" uid="uid://dh4kw75nff36h" path="res://levels/level_base.tscn" id="1_3pyd7"]
 [ext_resource type="Texture2D" uid="uid://bjgtwyjfiu811" path="res://levels/master_bed/bedroomBase.png" id="2_xd0qt"]
@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dule7vwekt4vf" path="res://actors/master_bed/dresser.tscn" id="5_bqxra"]
 [ext_resource type="PackedScene" uid="uid://c623aq3txurna" path="res://actors/master_bed/rug.tscn" id="6_2v3rq"]
 [ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="6_28rfw"]
-[ext_resource type="Texture2D" path="res://levels/master_bed/bedDirty.png" id="6_yjgrs"]
-[ext_resource type="Texture2D" path="res://levels/master_bed/bedClean.png" id="7_bbx5w"]
+[ext_resource type="Texture2D" uid="uid://hg375gveye6l" path="res://levels/master_bed/bedDirty.png" id="6_yjgrs"]
+[ext_resource type="Texture2D" uid="uid://pilhokgylh8r" path="res://levels/master_bed/bedClean.png" id="7_bbx5w"]
 [ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="7_bnifm"]
 [ext_resource type="PackedScene" uid="uid://tam45u3aqks0" path="res://actors/master_bed/table.tscn" id="7_wucfe"]
 [ext_resource type="Script" path="res://actors/master_bed/rug.gd" id="8_0pwi5"]
@@ -17,10 +17,19 @@
 [ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="8_ukbu5"]
 [ext_resource type="Script" path="res://actors/master_bed/table.gd" id="9_8y7q6"]
 [ext_resource type="Script" path="res://actors/master_bed/window.gd" id="10_fydif"]
-[ext_resource type="Texture2D" path="res://levels/master_bed/dirtyRug.png" id="12_abid6"]
+[ext_resource type="Texture2D" uid="uid://6gwutwdyfrns" path="res://levels/master_bed/dirtyRug.png" id="12_abid6"]
 [ext_resource type="Texture2D" uid="uid://cbgwg5a23p4q5" path="res://levels/master_bed/rugRolled.png" id="16_atna8"]
-[ext_resource type="Texture2D" path="res://levels/master_bed/dirtyWindow.png" id="17_8fqje"]
-[ext_resource type="Texture2D" uid="uid://boetukeg784bk" path="res://levels/master_bed/floorKey.png" id="17_osw2u"]
+[ext_resource type="Texture2D" uid="uid://cfaso1gub4gbh" path="res://levels/master_bed/dirtyWindow.png" id="17_8fqje"]
+[ext_resource type="PackedScene" uid="uid://dw7bgr2wuswo1" path="res://actors/master_bed/key.tscn" id="20_hb1bt"]
+
+[sub_resource type="Resource" id="Resource_4n8yi"]
+script = ExtResource("7_bnifm")
+text = "Hmm..? There's something underneath the rug!"
+choices = Array[ExtResource("8_ukbu5")]([])
+
+[sub_resource type="Resource" id="Resource_cdsbp"]
+script = ExtResource("6_28rfw")
+contents = Array[ExtResource("7_bnifm")]([SubResource("Resource_4n8yi")])
 
 [sub_resource type="Resource" id="Resource_ebmw2"]
 script = ExtResource("7_bnifm")
@@ -79,9 +88,11 @@ texture = ExtResource("7_bbx5w")
 [node name="Dresser" parent="Interactables" index="1" instance=ExtResource("5_bqxra")]
 position = Vector2(80, 115)
 
-[node name="Rug" parent="Interactables" index="2" instance=ExtResource("6_2v3rq")]
+[node name="Rug" parent="Interactables" index="2" node_paths=PackedStringArray("key") instance=ExtResource("6_2v3rq")]
 position = Vector2(123, 194)
 script = ExtResource("8_0pwi5")
+key = NodePath("../../KeyShhDontTell(Hidden)")
+discovery = SubResource("Resource_cdsbp")
 text = Array[ExtResource("6_28rfw")]([SubResource("Resource_2p34g")])
 
 [node name="cleanRug" type="Sprite2D" parent="Interactables/Rug" index="3"]
@@ -110,10 +121,8 @@ position = Vector2(17, 98)
 [node name="bottomright" parent="Collision" index="1"]
 position = Vector2(303, 225)
 
-[node name="HiddenKey" type="Sprite2D" parent="." index="5"]
-visible = false
-position = Vector2(147, 120)
-texture = ExtResource("17_osw2u")
+[node name="KeyShhDontTell(Hidden)" parent="." index="5" instance=ExtResource("20_hb1bt")]
+position = Vector2(-13, 0)
 
 [node name="rolledRug" type="Sprite2D" parent="." index="6"]
 visible = false

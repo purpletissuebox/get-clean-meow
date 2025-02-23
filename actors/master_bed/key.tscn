@@ -1,0 +1,63 @@
+[gd_scene load_steps=16 format=3 uid="uid://dw7bgr2wuswo1"]
+
+[ext_resource type="PackedScene" uid="uid://civqyx6i1i73l" path="res://actors/interactable.tscn" id="1_2xbmu"]
+[ext_resource type="Script" path="res://actors/master_bed/key.gd" id="2_17abg"]
+[ext_resource type="Texture2D" uid="uid://boetukeg784bk" path="res://levels/master_bed/floorKey.png" id="2_328id"]
+[ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="3_xflil"]
+[ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="4_vsqm0"]
+[ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="5_xltny"]
+
+[sub_resource type="Resource" id="Resource_6k2tk"]
+script = ExtResource("3_xflil")
+text = "Hmm? An old key forgotten under the rug."
+choices = Array[ExtResource("4_vsqm0")]([])
+
+[sub_resource type="Resource" id="Resource_htg61"]
+script = ExtResource("3_xflil")
+text = "Are you stupid? Of course you pick up the mysterious key in an old house!"
+choices = Array[ExtResource("4_vsqm0")]([])
+
+[sub_resource type="Resource" id="Resource_8v2j8"]
+script = ExtResource("5_xltny")
+contents = Array[ExtResource("3_xflil")]([SubResource("Resource_htg61")])
+
+[sub_resource type="Resource" id="Resource_52ig6"]
+script = ExtResource("4_vsqm0")
+prompt = "No."
+continuation = SubResource("Resource_8v2j8")
+
+[sub_resource type="Resource" id="Resource_4giu2"]
+script = ExtResource("3_xflil")
+text = "You sneakily pocket it for later."
+choices = Array[ExtResource("4_vsqm0")]([])
+
+[sub_resource type="Resource" id="Resource_0pvei"]
+script = ExtResource("5_xltny")
+contents = Array[ExtResource("3_xflil")]([SubResource("Resource_4giu2")])
+
+[sub_resource type="Resource" id="Resource_0h5by"]
+script = ExtResource("4_vsqm0")
+prompt = "Yes!"
+continuation = SubResource("Resource_0pvei")
+
+[sub_resource type="Resource" id="Resource_bdwu5"]
+script = ExtResource("3_xflil")
+text = "Will you pick it up?"
+choices = Array[ExtResource("4_vsqm0")]([SubResource("Resource_52ig6"), SubResource("Resource_0h5by")])
+
+[sub_resource type="Resource" id="Resource_nsfy6"]
+script = ExtResource("5_xltny")
+contents = Array[ExtResource("3_xflil")]([SubResource("Resource_6k2tk"), SubResource("Resource_bdwu5")])
+
+[node name="KeyShhDontTell(Hidden)" instance=ExtResource("1_2xbmu")]
+script = ExtResource("2_17abg")
+pickup_txt = SubResource("Resource_nsfy6")
+obj_ID = "keyyyyy"
+obj_interaction = "Hidden Key?"
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+polygon = PackedVector2Array(101, 169, 103, 150, 135, 150, 132, 169)
+
+[node name="Graphic" parent="." index="1"]
+texture = ExtResource("2_328id")
+centered = false
