@@ -1,23 +1,34 @@
-[gd_scene load_steps=8 format=3 uid="uid://cl7jnlmynpy0d"]
+[gd_scene load_steps=11 format=3 uid="uid://cl7jnlmynpy0d"]
 
 [ext_resource type="PackedScene" uid="uid://civqyx6i1i73l" path="res://actors/interactable.tscn" id="1_0fffa"]
 [ext_resource type="Script" path="res://actors/outside/FrontDoorCar.gd" id="2_2e5ao"]
 [ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="3_fsowk"]
+[ext_resource type="Texture2D" uid="uid://dpamrba2tppox" path="res://actors/outside/crack.png" id="3_iikxq"]
 [ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="4_vj300"]
 [ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="5_73k4n"]
 
-[sub_resource type="Resource" id="Resource_sfgio"]
+[sub_resource type="Resource" id="Resource_n8xjo"]
 script = ExtResource("3_fsowk")
-text = "*Sigh* I must have locked my keys inside again...."
+text = "Locked the keys in the van again....."
 choices = Array[ExtResource("4_vj300")]([])
 
-[sub_resource type="Resource" id="Resource_1vo6p"]
+[sub_resource type="Resource" id="Resource_wctba"]
 script = ExtResource("5_73k4n")
-contents = Array[ExtResource("3_fsowk")]([SubResource("Resource_sfgio")])
+contents = Array[ExtResource("3_fsowk")]([SubResource("Resource_n8xjo")])
+
+[sub_resource type="Resource" id="Resource_6uada"]
+script = ExtResource("3_fsowk")
+text = "Keys be damned. Let's get out of here!!!"
+choices = Array[ExtResource("4_vj300")]([])
+
+[sub_resource type="Resource" id="Resource_yq6dl"]
+script = ExtResource("5_73k4n")
+contents = Array[ExtResource("3_fsowk")]([SubResource("Resource_6uada")])
 
 [node name="FrontDoor" instance=ExtResource("1_0fffa")]
 script = ExtResource("2_2e5ao")
-text = SubResource("Resource_1vo6p")
+locked = SubResource("Resource_wctba")
+unlocked = SubResource("Resource_yq6dl")
 obj_ID = "Front Door"
 obj_interaction = "Front Door"
 
@@ -25,5 +36,7 @@ obj_interaction = "Front Door"
 polygon = PackedVector2Array(-17, -1, 17, -1, 17, -84, -17, -84)
 
 [node name="Graphic" parent="." index="1"]
+position = Vector2(25, 13)
+texture = ExtResource("3_iikxq")
 centered = false
 offset = Vector2(-40, -103)

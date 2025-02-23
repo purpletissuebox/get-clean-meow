@@ -1,22 +1,24 @@
 extends Interactable
 
-@export var text : Conversation
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	
-	pass # Replace with function body.
+@export var locked : Conversation
+@export var unlocked:Conversation
 
-func breakWindow():
-	if 	GlobalContext.hasTrophy == true:
-		pass
-	else:
-		pass
-	
+@onready var graphic: Sprite2D = $Graphic
+
+func _ready():
+	self.graphic.hide()
+
 func _interact():
-	print(self.text)
-	SignalBus.trigger_conversation.emit(self.text)
-	#breakWindow()
-	pass
+	if GlobalContext.gtfo:
+		SignalBus.trigger_conversation.emit(self.unlocked)
+		await SignalBus.conversation_ended
+		GlobalContext.player_node.busy = true
+		self.graphic.show()
+		
+		SignalBus.change_lvl.emit("res://levels/END.tscn", 2)
+	else:
+		SignalBus.trigger_conversation.emit(self.locked)
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
