@@ -3,9 +3,7 @@
 [ext_resource type="Script" path="res://actors/player/hud/dialog.gd" id="1_81lij"]
 [ext_resource type="PackedScene" uid="uid://bvfwt1iwfyrb7" path="res://actors/player/hud/dialogChoice.tscn" id="2_viiqk"]
 [ext_resource type="Texture2D" uid="uid://cnt4mygir5nj1" path="res://actors/player/hud/dialouge.png" id="3_tltgy"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8lbc3"]
-size = Vector2(20, 20)
+[ext_resource type="Texture2D" uid="uid://h8hjdqjhy7r7" path="res://actors/player/hud/E.png" id="4_7l7hf"]
 
 [node name="DialogManager" type="Control"]
 layout_mode = 3
@@ -57,5 +55,5 @@ scroll_active = false
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-texture = SubResource("PlaceholderTexture2D_8lbc3")
+texture = ExtResource("4_7l7hf")
 stretch_mode = 2

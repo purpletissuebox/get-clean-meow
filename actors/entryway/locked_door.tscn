@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bkt8om4o6gagi"]
+[gd_scene load_steps=21 format=3 uid="uid://bkt8om4o6gagi"]
 
 [ext_resource type="PackedScene" uid="uid://civqyx6i1i73l" path="res://actors/interactable.tscn" id="1_ut77f"]
 [ext_resource type="Script" path="res://actors/entryway/note.gd" id="2_laimm"]
@@ -63,10 +63,20 @@ choices = Array[ExtResource("4_sucft")]([SubResource("Resource_pluwf"), SubResou
 script = ExtResource("5_dh6fy")
 contents = Array[ExtResource("3_17psl")]([SubResource("Resource_nu2jd")])
 
+[sub_resource type="Resource" id="Resource_ca72a"]
+script = ExtResource("3_17psl")
+text = "I should finish the checklist first..."
+choices = Array[ExtResource("4_sucft")]([])
+
+[sub_resource type="Resource" id="Resource_5olhx"]
+script = ExtResource("5_dh6fy")
+contents = Array[ExtResource("3_17psl")]([SubResource("Resource_ca72a")])
+
 [node name="Note" instance=ExtResource("1_ut77f")]
 script = ExtResource("2_laimm")
 locked_text = SubResource("Resource_8ptpe")
 unlocked_text = SubResource("Resource_huxdl")
+checkListNotDone = SubResource("Resource_5olhx")
 obj_ID = "note"
 obj_interaction = "Note"
 

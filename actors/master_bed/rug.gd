@@ -13,7 +13,7 @@ func _interact():
 		$"../../rolledRug".visible = true
 		key.appear()
 		SignalBus.trigger_conversation.emit(self.discovery)
-		GlobalContext.goals["Vaccuum Floors"] = true
+		GlobalContext.goals["Clean Rug"] = true
 	else:
 		SignalBus.trigger_conversation.emit(self.text.pick_random())
 	pass
