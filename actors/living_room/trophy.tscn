@@ -3,11 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://civqyx6i1i73l" path="res://actors/interactable.tscn" id="1_hl7la"]
 [ext_resource type="Texture2D" uid="uid://c5e4aqh00r8du" path="res://actors/living_room/trophyClean.png" id="2_phgw8"]
 [ext_resource type="Script" path="res://actors/living_room/trophyScript.gd" id="2_qehoc"]
-[ext_resource type="Resource" path="res://act:Resource_lsmeu" id="3_o2hok"]
+
+[sub_resource type="Resource" id="Resource_tb6l3"]
+metadata/__load_path__ = "res://act:Resource_lsmeu"
 
 [node name="InteractRadius" instance=ExtResource("1_hl7la")]
 script = ExtResource("2_qehoc")
-text = ExtResource("3_o2hok")
+text = SubResource("Resource_tb6l3")
 
 [node name="CollisionPolygon2D" parent="." index="0"]
 position = Vector2(-0.499998, 1.52301)

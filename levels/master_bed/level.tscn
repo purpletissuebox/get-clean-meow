@@ -1,13 +1,50 @@
-[gd_scene load_steps=9 format=3 uid="uid://bbpjikpl0yyum"]
+[gd_scene load_steps=25 format=3 uid="uid://bbpjikpl0yyum"]
 
 [ext_resource type="PackedScene" uid="uid://dh4kw75nff36h" path="res://levels/level_base.tscn" id="1_3pyd7"]
 [ext_resource type="Texture2D" uid="uid://bjgtwyjfiu811" path="res://levels/master_bed/bedroomBase.png" id="2_xd0qt"]
 [ext_resource type="PackedScene" uid="uid://dthqwuvotxvq4" path="res://levels/load_zone.tscn" id="3_mv23n"]
 [ext_resource type="PackedScene" uid="uid://kxaufhi74bp7" path="res://actors/master_bed/bed.tscn" id="4_kpg84"]
+[ext_resource type="Script" path="res://actors/master_bed/bed.gd" id="5_3bx2d"]
 [ext_resource type="PackedScene" uid="uid://dule7vwekt4vf" path="res://actors/master_bed/dresser.tscn" id="5_bqxra"]
 [ext_resource type="PackedScene" uid="uid://c623aq3txurna" path="res://actors/master_bed/rug.tscn" id="6_2v3rq"]
+[ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="6_28rfw"]
+[ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="7_bnifm"]
 [ext_resource type="PackedScene" uid="uid://tam45u3aqks0" path="res://actors/master_bed/table.tscn" id="7_wucfe"]
+[ext_resource type="Script" path="res://actors/master_bed/rug.gd" id="8_0pwi5"]
 [ext_resource type="PackedScene" uid="uid://cwf1x2xnugv38" path="res://actors/master_bed/window.tscn" id="8_pgf3s"]
+[ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="8_ukbu5"]
+[ext_resource type="Script" path="res://actors/master_bed/table.gd" id="9_8y7q6"]
+[ext_resource type="Script" path="res://actors/master_bed/window.gd" id="10_fydif"]
+[ext_resource type="Texture2D" uid="uid://b0l113miianc1" path="res://levels/master_bed/cleanRug.png" id="12_sqaad"]
+[ext_resource type="Texture2D" uid="uid://cbgwg5a23p4q5" path="res://levels/master_bed/rugRolled.png" id="16_atna8"]
+[ext_resource type="Texture2D" uid="uid://boetukeg784bk" path="res://levels/master_bed/floorKey.png" id="17_osw2u"]
+
+[sub_resource type="Resource" id="Resource_ebmw2"]
+script = ExtResource("7_bnifm")
+text = "RUG THEMED GAME. RUG THEMED GAME. RUG THEMED GAME."
+choices = Array[ExtResource("8_ukbu5")]([])
+
+[sub_resource type="Resource" id="Resource_2p34g"]
+script = ExtResource("6_28rfw")
+contents = Array[ExtResource("7_bnifm")]([SubResource("Resource_ebmw2")])
+
+[sub_resource type="Resource" id="Resource_qqyt5"]
+script = ExtResource("7_bnifm")
+text = "Still won't turn on..."
+choices = Array[ExtResource("8_ukbu5")]([])
+
+[sub_resource type="Resource" id="Resource_b0sx8"]
+script = ExtResource("6_28rfw")
+contents = Array[ExtResource("7_bnifm")]([SubResource("Resource_qqyt5")])
+
+[sub_resource type="Resource" id="Resource_3nyld"]
+script = ExtResource("7_bnifm")
+text = "I can see my van from here!"
+choices = Array[ExtResource("8_ukbu5")]([])
+
+[sub_resource type="Resource" id="Resource_t8aoy"]
+script = ExtResource("6_28rfw")
+contents = Array[ExtResource("7_bnifm")]([SubResource("Resource_3nyld")])
 
 [node name="Level" instance=ExtResource("1_3pyd7")]
 
@@ -24,21 +61,45 @@ sceneID = 2
 
 [node name="Bed" parent="Interactables" index="0" instance=ExtResource("4_kpg84")]
 position = Vector2(259, 182)
+script = ExtResource("5_3bx2d")
+obj_ID = "Bed"
 
 [node name="Dresser" parent="Interactables" index="1" instance=ExtResource("5_bqxra")]
 position = Vector2(80, 115)
 
 [node name="Rug" parent="Interactables" index="2" instance=ExtResource("6_2v3rq")]
 position = Vector2(123, 194)
+script = ExtResource("8_0pwi5")
+text = Array[ExtResource("6_28rfw")]([SubResource("Resource_2p34g")])
+
+[node name="cleanRug" type="Sprite2D" parent="Interactables/Rug" index="3"]
+position = Vector2(36, -73)
+texture = ExtResource("12_sqaad")
 
 [node name="Table" parent="Interactables" index="3" instance=ExtResource("7_wucfe")]
 position = Vector2(182, 119)
+script = ExtResource("9_8y7q6")
+text = Array[ExtResource("6_28rfw")]([SubResource("Resource_b0sx8")])
+obj_interaction = "Lamp"
 
 [node name="Window" parent="Interactables" index="4" instance=ExtResource("8_pgf3s")]
 position = Vector2(153, 113)
+script = ExtResource("10_fydif")
+text = Array[ExtResource("6_28rfw")]([SubResource("Resource_t8aoy")])
+obj_ID = "Window"
 
 [node name="topleft" parent="Collision" index="0"]
 position = Vector2(17, 98)
 
 [node name="bottomright" parent="Collision" index="1"]
 position = Vector2(303, 225)
+
+[node name="HiddenKey" type="Sprite2D" parent="." index="5"]
+visible = false
+position = Vector2(147, 120)
+texture = ExtResource("17_osw2u")
+
+[node name="rolledRug" type="Sprite2D" parent="." index="6"]
+visible = false
+position = Vector2(160, 121)
+texture = ExtResource("16_atna8")

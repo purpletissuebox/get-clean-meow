@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://mlu6p3mdegfh"]
+
+[ext_resource type="Script" path="res://minigames/scrub/scrub.gd" id="1_om85v"]
+[ext_resource type="Texture2D" uid="uid://dvqugfnd84dp" path="res://minigames/scrubWindow/windowMinigameBG1.png" id="2_pmdgd"]
+[ext_resource type="Texture2D" uid="uid://3k7ns7b6hf3y" path="res://minigames/scrubMirror/tissueHand.png" id="3_ro2x4"]
+
+[node name="Scrub" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_om85v")
+
+[node name="bkg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.572988, 0.572988, 0.572988, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(160, 122)
+texture = ExtResource("2_pmdgd")
+
+[node name="arm" type="Sprite2D" parent="."]
+position = Vector2(153, 123)
+texture = ExtResource("3_ro2x4")
