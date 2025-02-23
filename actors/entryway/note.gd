@@ -20,7 +20,7 @@ func _interact():
 
 func checkIfDone():
 	if GlobalContext.goals["Clean Bathtub"] == true:
-		if GlobalContext.goals["Vaccuum Floors"] == true:
+		if GlobalContext.goals["Clean Rug"] == true:
 			if GlobalContext.goals["Exterminate Spider"] == true:
 				return true
 	return false
