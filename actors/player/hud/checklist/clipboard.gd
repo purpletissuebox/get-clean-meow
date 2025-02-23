@@ -9,6 +9,10 @@ const ANCHOR_DIFF:float = 0.19
 
 var movementT:Tween = null
 
+func _ready():
+	if !GlobalContext.level_node:
+		self.hide()
+
 func raise():
 	cancelTween()
 	movementT = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
