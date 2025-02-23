@@ -21,7 +21,10 @@ size = Vector2(79, 25)
 texture = ExtResource("2_d2sw8")
 
 [node name="Node2D" type="Node2D" parent="Spawns" index="0"]
-position = Vector2(27, 196)
+position = Vector2(177, 190)
+
+[node name="Node2D2" type="Node2D" parent="Spawns" index="1"]
+position = Vector2(33, 198)
 
 [node name="LoadZone" parent="Load Zones" index="0" instance=ExtResource("3_jngel")]
 position = Vector2(-1, 195)
