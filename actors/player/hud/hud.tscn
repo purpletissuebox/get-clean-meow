@@ -14,6 +14,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Clipboard" parent="Control" node_paths=PackedStringArray("pause_menu") instance=ExtResource("2_f4thv")]
+layout_mode = 1
+pause_menu = NodePath("../PauseMenu")
+
 [node name="DialogManager" parent="Control" instance=ExtResource("1_adtfs")]
 layout_mode = 1
 anchors_preset = -1
@@ -22,7 +26,3 @@ anchor_bottom = 2.0
 
 [node name="PauseMenu" parent="Control" instance=ExtResource("3_ttjem")]
 layout_mode = 1
-
-[node name="Clipboard" parent="Control" node_paths=PackedStringArray("pause_menu") instance=ExtResource("2_f4thv")]
-layout_mode = 1
-pause_menu = NodePath("../PauseMenu")
