@@ -17,6 +17,7 @@ var foundKey:bool
 var goals:Dictionary
 var day:int = 0
 var hasTrophy:bool = false
+var gtfo:bool = false
 
 func _ready():
 	for i in GlobalData.RoomID.NUM_ROOMS:
