@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Conversation" load_steps=3 format=3 uid="uid://dqxnbdd8w07ny"]
+
+[ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="1_o8ul1"]
+[ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="2_l3qka"]
+
+[resource]
+script = ExtResource("2_l3qka")
+contents = Array[ExtResource("1_o8ul1")]([])

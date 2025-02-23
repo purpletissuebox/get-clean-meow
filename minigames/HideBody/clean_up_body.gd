@@ -30,13 +30,49 @@ func clearHolding():
 	if holdingSaw == false:
 		$saw.position = tempVector2
 	pass
-func cutting():
-	print("Holding saw")
-	print(holdingSaw)
+func cutting(num):
+	# 0 = armUp
+	# 1 = armDown
+	# 2 = legUp
+	# 3 = legDown
+	# 4 = head
+	# 5 = body
+	# 6 = saw
 	if holdingSaw == true:
-		if isArmUpConnected == true:
-			isArmUpConnected = false
-	pass
+		match num:
+			0:
+				if isArmUpConnected == true:
+					isArmUpConnected = false
+				pass
+			1:
+				if isArmDownConnected == true:
+					isArmDownConnected = false
+				pass
+			2:
+				if isLegUpConnected == true:
+					isLegUpConnected = false
+				pass
+			3:
+				if isLegDownConnected == true:
+					isLegDownConnected = false
+				pass
+			4:
+				if isHeadConnected == true:
+					isHeadConnected = false
+				pass
+			5:
+				if isBodyConnected == true:
+					isBodyConnected = false
+				pass
+			6:
+				pass
+			7:
+				pass
+			8:
+				pass
+			9:
+				pass
+		pass
 func isHolding():
 	if holdingSaw:
 		#clearHolding()
@@ -49,6 +85,35 @@ func isHolding():
 		#clearHolding()
 		$armUp.position = get_global_mouse_position()
 		$ArmUpButton.position = get_global_mouse_position()
+		pass
+	elif holdingArmDown:
+		#clearHolding()
+		print("First")
+		print(get_global_mouse_position())
+		$armDown.position = get_global_mouse_position()
+		$armDownButton.position = get_global_mouse_position()
+		print("Second")
+		print(get_global_mouse_position())
+		pass
+	elif holdingLegUp:
+		#clearHolding()
+		$legUp.position = get_global_mouse_position()
+		$legUpButton.position = get_global_mouse_position()
+		pass
+	elif holdingLegDown:
+		#clearHolding()
+		$legDown.position = get_global_mouse_position()
+		$legDownButton.position = get_global_mouse_position()
+		pass
+	elif holdingBody:
+		#clearHolding()
+		$body.position = get_global_mouse_position()
+		$bodyButton.position = get_global_mouse_position()
+		pass
+	elif holdingHead:
+		#clearHolding()
+		$head.position = get_global_mouse_position()
+		$headButton.position = get_global_mouse_position()
 		pass
 	else:
 		$Mouse.position = get_global_mouse_position()
@@ -135,21 +200,15 @@ func allButOne(one):
 			pass
 				
 func _on_saw_button_pressed() -> void:
-	allButOne(holdingSaw)
+	allButOne(6)
 	pass # Replace with function body.
-
-
 func _on_arm_up_button_pressed() -> void:
 	if isArmUpConnected == false:
 		allButOne(0)
 	else:
 		holdingArmUp = false
-	print("This is ")
-	print(isArmUpConnected)
-	cutting()
+	cutting(0)
 	pass # Replace with function body.
-
-
 func _on_button_pressed() -> void:
 	holdingRag = false
 	holdingSaw = false
@@ -160,4 +219,48 @@ func _on_button_pressed() -> void:
 	holdingLegDown = false
 	holdingHead = false
 	holdingBody = false
+	pass # Replace with function body.
+
+func _on_head_button_pressed() -> void:
+	if isHeadConnected == false:
+		allButOne(4)
+	else:
+		holdingHead = false
+	cutting(4)
+	pass # Replace with function body.
+
+
+func _on_body_button_pressed() -> void:
+	if isBodyConnected == false:
+		allButOne(5)
+	else:
+		holdingBody = false
+	cutting(5)
+	pass # Replace with function body.
+
+
+func _on_arm_down_button_pressed() -> void:
+	if isArmDownConnected == false:
+		allButOne(1)
+	else:
+		holdingArmDown = false
+	cutting(1)
+	pass # Replace with function body.
+
+
+func _on_leg_up_button_pressed() -> void:
+	if isLegUpConnected == false:
+		allButOne(2)
+	else:
+		holdingLegUp = false
+	cutting(2)
+	pass # Replace with function body.
+
+
+func _on_leg_down_button_pressed() -> void:
+	if isLegDownConnected == false:
+		allButOne(3)
+	else:
+		holdingLegDown = false
+	cutting(3)
 	pass # Replace with function body.

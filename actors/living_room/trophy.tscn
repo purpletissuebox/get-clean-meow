@@ -1,24 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://45yahwfn3ppr"]
+[gd_scene load_steps=5 format=3 uid="uid://45yahwfn3ppr"]
 
 [ext_resource type="PackedScene" uid="uid://civqyx6i1i73l" path="res://actors/interactable.tscn" id="1_hl7la"]
 [ext_resource type="Texture2D" uid="uid://c5e4aqh00r8du" path="res://actors/living_room/trophyClean.png" id="2_phgw8"]
 [ext_resource type="Script" path="res://actors/living_room/trophyScript.gd" id="2_qehoc"]
-[ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="3_ca4rb"]
-[ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="4_inbrd"]
-[ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="5_iwr8a"]
-
-[sub_resource type="Resource" id="Resource_mkki2"]
-script = ExtResource("3_ca4rb")
-text = "Epic"
-choices = Array[ExtResource("4_inbrd")]([])
-
-[sub_resource type="Resource" id="Resource_lsmeu"]
-script = ExtResource("5_iwr8a")
-contents = Array[ExtResource("3_ca4rb")]([SubResource("Resource_mkki2")])
+[ext_resource type="Resource" path="res://act:Resource_lsmeu" id="3_o2hok"]
 
 [node name="InteractRadius" instance=ExtResource("1_hl7la")]
 script = ExtResource("2_qehoc")
-text = SubResource("Resource_lsmeu")
+text = ExtResource("3_o2hok")
 
 [node name="CollisionPolygon2D" parent="." index="0"]
 position = Vector2(-0.499998, 1.52301)
