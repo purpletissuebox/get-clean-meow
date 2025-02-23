@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c3bxwno786wbr" path="res://actors/outside/supplies.tscn" id="5_h3v5c"]
 [ext_resource type="PackedScene" uid="uid://cgix8mymig2x6" path="res://actors/outside/intro_text.tscn" id="6_dssns"]
 
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frnoo"]
 size = Vector2(106, 35)
 
@@ -39,7 +40,10 @@ base_location = Vector2(244, 168)
 [node name="Supplies" parent="Interactables" index="1" instance=ExtResource("5_h3v5c")]
 position = Vector2(244, 169)
 
+
 [node name="IntroText" parent="Interactables" index="2" instance=ExtResource("6_dssns")]
+[node name="FrontDoor" parent="Interactables" index="2" instance=ExtResource("6_rc45w")]
+position = Vector2(181, 183)
 
 [node name="topleft" parent="Collision" index="0"]
 position = Vector2(0, 152)

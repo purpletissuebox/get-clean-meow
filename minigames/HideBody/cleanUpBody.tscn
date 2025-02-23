@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cd6mmrq4qod1e"]
+[gd_scene load_steps=10 format=3 uid="uid://cd6mmrq4qod1e"]
 
 [ext_resource type="Script" path="res://minigames/HideBody/clean_up_body.gd" id="1_cy821"]
 [ext_resource type="Texture2D" uid="uid://ns05pakp7w2h" path="res://minigames/HideBody/head.png" id="1_kf8jl"]
-[ext_resource type="Texture2D" uid="uid://bg55aitlqyhcm" path="res://minigames/HideBody/body.png" id="2_eyiw8"]
-[ext_resource type="Texture2D" uid="uid://biqcvfkyovvr5" path="res://minigames/HideBody/arm.png" id="3_xplab"]
+[ext_resource type="Texture2D" uid="uid://8abltxyn3m4s" path="res://minigames/HideBody/BodyParts/Censor/torsoCensored.png" id="3_bjo5n"]
 [ext_resource type="Texture2D" uid="uid://mqnutdpin5gc" path="res://minigames/HideBody/leg.png" id="4_aw2e0"]
+[ext_resource type="Texture2D" uid="uid://b875vr768vibd" path="res://minigames/HideBody/BodyParts/armRBasic.png" id="4_hd7fo"]
+[ext_resource type="Texture2D" uid="uid://cqal2arbral0r" path="res://minigames/HideBody/BodyParts/armL.png" id="5_o8hnj"]
 [ext_resource type="Texture2D" uid="uid://c2ursjxiu4ph1" path="res://minigames/HideBody/saw.png" id="5_w0m7f"]
 [ext_resource type="Texture2D" uid="uid://bh21kci83bmom" path="res://minigames/HideBody/mouse.png" id="6_cqte3"]
 [ext_resource type="Script" path="res://minigames/HideBody/mouse.gd" id="7_e7qcg"]
@@ -21,18 +22,36 @@ grow_vertical = 2
 script = ExtResource("1_cy821")
 
 [node name="head" type="Sprite2D" parent="."]
-position = Vector2(79, 57)
+position = Vector2(25, 53)
 texture = ExtResource("1_kf8jl")
+centered = false
+
+[node name="headButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 56.0
+offset_right = 34.0
+offset_bottom = 68.0
+scale = Vector2(2.91792, 1.45456)
 
 [node name="body" type="Sprite2D" parent="."]
 position = Vector2(102, 60)
-texture = ExtResource("2_eyiw8")
+rotation = -0.00129483
+texture = ExtResource("3_bjo5n")
+
+[node name="bodyButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 51.0
+offset_right = 88.0
+offset_bottom = 59.0
+scale = Vector2(5.28403, 2.154)
 
 [node name="armUp" type="Sprite2D" parent="."]
 position = Vector2(102, 39)
 rotation = -0.655471
 scale = Vector2(0.999999, 0.999996)
-texture = ExtResource("3_xplab")
+texture = ExtResource("4_hd7fo")
 
 [node name="ArmUpButton" type="Button" parent="."]
 self_modulate = Color(0, 0, 0, 1)
@@ -45,19 +64,46 @@ rotation = -0.652913
 scale = Vector2(3.39663, 1.19396)
 
 [node name="armDown" type="Sprite2D" parent="."]
-position = Vector2(104, 78)
+position = Vector2(69.1888, 88)
 rotation = 0.477365
-texture = ExtResource("3_xplab")
+texture = ExtResource("5_o8hnj")
+centered = false
+
+[node name="armDownButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 70.1888
+offset_top = 90.0
+offset_right = 78.1888
+offset_bottom = 98.0
+rotation = 0.445743
+scale = Vector2(4.31081, 2.02111)
 
 [node name="legUp" type="Sprite2D" parent="."]
 position = Vector2(140, 50)
 rotation = -0.214349
 texture = ExtResource("4_aw2e0")
 
+[node name="legUpButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 39.0
+offset_right = 134.0
+offset_bottom = 47.0
+scale = Vector2(4.11216, 2.42377)
+
 [node name="legDown" type="Sprite2D" parent="."]
-position = Vector2(137, 69)
+position = Vector2(146, 100)
 rotation = 0.228485
 texture = ExtResource("4_aw2e0")
+
+[node name="legDownButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 91.0
+offset_right = 129.0
+offset_bottom = 99.0
+rotation = 0.230532
+scale = Vector2(6.82569, 2.3623)
 
 [node name="saw" type="Sprite2D" parent="."]
 position = Vector2(258, 158)
@@ -83,6 +129,11 @@ offset_top = 150.0
 offset_right = 83.0
 offset_bottom = 158.0
 
+[connection signal="pressed" from="headButton" to="." method="_on_head_button_pressed"]
+[connection signal="pressed" from="bodyButton" to="." method="_on_body_button_pressed"]
 [connection signal="pressed" from="ArmUpButton" to="." method="_on_arm_up_button_pressed"]
+[connection signal="pressed" from="armDownButton" to="." method="_on_arm_down_button_pressed"]
+[connection signal="pressed" from="legUpButton" to="." method="_on_leg_up_button_pressed"]
+[connection signal="pressed" from="legDownButton" to="." method="_on_leg_down_button_pressed"]
 [connection signal="pressed" from="SawButton" to="." method="_on_saw_button_pressed"]
 [connection signal="pressed" from="DropAll" to="." method="_on_button_pressed"]

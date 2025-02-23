@@ -1,10 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://cl7jnlmynpy0d"]
+[gd_scene load_steps=8 format=3 uid="uid://cl7jnlmynpy0d"]
 
 [ext_resource type="PackedScene" uid="uid://civqyx6i1i73l" path="res://actors/interactable.tscn" id="1_0fffa"]
 [ext_resource type="Script" path="res://actors/outside/FrontDoorCar.gd" id="2_2e5ao"]
+[ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="3_fsowk"]
+[ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="4_vj300"]
+[ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="5_73k4n"]
+
+[sub_resource type="Resource" id="Resource_sfgio"]
+script = ExtResource("3_fsowk")
+text = "*Sigh* I must have locked my keys inside again...."
+choices = Array[ExtResource("4_vj300")]([])
+
+[sub_resource type="Resource" id="Resource_1vo6p"]
+script = ExtResource("5_73k4n")
+contents = Array[ExtResource("3_fsowk")]([SubResource("Resource_sfgio")])
 
 [node name="FrontDoor" instance=ExtResource("1_0fffa")]
 script = ExtResource("2_2e5ao")
+text = SubResource("Resource_1vo6p")
+obj_ID = "Front Door"
+obj_interaction = "Front Door"
 
 [node name="CollisionPolygon2D" parent="." index="0"]
 polygon = PackedVector2Array(-17, -1, 17, -1, 17, -84, -17, -84)
