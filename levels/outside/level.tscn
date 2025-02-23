@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cbj8nw6ruobou"]
+[gd_scene load_steps=11 format=3 uid="uid://cbj8nw6ruobou"]
 
 [ext_resource type="PackedScene" uid="uid://dh4kw75nff36h" path="res://levels/level_base.tscn" id="1_c2q14"]
 [ext_resource type="Texture2D" uid="uid://c56adsd0rbnju" path="res://levels/outside/outsideVan.png" id="2_d2sw8"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dqeqo43y4hvgr" path="res://actors/outside/door.tscn" id="4_e32um"]
 [ext_resource type="PackedScene" uid="uid://c3bxwno786wbr" path="res://actors/outside/supplies.tscn" id="5_h3v5c"]
 [ext_resource type="PackedScene" uid="uid://cgix8mymig2x6" path="res://actors/outside/intro_text.tscn" id="6_dssns"]
+[ext_resource type="PackedScene" uid="uid://cl7jnlmynpy0d" path="res://actors/outside/FrontDoor.tscn" id="7_k7wae"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frnoo"]
 size = Vector2(106, 35)
@@ -22,7 +23,7 @@ size = Vector2(79, 25)
 texture = ExtResource("2_d2sw8")
 
 [node name="Node2D" type="Node2D" parent="Spawns" index="0"]
-position = Vector2(177, 190)
+position = Vector2(177, 203)
 
 [node name="Node2D2" type="Node2D" parent="Spawns" index="1"]
 position = Vector2(33, 198)
@@ -40,6 +41,9 @@ base_location = Vector2(244, 168)
 position = Vector2(244, 169)
 
 [node name="IntroText" parent="Interactables" index="2" instance=ExtResource("6_dssns")]
+
+[node name="FrontDoor" parent="Interactables" index="3" instance=ExtResource("7_k7wae")]
+position = Vector2(174, 178)
 
 [node name="topleft" parent="Collision" index="0"]
 position = Vector2(0, 152)
