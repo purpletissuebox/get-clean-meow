@@ -6,7 +6,23 @@ var level_node:Level
 var spawn_point_ID:int = 0
 var plot_progress:Array[Dictionary]
 var hasTrophy
+var tubClean
+var mirrorClean
+var bedClean
+var lampClean
+var windowClean
+var lampInBed
+var tilesClean
+var rugClean
 
 func _ready():
 	for i in GlobalData.RoomID.NUM_ROOMS:
 		plot_progress.append({})
+	tubClean = false
+	mirrorClean = false
+	bedClean = false
+	lampClean = false
+	windowClean = false
+	lampInBed = false
+	tilesClean = false
+	rugClean = false

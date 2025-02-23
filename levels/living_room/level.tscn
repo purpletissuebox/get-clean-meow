@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bvea38p5skr74"]
+[gd_scene load_steps=23 format=3 uid="uid://bvea38p5skr74"]
 
 [ext_resource type="PackedScene" uid="uid://dh4kw75nff36h" path="res://levels/level_base.tscn" id="1_hgtm4"]
 [ext_resource type="Texture2D" uid="uid://da8xvlcwcf46n" path="res://levels/living_room/livingroomBase.png" id="2_jxgqu"]
@@ -9,10 +9,38 @@
 [ext_resource type="PackedScene" uid="uid://m0uskbulkx3k" path="res://actors/living_room/painting.tscn" id="7_km7nu"]
 [ext_resource type="PackedScene" uid="uid://djcwh310w0gx0" path="res://actors/living_room/lamp.tscn" id="8_st42o"]
 [ext_resource type="PackedScene" uid="uid://c3nleupsmkvce" path="res://actors/living_room/rug.tscn" id="9_8df81"]
+[ext_resource type="Script" path="res://actors/living_room/lamp.gd" id="9_c0rxm"]
 [ext_resource type="PackedScene" uid="uid://45yahwfn3ppr" path="res://actors/living_room/trophy.tscn" id="10_j3jhv"]
 [ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="11_mk8hs"]
 [ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="12_pj8vt"]
 [ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="13_p36fh"]
+
+[sub_resource type="Resource" id="Resource_vqutr"]
+script = ExtResource("11_mk8hs")
+text = "Hey, wait a minute! There's no lightbulb in here! The lighting is just painted on the walls!"
+choices = Array[ExtResource("12_pj8vt")]([])
+
+[sub_resource type="Resource" id="Resource_mbdt4"]
+script = ExtResource("13_p36fh")
+contents = Array[ExtResource("11_mk8hs")]([SubResource("Resource_vqutr")])
+
+[sub_resource type="Resource" id="Resource_iqc0e"]
+script = ExtResource("12_pj8vt")
+prompt = "Yes."
+continuation = SubResource("Resource_mbdt4")
+
+[sub_resource type="Resource" id="Resource_58esu"]
+script = ExtResource("12_pj8vt")
+prompt = "No."
+
+[sub_resource type="Resource" id="Resource_yr0vx"]
+script = ExtResource("11_mk8hs")
+text = "Turn it off?"
+choices = Array[ExtResource("12_pj8vt")]([SubResource("Resource_iqc0e"), SubResource("Resource_58esu")])
+
+[sub_resource type="Resource" id="Resource_8ggv4"]
+script = ExtResource("13_p36fh")
+contents = Array[ExtResource("11_mk8hs")]([SubResource("Resource_yr0vx")])
 
 [sub_resource type="Resource" id="Resource_bc114"]
 script = ExtResource("11_mk8hs")
@@ -50,6 +78,10 @@ position = Vector2(149, 61)
 
 [node name="Lamp" parent="Interactables" index="4" instance=ExtResource("8_st42o")]
 position = Vector2(231, 121)
+script = ExtResource("9_c0rxm")
+text = Array[ExtResource("13_p36fh")]([SubResource("Resource_8ggv4")])
+obj_ID = "Lamp"
+obj_interaction = "Lamp"
 
 [node name="Rug" parent="Interactables" index="5" instance=ExtResource("9_8df81")]
 position = Vector2(149, 164)
