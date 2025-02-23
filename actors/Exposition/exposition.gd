@@ -1,17 +1,14 @@
-extends Minigame
+extends Control
 
-
+@export var introText: Conversation
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	SignalBus.trigger_conversation.emit(introText)
+	await SignalBus.conversation_ended
+	SignalBus.change_lvl.emit("res://levels/outside/level.tscn",1)
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-
-func _on_button_pressed() -> void:
-	print("working")
-	complete_minigame()
-	pass # Replace with function body.

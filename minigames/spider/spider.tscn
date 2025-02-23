@@ -1,11 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://d34uy3cejceqk"]
+[gd_scene load_steps=10 format=3 uid="uid://d34uy3cejceqk"]
 
 [ext_resource type="Script" path="res://minigames/spider/spider.gd" id="1_200ds"]
 [ext_resource type="Script" path="res://minigames/spider/spideRun.gd" id="1_ruolg"]
-[ext_resource type="Texture2D" uid="uid://e7020drop3xr" path="res://minigames/spider/Spider.png" id="1_sypbo"]
+[ext_resource type="Texture2D" uid="uid://l77nxsden2n4" path="res://minigames/spider/spider bg floor.png" id="2_bvqme"]
+[ext_resource type="Texture2D" uid="uid://i8vuiih85lsb" path="res://minigames/spider/spider_bed_leg.png" id="3_0tbp1"]
+[ext_resource type="Texture2D" uid="uid://difxmsj36epu1" path="res://minigames/spider/Spider-export.png" id="4_3of1j"]
+[ext_resource type="Texture2D" uid="uid://dwb0f32m3gef5" path="res://minigames/spider/spider bed.png" id="5_i8eor"]
+[ext_resource type="Script" path="res://minigames/spider/collision_shape_2d.gd" id="6_yxg1a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7r5w5"]
-radius = 66.2722
+radius = 23.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1pr1a"]
+size = Vector2(25, 1.5)
 
 [node name="Spider" type="Control"]
 layout_mode = 3
@@ -16,25 +23,43 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_200ds")
 
+[node name="SpiderBgFloor" type="Sprite2D" parent="."]
+position = Vector2(160, 121)
+texture = ExtResource("2_bvqme")
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(16, 23)
 script = ExtResource("1_ruolg")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(183, 121)
-texture = ExtResource("1_sypbo")
+texture = ExtResource("4_3of1j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(187, 95)
+position = Vector2(185, 105)
 shape = SubResource("CircleShape2D_7r5w5")
+script = ExtResource("6_yxg1a")
 
 [node name="Button" type="Button" parent="CharacterBody2D"]
 modulate = Color(1, 1, 1, 0)
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 131.0
-offset_top = 52.0
-offset_right = 187.0
-offset_bottom = 97.0
-scale = Vector2(2.06352, 2.08862)
+offset_left = 152.0
+offset_top = 93.0
+offset_right = 208.0
+offset_bottom = 138.0
+scale = Vector2(1.39287, 0.714528)
+
+[node name="SpiderBedLeg" type="Sprite2D" parent="."]
+position = Vector2(161, 120)
+texture = ExtResource("3_0tbp1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpiderBedLeg" groups=["legGroup"]]
+position = Vector2(-107.5, -19.25)
+shape = SubResource("RectangleShape2D_1pr1a")
+
+[node name="SpiderBed" type="Sprite2D" parent="."]
+position = Vector2(161, 120)
+texture = ExtResource("5_i8eor")
 
 [connection signal="pressed" from="CharacterBody2D/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CharacterBody2D/Button" to="CharacterBody2D" method="_on_button_pressed"]

@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 var speed = 100
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	move_left()
@@ -37,7 +36,7 @@ func changeMovementX():
 
 func moveToStart():
 	var vectorTemp = $".".position
-	vectorTemp.y = 0
+	vectorTemp.y = 50
 	$".".position = vectorTemp
 	move_right()
 	print(vectorTemp.y)
@@ -54,6 +53,7 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("missedPlug"):
+		$"../ScuffMark/ScuffMarkSprite".createScuffMark()
 		moveToStart()
 		#print("FAIL")
 		pass
