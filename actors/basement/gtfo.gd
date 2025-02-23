@@ -7,6 +7,7 @@ func _process(_delta:float):
 		die()
 	self.state = 1
 	SignalBus.trigger_conversation.emit(self.d)
+	SoundDriver.play_bgm(2,0.5,1)
 	GlobalContext.gtfo = true
 	
 func die():
