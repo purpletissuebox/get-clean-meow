@@ -7,7 +7,7 @@ enum BGM {
 	SINISTER,
 }
 const bgm_resources:Array[String] = [
-	"res://drivers/audio/title.ogg"
+	"res://drivers/audio/Exploring.mp3"
 ]
 
 var global_bgm_volume:float = 1.0

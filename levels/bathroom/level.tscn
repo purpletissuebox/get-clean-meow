@@ -10,14 +10,14 @@
 [ext_resource type="Script" path="res://actors/bathroom/mirror.gd" id="6_cmjjm"]
 [ext_resource type="PackedScene" uid="uid://0idvh5p4jo54" path="res://actors/bathroom/toilet.tscn" id="7_ush3x"]
 [ext_resource type="PackedScene" uid="uid://dt0eed5xx781n" path="res://actors/bathroom/tub.tscn" id="8_3julw"]
-[ext_resource type="Texture2D" path="res://levels/bathroom/tileMinigameGrime.png" id="9_3a1fk"]
+[ext_resource type="Texture2D" uid="uid://bh7bfeg7vrhdd" path="res://levels/bathroom/tileMinigameGrime.png" id="9_3a1fk"]
 [ext_resource type="Script" path="res://actors/bathroom/tub.gd" id="9_qucri"]
 [ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="10_tm5kw"]
 [ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="11_6dvct"]
-[ext_resource type="Texture2D" path="res://levels/bathroom/mirrorDirty.png" id="12_7lm0g"]
+[ext_resource type="Texture2D" uid="uid://bvagysbdcmk8y" path="res://levels/bathroom/mirrorDirty.png" id="12_7lm0g"]
 [ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="12_avwd4"]
-[ext_resource type="Texture2D" path="res://levels/bathroom/toiletDirty.png" id="15_r2pmq"]
-[ext_resource type="Texture2D" path="res://levels/bathroom/bathtubDirty.png" id="18_f60k2"]
+[ext_resource type="Texture2D" uid="uid://bc2bvoh515ayl" path="res://levels/bathroom/toiletDirty.png" id="15_r2pmq"]
+[ext_resource type="Texture2D" uid="uid://cqyt5sys17apw" path="res://levels/bathroom/bathtubDirty.png" id="18_f60k2"]
 
 [sub_resource type="Resource" id="Resource_xye73"]
 script = ExtResource("11_6dvct")
