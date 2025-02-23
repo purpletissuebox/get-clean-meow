@@ -9,14 +9,14 @@
 [ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="7_2kdgr"]
 [ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="8_h6ncu"]
 
-[sub_resource type="Resource" id="Resource_nitub"]
+[sub_resource type="Resource" id="Resource_11law"]
 script = ExtResource("7_2kdgr")
-text = "The doors locked. I must have locked my keys inside again."
+text = "It's locked! I must have locked my keys in my car again."
 choices = Array[ExtResource("8_h6ncu")]([])
 
-[sub_resource type="Resource" id="Resource_cnmk5"]
+[sub_resource type="Resource" id="Resource_ud2ug"]
 script = ExtResource("6_0g4rg")
-contents = Array[ExtResource("7_2kdgr")]([SubResource("Resource_nitub")])
+contents = Array[ExtResource("7_2kdgr")]([SubResource("Resource_11law")])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frnoo"]
 size = Vector2(106, 35)
@@ -50,8 +50,8 @@ position = Vector2(244, 169)
 [node name="FrontDoor" parent="Interactables" index="2" instance=ExtResource("5_h3v5c")]
 position = Vector2(175, 182)
 scale = Vector2(1.52, 1)
-text = Array[ExtResource("6_0g4rg")]([SubResource("Resource_cnmk5")])
-obj_ID = "FrontDoor"
+text = Array[ExtResource("6_0g4rg")]([SubResource("Resource_ud2ug")])
+obj_ID = "Front Door"
 obj_interaction = "Front Door"
 
 [node name="topleft" parent="Collision" index="0"]

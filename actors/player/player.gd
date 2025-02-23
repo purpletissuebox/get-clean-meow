@@ -18,13 +18,14 @@ func _init():
 
 func updateTrophy():
 	hasTrophy = true
+
 #Genuinly no idea what this does. Initalizes playback maybe?
 func _ready():
 	SignalBus.trigger_conversation.connect(func(_x):self.busy = true)
 	SignalBus.conversation_ended.connect(func(_x):self.busy = false)
 	playback = animation_tree["parameters/playback"]
 	SignalBus.updateTrophy.connect(updateTrophy)
-
+	
 func _physics_process(_delta:float):
 	if busy:
 		return
