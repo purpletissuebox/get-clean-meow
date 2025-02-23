@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://levels/title/volume.gd" id="5_n5fjo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_akc40"]
+render_priority = 0
 shader = ExtResource("2_3u82j")
 
 [node name="Mainmenu" type="Control"]

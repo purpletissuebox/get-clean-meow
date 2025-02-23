@@ -7,3 +7,4 @@ signal conversation_ended
 signal newDialouge
 signal updateInventory
 signal minigame_ended
+signal updateTrophy

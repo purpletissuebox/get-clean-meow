@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl7jnlmynpy0d"]
+
+[ext_resource type="PackedScene" uid="uid://civqyx6i1i73l" path="res://actors/interactable.tscn" id="1_0fffa"]
+[ext_resource type="Script" path="res://actors/outside/FrontDoorCar.gd" id="2_2e5ao"]
+
+[node name="FrontDoor" instance=ExtResource("1_0fffa")]
+script = ExtResource("2_2e5ao")
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+polygon = PackedVector2Array(-17, -1, 17, -1, 17, -84, -17, -84)
+
+[node name="Graphic" parent="." index="1"]
+centered = false
+offset = Vector2(-40, -103)

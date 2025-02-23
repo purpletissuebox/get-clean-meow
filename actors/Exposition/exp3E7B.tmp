@@ -1,0 +1,126 @@
+[gd_scene load_steps=27 format=3 uid="uid://bb5ubb3hfnjsm"]
+
+[ext_resource type="Script" path="res://actors/Exposition/exposition.gd" id="1_828sb"]
+[ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="2_g3cth"]
+[ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="3_kywj0"]
+[ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="4_p124t"]
+[ext_resource type="PackedScene" uid="uid://7k8yls7isrca" path="res://actors/player/player.tscn" id="5_k5kyu"]
+[ext_resource type="Texture2D" uid="uid://dgl87h6ii3xl7" path="res://actors/Exposition/blackScreen.png" id="6_wq6l1"]
+
+[sub_resource type="Resource" id="Resource_vrc36"]
+script = ExtResource("2_g3cth")
+text = "*click* *He must have hung up*"
+choices = Array[ExtResource("3_kywj0")]([])
+
+[sub_resource type="Resource" id="Resource_uonpu"]
+script = ExtResource("4_p124t")
+contents = Array[ExtResource("2_g3cth")]([SubResource("Resource_vrc36")])
+
+[sub_resource type="Resource" id="Resource_nqqtp"]
+script = ExtResource("3_kywj0")
+prompt = "Can you tell me the address please?"
+continuation = SubResource("Resource_uonpu")
+
+[sub_resource type="Resource" id="Resource_oxppd"]
+script = ExtResource("3_kywj0")
+prompt = "On my way!"
+
+[sub_resource type="Resource" id="Resource_8fv0r"]
+script = ExtResource("2_g3cth")
+text = "I live right next to NoWhere Tech! Take a right instead of a left at the entrence and you will be here."
+choices = Array[ExtResource("3_kywj0")]([SubResource("Resource_nqqtp"), SubResource("Resource_oxppd")])
+
+[sub_resource type="Resource" id="Resource_wag26"]
+script = ExtResource("4_p124t")
+contents = Array[ExtResource("2_g3cth")]([SubResource("Resource_8fv0r")])
+
+[sub_resource type="Resource" id="Resource_7em6r"]
+script = ExtResource("3_kywj0")
+prompt = "Ok! What is your address?"
+continuation = SubResource("Resource_wag26")
+
+[sub_resource type="Resource" id="Resource_daldv"]
+script = ExtResource("3_kywj0")
+prompt = "Bro calm down."
+
+[sub_resource type="Resource" id="Resource_exjcn"]
+script = ExtResource("2_g3cth")
+text = "I need my house cleaned. As soon as possible, today! I need it now, like right now!"
+choices = Array[ExtResource("3_kywj0")]([SubResource("Resource_7em6r"), SubResource("Resource_daldv")])
+
+[sub_resource type="Resource" id="Resource_3gye5"]
+script = ExtResource("4_p124t")
+contents = Array[ExtResource("2_g3cth")]([SubResource("Resource_exjcn")])
+
+[sub_resource type="Resource" id="Resource_ph8uh"]
+script = ExtResource("3_kywj0")
+prompt = "Yes! How can we help you?"
+continuation = SubResource("Resource_3gye5")
+
+[sub_resource type="Resource" id="Resource_punqn"]
+script = ExtResource("2_g3cth")
+text = "Sorry about that! *click*"
+choices = Array[ExtResource("3_kywj0")]([])
+
+[sub_resource type="Resource" id="Resource_c0rul"]
+script = ExtResource("4_p124t")
+contents = Array[ExtResource("2_g3cth")]([SubResource("Resource_punqn")])
+
+[sub_resource type="Resource" id="Resource_gu8he"]
+script = ExtResource("3_kywj0")
+prompt = "No... you have the wrong number..."
+continuation = SubResource("Resource_c0rul")
+
+[sub_resource type="Resource" id="Resource_wu6qw"]
+script = ExtResource("2_g3cth")
+text = "Is this Get Clean Meow?"
+choices = Array[ExtResource("3_kywj0")]([SubResource("Resource_ph8uh"), SubResource("Resource_gu8he")])
+
+[sub_resource type="Resource" id="Resource_c331a"]
+script = ExtResource("4_p124t")
+contents = Array[ExtResource("2_g3cth")]([SubResource("Resource_wu6qw")])
+
+[sub_resource type="Resource" id="Resource_kvkva"]
+script = ExtResource("3_kywj0")
+prompt = "Pick up"
+continuation = SubResource("Resource_c331a")
+
+[sub_resource type="Resource" id="Resource_k064w"]
+script = ExtResource("3_kywj0")
+prompt = "Ignore"
+
+[sub_resource type="Resource" id="Resource_pcbmt"]
+script = ExtResource("2_g3cth")
+text = "RING...RING...RING..."
+choices = Array[ExtResource("3_kywj0")]([SubResource("Resource_kvkva"), SubResource("Resource_k064w")])
+
+[sub_resource type="Resource" id="Resource_qxty6"]
+script = ExtResource("4_p124t")
+contents = Array[ExtResource("2_g3cth")]([SubResource("Resource_pcbmt")])
+
+[node name="Exposition" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_828sb")
+introText = SubResource("Resource_qxty6")
+
+[node name="Player" parent="." instance=ExtResource("5_k5kyu")]
+position = Vector2(161, 121)
+
+[node name="BlackScreen" type="Sprite2D" parent="."]
+position = Vector2(153, 105.5)
+scale = Vector2(1.9875, 1.7375)
+texture = ExtResource("6_wq6l1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
