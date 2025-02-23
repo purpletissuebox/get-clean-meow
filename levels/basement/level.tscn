@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bc1x1qvkyfi3b"]
+[gd_scene load_steps=8 format=3 uid="uid://bc1x1qvkyfi3b"]
 
 [ext_resource type="PackedScene" uid="uid://dh4kw75nff36h" path="res://levels/level_base.tscn" id="1_ee4hl"]
 [ext_resource type="Texture2D" uid="uid://58is3mwcnv8d" path="res://levels/basement/basementBase.png" id="2_bvlqr"]
-[ext_resource type="Script" path="res://levels/basement/basementLvl.gd" id="2_mley5"]
 [ext_resource type="PackedScene" uid="uid://dthqwuvotxvq4" path="res://levels/load_zone.tscn" id="3_ryxey"]
 [ext_resource type="Texture2D" uid="uid://dapb14ju10wra" path="res://levels/basement/moreDirt.png" id="5_wis2u"]
 [ext_resource type="Texture2D" uid="uid://du10b1405m33h" path="res://levels/basement/bodyandBlood.png" id="6_k1b7w"]
@@ -10,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://sna3yoyflah2" path="res://actors/basement/plotplotplot.tscn" id="8_0g643"]
 
 [node name="Level" instance=ExtResource("1_ee4hl")]
-script = ExtResource("2_mley5")
 
 [node name="Background" parent="." index="0"]
 texture = ExtResource("2_bvlqr")
@@ -43,3 +41,4 @@ texture = ExtResource("7_lj5io")
 
 [node name="plot" parent="." index="9" instance=ExtResource("8_0g643")]
 position = Vector2(192, 149)
+obj_interaction = null
