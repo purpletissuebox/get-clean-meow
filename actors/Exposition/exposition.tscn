@@ -226,3 +226,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(114, 123, 175, 122, 175, 103, 146, 103, 146, 122, 109, 148, 109, 57, 218, 57, 218, 171)
