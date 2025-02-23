@@ -43,7 +43,7 @@ position = Vector2(231, 121)
 position = Vector2(149, 164)
 
 [node name="Trophy" parent="Interactables" index="6" instance=ExtResource("10_j3jhv")]
-position = Vector2(267, 87)
+position = Vector2(269, 89)
 obj_ID = "Trophy"
 obj_interaction = "Trophy"
 

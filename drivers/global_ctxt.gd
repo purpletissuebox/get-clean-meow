@@ -5,6 +5,7 @@ var level_ID:int
 var level_node:Level
 var spawn_point_ID:int = 0
 var plot_progress:Array[Dictionary]
+var hasTrophy
 
 func _ready():
 	for i in GlobalData.RoomID.NUM_ROOMS:
