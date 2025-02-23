@@ -1,0 +1,77 @@
+[gd_scene load_steps=19 format=3 uid="uid://bkt8om4o6gagi"]
+
+[ext_resource type="PackedScene" uid="uid://civqyx6i1i73l" path="res://actors/interactable.tscn" id="1_ut77f"]
+[ext_resource type="Script" path="res://actors/entryway/note.gd" id="2_laimm"]
+[ext_resource type="Script" path="res://actors/player/hud/dialog_class.gd" id="3_17psl"]
+[ext_resource type="Texture2D" uid="uid://doklagnogerpk" path="res://actors/entryway/note.png" id="3_j21tw"]
+[ext_resource type="Script" path="res://actors/player/hud/choice_class.gd" id="4_sucft"]
+[ext_resource type="Script" path="res://actors/player/hud/conversation_class.gd" id="5_dh6fy"]
+
+[sub_resource type="Resource" id="Resource_j581t"]
+script = ExtResource("3_17psl")
+text = "A piece of paper is taped to the door:"
+choices = Array[ExtResource("4_sucft")]([])
+
+[sub_resource type="Resource" id="Resource_tu6au"]
+script = ExtResource("3_17psl")
+text = "\"Do NOT clean the basement for any reason. I will schedule a new appointment at a later time.\""
+choices = Array[ExtResource("4_sucft")]([])
+
+[sub_resource type="Resource" id="Resource_5wpok"]
+script = ExtResource("3_17psl")
+text = "...Interesting. As curious as you are of what's downstairs, the door is locked."
+choices = Array[ExtResource("4_sucft")]([])
+
+[sub_resource type="Resource" id="Resource_8ptpe"]
+script = ExtResource("5_dh6fy")
+contents = Array[ExtResource("3_17psl")]([SubResource("Resource_j581t"), SubResource("Resource_tu6au"), SubResource("Resource_5wpok")])
+
+[sub_resource type="Resource" id="Resource_b6u25"]
+script = ExtResource("3_17psl")
+text = "ok nerd"
+choices = Array[ExtResource("4_sucft")]([])
+
+[sub_resource type="Resource" id="Resource_opgwt"]
+script = ExtResource("5_dh6fy")
+contents = Array[ExtResource("3_17psl")]([SubResource("Resource_b6u25")])
+
+[sub_resource type="Resource" id="Resource_pluwf"]
+script = ExtResource("4_sucft")
+prompt = "I respect my clients' privacy."
+continuation = SubResource("Resource_opgwt")
+
+[sub_resource type="Resource" id="Resource_rl4hp"]
+script = ExtResource("3_17psl")
+text = "hell yeah"
+choices = Array[ExtResource("4_sucft")]([])
+
+[sub_resource type="Resource" id="Resource_l8d0f"]
+script = ExtResource("5_dh6fy")
+contents = Array[ExtResource("3_17psl")]([SubResource("Resource_rl4hp")])
+
+[sub_resource type="Resource" id="Resource_j1s60"]
+script = ExtResource("4_sucft")
+prompt = "Well, if nobody's home..."
+continuation = SubResource("Resource_l8d0f")
+
+[sub_resource type="Resource" id="Resource_nu2jd"]
+script = ExtResource("3_17psl")
+text = "Your key fits in the lock. Do you really want to know what's down there?"
+choices = Array[ExtResource("4_sucft")]([SubResource("Resource_pluwf"), SubResource("Resource_j1s60")])
+
+[sub_resource type="Resource" id="Resource_huxdl"]
+script = ExtResource("5_dh6fy")
+contents = Array[ExtResource("3_17psl")]([SubResource("Resource_nu2jd")])
+
+[node name="Note" instance=ExtResource("1_ut77f")]
+script = ExtResource("2_laimm")
+locked_text = SubResource("Resource_8ptpe")
+unlocked_text = SubResource("Resource_huxdl")
+obj_ID = "note"
+obj_interaction = "Note"
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+polygon = PackedVector2Array(-21, 38, 25, 38, 25, 30, -21, 30)
+
+[node name="Graphic" parent="." index="1"]
+texture = ExtResource("3_j21tw")
